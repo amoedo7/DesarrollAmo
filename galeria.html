@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galería y Proyectos </title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #121212;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 5px;
+    }
+    .btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    .btn-project {
+      background: #1db954;
+      border: none;
+      color: #121212;
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 6px rgba(29,185,84,0.6);
+    }
+    .btn-project:hover {
+      background: #17a54d;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    section h2 {
+      margin-bottom: 15px;
+      border-bottom: 2px solid #1db954;
+      padding-bottom: 5px;
+      font-weight: 600;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 15px;
+      justify-items: center;
+    }
+    .gallery img {
+      max-width: 150px;
+      max-height: 150px;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 0 12px #1db954aa;
+      background: #222;
+      padding: 5px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 18px #1db954ff;
+    }
+
+    /* Lightbox básico */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 0 25px #1db954;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: auto;
+      padding-top: 10px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Galería y Proyectos</h1>
+    <p>Algunos de nuestros trabajos</p>
+  </header>
+
+  <div class="btn-container">
+    <a href="#logos" class="btn-project">🎨 Logos</a>
+    <a href="#imagenes-ia" class="btn-project">🖼️ Imágenes IA</a>
+    <a href="#landings" class="btn-project">🌐 Landings</a>
+    <a href="#audios" class="btn-project">🎵 Audios</a>
+    <a href="#videos" class="btn-project">🎥 Videos</a>
+    <a href="#chatbots" class="btn-project">🤖 Chats</a>
+    <a href="#hojas" class="btn-project">📊 Hojas</a>
+    <a href="#automatizaciones" class="btn-project">🔁 Automatizaciones</a>
+  </div>
+
+ <!-- Landings -->
+<section id="landings">
+  <h2>Landings Desarrolladas</h2>
+  <div class="gallery">
+    <a href="https://erikaboveri.netlify.app/" target="_blank" title="Landing Erika" class="btn-project">🌐 Erika</a>
+    <a href="https://djeros.netlify.app/" target="_blank" title="Landing Eros" class="btn-project">🌐 Eros</a>
+    <a href="https://loganproject.netlify.app/" target="_blank" title="Landing Logan" class="btn-project">🌐 Logan</a>
+    <a href="https://movedj.netlify.app/" target="_blank" title="Landing MoveDJ" class="btn-project">🌐 MoveDJ</a>
+    <a href="https://proyectoestampa.netlify.app/" target="_blank" title="Landing PEstampa" class="btn-project">🌐 PEstampa</a>
+  </div>
+</section>
+
+<!-- Logos -->
+<section id="logos">
+  <h2>Logos DAMO</h2>
+  <div class="gallery">
+    <a href="#img1"><img src="https://i.imgur.com/J3WWHwy.png" alt="DAMO Logo1" /></a>
+    <a href="#img2"><img src="https://i.imgur.com/24AObLy.png" alt="DAMO Logo2" /></a>
+    <a href="#img3"><img src="https://i.imgur.com/24AObLy.png" alt="DAMO Logo3" /></a>
+    <a href="#img4"><img src="https://i.imgur.com/837ggsD.png" alt="DAMO Logo4" /></a>
+    <a href="#img5"><img src="https://i.imgur.com/2M8cDpt.png" alt="DAMO Logo5" /></a>
+    <a href="#img6"><img src="https://i.imgur.com/rhMOKw3.png" alt="DAMO Logo6" /></a>
+    <a href="#img7"><img src="https://i.imgur.com/onQ2K5v.png" alt="DAMO Logo7" /></a>
+    <a href="#img8"><img src="https://i.imgur.com/xF67XIZ.png" alt="DAMO Logo8" /></a>
+    <a href="#img9"><img src="https://i.imgur.com/iOG9cEX.png" alt="AA Logo9" /></a>
+  </div>
+</section>
+
+<!-- Imágenes IA -->
+<section id="imagenes-ia">
+  <h2>Imágenes IA</h2>
+  <div class="gallery">
+    <a href="#img10"><img src="https://i.imgur.com/UwpRAgX.png" alt="IA1" /></a>
+    <a href="#img11"><img src="https://i.imgur.com/MSL9v2A.png" alt="IA2" /></a>
+    <a href="#img12"><img src="https://i.imgur.com/WocOrND.png" alt="IA3" /></a>
+    <a href="#img13"><img src="https://i.imgur.com/zT11AcI.png" alt="IA4" /></a>
+    <a href="#img14"><img src="https://i.imgur.com/dMrtcFu.png" alt="IA5" /></a>
+    <a href="#img15"><img src="https://i.imgur.com/rotCYM0.png" alt="IA6" /></a>
+    <a href="#img16"><img src="https://i.imgur.com/LjU2c1t.png" alt="IA7" /></a>
+    <a href="#img17"><img src="https://i.imgur.com/ErBcP4h.png" alt="IA8" /></a>
+    <a href="#img18"><img src="https://i.imgur.com/QKNmU7o.png" alt="IA9" /></a>
+    <a href="#img19"><img src="https://i.imgur.com/9LO4Y9P.png" alt="IA10" /></a>
+    <a href="#img20"><img src="https://i.imgur.com/sRvww8t.png" alt="IA11" /></a>
+    <a href="#img21"><img src="https://i.imgur.com/uz5xdFb.png" alt="IA12" /></a>
+    <a href="#img22"><img src="https://i.imgur.com/xdpDzpU.png" alt="IA13" /></a>
+    <a href="#img23"><img src="https://i.imgur.com/swi4WP5.png" alt="IA14" /></a>
+    <a href="#img24"><img src="https://i.imgur.com/nRCFb27.png" alt="IA15" /></a>
+  </div>
+</section>
+
+
+  <!-- Audios -->
+  <section id="audios">
+    <h2>Audios Personalizados</h2>
+    <div class="gallery">
+      <!-- Audio thumbnails o íconos -->
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section id="videos">
+    <h2>Videos Personalizados</h2>
+    <div class="gallery">
+      <!-- Video thumbnails -->
+    </div>
+  </section>
+
+  <!-- Chatbots -->
+  <section id="chatbots">
+    <h2>Chats Inteligentes</h2>
+    <div class="gallery">
+      <!-- Capturas de chats -->
+    </div>
+  </section>
+
+  <!-- Hojas -->
+  <section id="hojas">
+    <h2>Hojas de Cálculo Automatizadas</h2>
+    <div class="gallery">
+      <!-- Gráficos o capturas -->
+    </div>
+  </section>
+
+  <!-- Automatizaciones -->
+  <section id="automatizaciones">
+    <h2>Automatizaciones con n8n</h2>
+    <div class="gallery">
+      <!-- Diagramas de flujo o capturas -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 DAMO - Todos los derechos reservados
+  </footer>
+
+  <!-- Lightbox modals (puedes duplicar y adaptar según cantidad) -->
+  <!-- Lightbox Logos -->
+<div id="img1" class="lightbox"><a href="#"><img src="https://i.imgur.com/J3WWHwy.png" alt="DAMO Logo1" /></a></div>
+<div id="img2" class="lightbox"><a href="#"><img src="https://i.imgur.com/24AObLy.png" alt="DAMO Logo2" /></a></div>
+<div id="img3" class="lightbox"><a href="#"><img src="https://i.imgur.com/24AObLy.png" alt="DAMO Logo3" /></a></div>
+<div id="img4" class="lightbox"><a href="#"><img src="https://i.imgur.com/837ggsD.png" alt="DAMO Logo4" /></a></div>
+<div id="img5" class="lightbox"><a href="#"><img src="https://i.imgur.com/2M8cDpt.png" alt="DAMO Logo5" /></a></div>
+<div id="img6" class="lightbox"><a href="#"><img src="https://i.imgur.com/rhMOKw3.png" alt="DAMO Logo6" /></a></div>
+<div id="img7" class="lightbox"><a href="#"><img src="https://i.imgur.com/onQ2K5v.png" alt="DAMO Logo7" /></a></div>
+<div id="img8" class="lightbox"><a href="#"><img src="https://i.imgur.com/xF67XIZ.png" alt="DAMO Logo8" /></a></div>
+<div id="img9" class="lightbox"><a href="#"><img src="https://i.imgur.com/iOG9cEX.png" alt="AA Logo9" /></a></div>
+
+<!-- Lightbox Imágenes IA -->
+<div id="img10" class="lightbox"><a href="#"><img src="https://i.imgur.com/UwpRAgX.png" alt="IA1" /></a></div>
+<div id="img11" class="lightbox"><a href="#"><img src="https://i.imgur.com/MSL9v2A.png" alt="IA2" /></a></div>
+<div id="img12" class="lightbox"><a href="#"><img src="https://i.imgur.com/WocOrND.png" alt="IA3" /></a></div>
+<div id="img13" class="lightbox"><a href="#"><img src="https://i.imgur.com/zT11AcI.png" alt="IA4" /></a></div>
+<div id="img14" class="lightbox"><a href="#"><img src="https://i.imgur.com/dMrtcFu.png" alt="IA5" /></a></div>
+<div id="img15" class="lightbox"><a href="#"><img src="https://i.imgur.com/rotCYM0.png" alt="IA6" /></a></div>
+<div id="img16" class="lightbox"><a href="#"><img src="https://i.imgur.com/LjU2c1t.png" alt="IA7" /></a></div>
+<div id="img17" class="lightbox"><a href="#"><img src="https://i.imgur.com/ErBcP4h.png" alt="IA8" /></a></div>
+<div id="img18" class="lightbox"><a href="#"><img src="https://i.imgur.com/QKNmU7o.png" alt="IA9" /></a></div>
+<div id="img19" class="lightbox"><a href="#"><img src="https://i.imgur.com/9LO4Y9P.png" alt="IA10" /></a></div>
+<div id="img20" class="lightbox"><a href="#"><img src="https://i.imgur.com/sRvww8t.png" alt="IA11" /></a></div>
+<div id="img21" class="lightbox"><a href="#"><img src="https://i.imgur.com/uz5xdFb.png" alt="IA12" /></a></div>
+<div id="img22" class="lightbox"><a href="#"><img src="https://i.imgur.com/xdpDzpU.png" alt="IA13" /></a></div>
+<div id="img23" class="lightbox"><a href="#"><img src="https://i.imgur.com/swi4WP5.png" alt="IA14" /></a></div>
+<div id="img24" class="lightbox"><a href="#"><img src="https://i.imgur.com/nRCFb27.png" alt="IA15" /></a></div>
+
+<script src="static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DesarrollAMO - IA para todos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Glassmorphism background */
+    .glass-bg {
+      background: rgba(255 255 255 / 0.25);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+    }
+
+    /* Dark mode override for glass-bg */
+    .dark .glass-bg {
+      background: rgba(31 41 55 / 0.6);
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-500">
+
+  <!-- Dark mode toggle -->
+  <button id="darkToggle" aria-label="Toggle Dark Mode" class="fixed top-5 right-5 p-3 bg-gray-200 dark:bg-gray-700 rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
+    🌙
+  </button>
+
+  <div class="max-w-7xl mx-auto px-6 py-16 space-y-24">
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 fade-in glass-bg rounded-3xl p-12 shadow-xl">
+      <h1 class="text-6xl md:text-7xl font-extrabold mb-4 tracking-tight text-blue-600 dark:text-blue-400">
+        Desarroll<span class="text-pink-500">AMO</span>.
+      </h1>
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-800 dark:text-white">
+        Traducimos tus ideas a tecnología.      </h2>
+      <p class="text-lg md:text-xl max-w-2xl mb-8 leading-relaxed text-gray-600 dark:text-gray-300">
+        Te escuchamos, entendemos tus necesidades, y usamos IA para crear soluciones a tu medida. Así de simple.
+      </p>
+      <a href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 text-xl font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105">
+        Hablemos por Instagram
+      </a>
+    </section>
+
+    <!-- Services Section -->
+   <section class="fade-in glass-bg rounded-3xl p-12 shadow-xl">
+  <h3 class="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-gray-100">Servicios personalizados</h3>
+  <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+    
+    <div class="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+      <div class="bg-pink-500 text-white rounded-full p-4 mb-4 inline-flex items-center justify-center text-3xl">
+        🎨
+      </div>
+      <h4 class="font-semibold text-lg mb-1">Generación de logos</h4>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Diseños únicos y personalizados para tu marca.</p>
+    </div>
+
+    <div class="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+      <div class="bg-blue-500 text-white rounded-full p-4 mb-4 inline-flex items-center justify-center text-3xl">
+        🖼️
+      </div>
+      <h4 class="font-semibold text-lg mb-1">Creación de imágenes</h4>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Visuales impactantes para redes, presentaciones y más.</p>
+    </div>
+
+    <div class="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+      <div class="bg-green-500 text-white rounded-full p-4 mb-4 inline-flex items-center justify-center text-3xl">
+        🎵
+      </div>
+      <h4 class="font-semibold text-lg mb-1">Producción de audios</h4>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Audios personalizados para podcasts, anuncios o intros.</p>
+    </div>
+
+    <div class="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+      <div class="bg-yellow-500 text-white rounded-full p-4 mb-4 inline-flex items-center justify-center text-3xl">
+        🎬
+      </div>
+      <h4 class="font-semibold text-lg mb-1">Videos personalizados</h4>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Videos creativos que cuentan la historia de tu marca.</p>
+    </div>
+
+    <div class="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+      <div class="bg-indigo-500 text-white rounded-full p-4 mb-4 inline-flex items-center justify-center text-3xl">
+        🖥️
+      </div>
+      <h4 class="font-semibold text-lg mb-1">Desarrollo de landings</h4>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Páginas web rápidas y efectivas para tu negocio.</p>
+    </div>
+
+    <div class="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+      <div class="bg-red-500 text-white rounded-full p-4 mb-4 inline-flex items-center justify-center text-3xl">
+        💬
+      </div>
+      <h4 class="font-semibold text-lg mb-1">Chats inteligentes</h4>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Implementación de chatbots para atención 24/7.</p>
+    </div>
+
+    <div class="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+      <div class="bg-cyan-500 text-white rounded-full p-4 mb-4 inline-flex items-center justify-center text-3xl">
+        📊
+      </div>
+      <h4 class="font-semibold text-lg mb-1">Hojas de cálculo automatizadas</h4>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Procesos eficientes para manejar tus datos sin esfuerzo.</p>
+    </div>
+
+    <div class="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+      <div class="bg-purple-500 text-white rounded-full p-4 mb-4 inline-flex items-center justify-center text-3xl">
+        🤖
+      </div>
+      <h4 class="font-semibold text-lg mb-1">Automatizaciones con n8n</h4>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Conecta y automatiza tareas para ahorrar tiempo.</p>
+    </div>
+
+  </div>
+</section>
+
+   <!-- Projects Section -->
+<section class="fade-in glass-bg rounded-3xl p-12 shadow-xl">
+  <h3 class="text-4xl font-bold mb-8 text-center text-gray-800 dark:text-gray-100">Proyectos destacados</h3>
+  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+    <a href="#" class="block p-6 rounded-lg bg-white dark:bg-gray-700 shadow-md hover:shadow-lg transition-shadow duration-300 text-center text-gray-900 dark:text-gray-100 font-semibold">
+      CriptAMO
+    </a>
+    <a href="#" class="block p-6 rounded-lg bg-white dark:bg-gray-700 shadow-md hover:shadow-lg transition-shadow duration-300 text-center text-gray-900 dark:text-gray-100 font-semibold">
+      PidAMO
+    </a>
+    <a href="#" class="block p-6 rounded-lg bg-white dark:bg-gray-700 shadow-md hover:shadow-lg transition-shadow duration-300 text-center text-gray-900 dark:text-gray-100 font-semibold">
+      ViajAMO
+    </a>
+    <a href="#" class="block p-6 rounded-lg bg-white dark:bg-gray-700 shadow-md hover:shadow-lg transition-shadow duration-300 text-center text-gray-900 dark:text-gray-100 font-semibold">
+      TermAMO
+    </a>
+    <a href="#" class="block p-6 rounded-lg bg-white dark:bg-gray-700 shadow-md hover:shadow-lg transition-shadow duration-300 text-center text-gray-900 dark:text-gray-100 font-semibold">
+      TrucAMO
+    </a>
+  </div>
+
+  <div class="text-center">
+    <a href="galeria.html" 
+       class="inline-block px-8 py-3 bg-pink-500 text-white font-semibold rounded-full shadow-lg hover:bg-pink-600 transition duration-300 transform hover:scale-105">
+      Ver toda la galería
+    </a>
+  </div>
+</section>
+
+
+    <!-- About Section -->
+    <section class="fade-in glass-bg rounded-3xl p-12 shadow-xl flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
+      <div class="md:w-1/3 flex justify-center">
+        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-xl">
+          <img src="https://i.imgur.com/DDdnPGd.png" alt="Amoedo Juan" class="w-full h-full object-cover" />
+        </div>
+      </div>
+      <div class="md:w-2/3 text-gray-700 dark:text-gray-300">
+        <h3 class="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Hola, soy Amoedo Juan</h3>
+        <p class="mb-4">
+          Después de años en tecnología, descubrí que lo que más me apasiona es humanizar la IA. En DesarrollAMO, combinamos herramientas avanzadas con comprensión real de lo que necesitas.
+        </p>
+        <p>
+          No somos una consultora fría ni una agencia impersonal. Somos tu aliado tecnológico, que habla tu idioma y entiende tus frustraciones con la tecnología.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="fade-in glass-bg rounded-3xl p-12 shadow-xl text-center">
+      <h3 class="text-4xl font-bold mb-8 text-gray-800 dark:text-white">Hablemos de tu proyecto</h3>
+      <a href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-4 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 text-xl font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105">
+        ¡Hablemos ahora!
+      </a>
+    </section>
+
+  </div>
+
+  <script src="static/script.js"></script>
+</body>
+</html>
