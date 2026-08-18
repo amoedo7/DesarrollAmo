@@ -1,0 +1,14 @@
+{
+  "schema": "desarrollamo.project.v1",
+  "repository": "amoedo7/DesarrollAmo",
+  "name": "DesarrollAmo",
+  "ecosystem": "DesarrollAMO",
+  "type": "historical-website",
+  "lifecycle": "historical-reference",
+  "visibility": "public",
+  "source_of_truth": false,
+  "production_url": "https://desarrollamo.com.ar/",
+  "related": ["amoedo7/landings"],
+  "reviewed_at": "2026-08-18",
+  "notes": ["Production has evolved beyond this repository.", "Useful as historical identity and content reference."]
+}
