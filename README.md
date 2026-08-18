@@ -1,40 +1,79 @@
-# DesarrollAMO · sitio histórico
+<div align="center">
 
-Este repositorio contiene una **versión histórica de la presencia web de DesarrollAMO**.
+# DesarrollAMO · archivo web histórico
 
-## Estado
+### Una etapa anterior de la identidad que hoy evolucionó hacia un ecosistema completo
 
-**Histórico / referencia de identidad.** El sitio y el ecosistema actual de DesarrollAMO evolucionaron más allá de este snapshot, por lo que este repo no debe tomarse automáticamente como fuente de verdad de producción.
+[🌐 Sitio actual](https://desarrollamo.com.ar/) · [🏢 Ecosistema visual](https://github.com/amoedo7/landings) · [🗺️ GitHub actual](https://github.com/amoedo7/amoedo7)
 
-## Qué contiene
-
-- `index.html` — landing histórica de DesarrollAMO.
-- `galeria.html` — galería histórica de proyectos.
-- `static/` — recursos del sitio.
-- `Subir.ps1` — automatización de publicación de aquella etapa.
-
-Esta versión ya introducía ideas que siguen formando parte de la identidad: **DesarrollAMO**, la combinación visual `Desarroll` + `AMO` y la intención de traducir ideas a tecnología.
-
-## Relación con el sitio actual
-
-Sitio público actual:
-
-https://desarrollamo.com.ar/
-
-Si el contenido de este repositorio contradice al sitio actual o a documentación más reciente, debe considerarse **material histórico**.
-
-## Branding
-
-La identidad reutilizable se está centralizando progresivamente en:
-
-`amoedo7/landings/branding/`
-
-Este repositorio puede servir como evidencia histórica de colores, copy y decisiones visuales, pero no debe obligar a futuros productos a copiar literalmente su UI.
-
-## Seguridad
-
-No añadir tokens de Netlify, contraseñas, claves de API ni credenciales a scripts de deploy. Usar variables de entorno o el gestor de secretos de la plataforma correspondiente.
+</div>
 
 ---
 
-**DesarrollAMO** · tecnología humana, modular y reutilizable.
+## Estado
+
+**Histórico / referencia de identidad.** Este repositorio conserva una versión anterior de la presencia web de DesarrollAMO.
+
+No debe tomarse automáticamente como fuente de verdad de producción. La arquitectura, los productos y la organización actual evolucionaron más allá de este snapshot.
+
+## Qué conserva
+
+- `index.html` — landing histórica;
+- `galeria.html` — galería histórica de proyectos;
+- `static/` — recursos visuales de aquella etapa;
+- `Subir.ps1` — automatización de publicación histórica.
+
+También conserva ideas que siguen siendo parte de la identidad:
+
+- el nombre **DesarrollAMO**;
+- la combinación visual `Desarroll` + `AMO`;
+- la intención de traducir ideas a tecnología;
+- una visión orientada a construir, no sólo a asesorar.
+
+## Qué cambió desde entonces
+
+DesarrollAMO hoy se entiende como una estructura mayor:
+
+```text
+identidad web
+     ↓
+productos + datos + automatización
+     ↓
+EstructurAMO
+     ↓
+oficinas especializadas
+     ↓
+DAMO / IA / herramientas
+     ↓
+operación real y entregas
+```
+
+El mapa público de oficinas y capacidades se está construyendo en el repositorio `landings`.
+
+## Branding
+
+La identidad reutilizable se centraliza progresivamente en:
+
+`amoedo7/landings/branding/`
+
+Este repo puede aportar evidencia histórica de colores, copy y decisiones visuales, pero no obliga a nuevos productos a copiar literalmente su UI.
+
+## Regla de preservación
+
+No borrar este repositorio para “limpiar” GitHub. La historia también explica cómo llegó DesarrollAMO hasta su arquitectura actual.
+
+Si una pieza de este sitio vuelve a ser útil:
+
+`identificar → extraer → adaptar → probar → reutilizar`
+
+## Seguridad
+
+No añadir tokens de Netlify, contraseñas, claves de API ni credenciales a scripts de deploy. Usar variables de entorno o gestores de secretos.
+
+---
+
+<div align="center">
+
+**DesarrollAMO** · la historia se conserva; la arquitectura sigue avanzando.
+
+</div>
