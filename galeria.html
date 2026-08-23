@@ -1,258 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Galería y Proyectos </title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #121212;
-      color: #eee;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      padding: 20px;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    header h1 {
-      font-weight: 700;
-      letter-spacing: 3px;
-      margin-bottom: 5px;
-    }
-    .btn-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-    .btn-project {
-      background: #1db954;
-      border: none;
-      color: #121212;
-      font-weight: 600;
-      padding: 12px 22px;
-      border-radius: 25px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.3s ease;
-      box-shadow: 0 4px 6px rgba(29,185,84,0.6);
-    }
-    .btn-project:hover {
-      background: #17a54d;
-    }
-    section {
-      margin-bottom: 50px;
-    }
-    section h2 {
-      margin-bottom: 15px;
-      border-bottom: 2px solid #1db954;
-      padding-bottom: 5px;
-      font-weight: 600;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 15px;
-      justify-items: center;
-    }
-    .gallery img {
-      max-width: 150px;
-      max-height: 150px;
-      object-fit: contain;
-      border-radius: 10px;
-      box-shadow: 0 0 12px #1db954aa;
-      background: #222;
-      padding: 5px;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .gallery img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 18px #1db954ff;
-    }
-
-    /* Lightbox básico */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-    }
-    .lightbox img {
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 12px;
-      box-shadow: 0 0 25px #1db954;
-    }
-    .lightbox:target {
-      display: flex;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: auto;
-      padding-top: 10px;
-      font-size: 0.9rem;
-      color: #888;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#070b12" />
+  <meta name="description" content="Galería de proyectos de DesarrollAMO: webs, apps, sistemas, automatizaciones, laboratorios y trabajos de identidad." />
+  <title>Galería · DesarrollAMO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/site-shell.css" />
+  <link rel="stylesheet" href="/static/galeria.css" />
 </head>
-<body>
-  <header>
-    <h1>Galería y Proyectos</h1>
-    <p>Algunos de nuestros trabajos</p>
+<body class="gallery-page">
+  <header class="amo-header">
+    <div class="amo-header__inner">
+      <a class="amo-brand" href="/" aria-label="DesarrollAMO inicio">desarroll<span>AMO</span></a>
+      <nav class="amo-nav" aria-label="Navegación principal">
+        <a href="/">Inicio</a><a href="/clientes">Clientes</a><a href="/manifiesto">Manifiesto</a><a href="/servicios">Servicios</a><a href="/galeria" aria-current="page" class="is-active">Galería</a>
+      </nav>
+      <a class="amo-contact" href="/#contacto">Hablemos</a>
+      <details class="amo-menu"><summary>Menú</summary><nav class="amo-menu__panel" aria-label="Navegación móvil"><a href="/">Inicio</a><a href="/clientes">Clientes</a><a href="/manifiesto">Manifiesto</a><a href="/servicios">Servicios</a><a href="/galeria" aria-current="page">Galería</a></nav></details>
+    </div>
   </header>
 
-  <div class="btn-container">
-    <a href="#logos" class="btn-project">🎨 Logos</a>
-    <a href="#imagenes-ia" class="btn-project">🖼️ Imágenes IA</a>
-    <a href="#landings" class="btn-project">🌐 Landings</a>
-    <a href="#audios" class="btn-project">🎵 Audios</a>
-    <a href="#videos" class="btn-project">🎥 Videos</a>
-    <a href="#chatbots" class="btn-project">🤖 Chats</a>
-    <a href="#hojas" class="btn-project">📊 Hojas</a>
-    <a href="#automatizaciones" class="btn-project">🔁 Automatizaciones</a>
-  </div>
+  <main class="gallery-main">
+    <section class="gallery-hero">
+      <div>
+        <p class="gallery-eyebrow">GALERÍA · DESARROLLAMO</p>
+        <h1>Trabajo que se puede <span>abrir.</span></h1>
+        <p class="gallery-lead">Una selección de webs, aplicaciones, sistemas, experimentos y trabajos visuales. Todo el contenido principal existe en HTML: los filtros ayudan a explorar, pero nunca son necesarios para que los proyectos aparezcan.</p>
+      </div>
+      <div class="gallery-summary" aria-label="Resumen de galería">
+        <div class="gallery-stat"><strong>17</strong><span>seleccionados</span></div>
+        <div class="gallery-stat"><strong>5</strong><span>áreas</span></div>
+        <div class="gallery-stat"><strong>WEB</strong><span>sitios y sistemas</span></div>
+        <div class="gallery-stat"><strong>APP</strong><span>productos y labs</span></div>
+      </div>
+    </section>
 
- <!-- Landings -->
-<section id="landings">
-  <h2>Landings Desarrolladas</h2>
-  <div class="gallery">
-    <a href="https://erikaboveri.netlify.app/" target="_blank" title="Landing Erika" class="btn-project">🌐 Erika</a>
-    <a href="https://djeros.netlify.app/" target="_blank" title="Landing Eros" class="btn-project">🌐 Eros</a>
-    <a href="https://loganproject.netlify.app/" target="_blank" title="Landing Logan" class="btn-project">🌐 Logan</a>
-    <a href="https://movedj.netlify.app/" target="_blank" title="Landing MoveDJ" class="btn-project">🌐 MoveDJ</a>
-    <a href="https://proyectoestampa.netlify.app/" target="_blank" title="Landing PEstampa" class="btn-project">🌐 PEstampa</a>
-  </div>
-</section>
+    <section aria-label="Explorar proyectos">
+      <div class="gallery-tools">
+        <label class="gallery-search" for="gallerySearch"><span>⌕</span><input id="gallerySearch" type="search" placeholder="Buscar proyecto o tecnología…" autocomplete="off" /></label>
+        <div class="gallery-filters" aria-label="Filtros">
+          <button class="gallery-filter is-active" type="button" data-filter="all">Todos</button>
+          <button class="gallery-filter" type="button" data-filter="web">Web</button>
+          <button class="gallery-filter" type="button" data-filter="app">Apps</button>
+          <button class="gallery-filter" type="button" data-filter="system">Sistemas</button>
+          <button class="gallery-filter" type="button" data-filter="lab">Labs</button>
+          <button class="gallery-filter" type="button" data-filter="branding">Branding</button>
+        </div>
+      </div>
+      <p class="gallery-status" id="galleryStatus">17 proyectos visibles</p>
 
-<!-- Logos -->
-<section id="logos">
-  <h2>Logos DAMO</h2>
-  <div class="gallery">
-    <a href="#img1"><img src="https://i.imgur.com/J3WWHwy.png" alt="DAMO Logo1" /></a>
-    <a href="#img2"><img src="https://i.imgur.com/24AObLy.png" alt="DAMO Logo2" /></a>
-    <a href="#img3"><img src="https://i.imgur.com/24AObLy.png" alt="DAMO Logo3" /></a>
-    <a href="#img4"><img src="https://i.imgur.com/837ggsD.png" alt="DAMO Logo4" /></a>
-    <a href="#img5"><img src="https://i.imgur.com/2M8cDpt.png" alt="DAMO Logo5" /></a>
-    <a href="#img6"><img src="https://i.imgur.com/rhMOKw3.png" alt="DAMO Logo6" /></a>
-    <a href="#img7"><img src="https://i.imgur.com/onQ2K5v.png" alt="DAMO Logo7" /></a>
-    <a href="#img8"><img src="https://i.imgur.com/xF67XIZ.png" alt="DAMO Logo8" /></a>
-    <a href="#img9"><img src="https://i.imgur.com/iOG9cEX.png" alt="AA Logo9" /></a>
-  </div>
-</section>
+      <div class="project-grid" id="projectGrid">
+        <article class="project-card" data-category="system lab web">
+          <div class="project-visual" data-fallback="DesarrollAMO LIVE"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind system">Sistema vivo</span></div><h2>DesarrollAMO LIVE</h2><p>Centro visual para entender actividad, proyectos, datos y operación del ecosistema DesarrollAMO.</p><div class="project-links"><a class="project-link primary" href="/live">Abrir proyecto →</a></div><div class="project-tags"><span>dashboard</span><span>operación</span><span>visualización</span></div></div>
+        </article>
 
-<!-- Imágenes IA -->
-<section id="imagenes-ia">
-  <h2>Imágenes IA</h2>
-  <div class="gallery">
-    <a href="#img10"><img src="https://i.imgur.com/UwpRAgX.png" alt="IA1" /></a>
-    <a href="#img11"><img src="https://i.imgur.com/MSL9v2A.png" alt="IA2" /></a>
-    <a href="#img12"><img src="https://i.imgur.com/WocOrND.png" alt="IA3" /></a>
-    <a href="#img13"><img src="https://i.imgur.com/zT11AcI.png" alt="IA4" /></a>
-    <a href="#img14"><img src="https://i.imgur.com/dMrtcFu.png" alt="IA5" /></a>
-    <a href="#img15"><img src="https://i.imgur.com/rotCYM0.png" alt="IA6" /></a>
-    <a href="#img16"><img src="https://i.imgur.com/LjU2c1t.png" alt="IA7" /></a>
-    <a href="#img17"><img src="https://i.imgur.com/ErBcP4h.png" alt="IA8" /></a>
-    <a href="#img18"><img src="https://i.imgur.com/QKNmU7o.png" alt="IA9" /></a>
-    <a href="#img19"><img src="https://i.imgur.com/9LO4Y9P.png" alt="IA10" /></a>
-    <a href="#img20"><img src="https://i.imgur.com/sRvww8t.png" alt="IA11" /></a>
-    <a href="#img21"><img src="https://i.imgur.com/uz5xdFb.png" alt="IA12" /></a>
-    <a href="#img22"><img src="https://i.imgur.com/xdpDzpU.png" alt="IA13" /></a>
-    <a href="#img23"><img src="https://i.imgur.com/swi4WP5.png" alt="IA14" /></a>
-    <a href="#img24"><img src="https://i.imgur.com/nRCFb27.png" alt="IA15" /></a>
-  </div>
-</section>
+        <article class="project-card" data-category="app system">
+          <div class="project-visual" data-fallback="StoreAMO"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind system">Ecosistema</span></div><h2>StoreAMO</h2><p>Catálogo y distribución de aplicaciones del ecosistema, con versiones, candidatos y publicaciones.</p><div class="project-links"><a class="project-link primary" href="https://github.com/amoedo7/StoreAMO" target="_blank" rel="noopener">Ver proyecto →</a></div><div class="project-tags"><span>Android</span><span>catálogo</span><span>distribución</span></div></div>
+        </article>
 
+        <article class="project-card" data-category="web system">
+          <div class="project-visual" data-fallback="CobrAMO"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind system">Operación</span></div><h2>CobrAMO</h2><p>Flujo simple para convertir propuestas aceptadas en cobros verificables y seguir el estado del pago.</p><div class="project-links"><a class="project-link primary" href="https://cobramo.netlify.app/" target="_blank" rel="noopener">Abrir →</a><a class="project-link" href="https://github.com/amoedo7/CobrAMO" target="_blank" rel="noopener">Código</a></div><div class="project-tags"><span>pagos</span><span>web</span><span>operación</span></div></div>
+        </article>
 
-  <!-- Audios -->
-  <section id="audios">
-    <h2>Audios Personalizados</h2>
-    <div class="gallery">
-      <!-- Audio thumbnails o íconos -->
+        <article class="project-card" data-category="web lab">
+          <div class="project-visual" data-fallback="RankeAMO"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind lab">Experimento</span></div><h2>RankeAMO</h2><p>Ranking público y competitivo para proyectos, pensado como experimento de visibilidad y posición.</p><div class="project-links"><a class="project-link primary" href="/rankeamo">Abrir →</a></div><div class="project-tags"><span>ranking</span><span>web</span><span>experimento</span></div></div>
+        </article>
+
+        <article class="project-card" data-category="lab system">
+          <div class="project-visual" data-fallback="MiDispositivo"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind lab">Lab</span></div><h2>MiDispositivo</h2><p>Reporte común de sistema, hardware y red para Android/Termux, Windows, macOS y Linux.</p><div class="project-links"><a class="project-link primary" href="https://github.com/amoedo7/MiDispositivo" target="_blank" rel="noopener">Abrir proyecto →</a></div><div class="project-tags"><span>multiplataforma</span><span>JSON</span><span>diagnóstico</span></div></div>
+        </article>
+
+        <article class="project-card" data-category="app lab">
+          <div class="project-visual" data-fallback="GeneralAMO"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind lab">App</span></div><h2>GeneralAMO</h2><p>Juego de generala desarrollado dentro de la línea de aplicaciones y experimentos móviles AMO.</p><div class="project-links"><a class="project-link primary" href="https://github.com/amoedo7/GeneralAMO" target="_blank" rel="noopener">Ver proyecto →</a></div><div class="project-tags"><span>juego</span><span>Android</span><span>producto</span></div></div>
+        </article>
+
+        <article class="project-card" data-category="app lab">
+          <div class="project-visual" data-fallback="CriptAMO"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind lab">App</span></div><h2>CriptAMO</h2><p>Proyecto de software del ecosistema AMO alrededor de herramientas y experimentación cripto.</p><div class="project-links"><a class="project-link primary" href="https://github.com/amoedo7/CriptAmo" target="_blank" rel="noopener">Ver código →</a></div><div class="project-tags"><span>software</span><span>cripto</span><span>producto</span></div></div>
+        </article>
+
+        <article class="project-card" data-category="app lab">
+          <div class="project-visual" data-fallback="PidAMO"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind lab">Producto</span></div><h2>PidAMO</h2><p>Aplicación construida como parte del laboratorio de productos y servicios digitales de DesarrollAMO.</p><div class="project-links"><a class="project-link primary" href="https://github.com/amoedo7/PidAmo" target="_blank" rel="noopener">Ver proyecto →</a></div><div class="project-tags"><span>app</span><span>producto</span><span>prototipo</span></div></div>
+        </article>
+
+        <article class="project-card" data-category="web">
+          <div class="project-visual" data-fallback="Erika · Landing"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind">Web</span></div><h2>Landing Erika</h2><p>Sitio de presentación desarrollado como pieza web independiente y adaptable.</p><div class="project-links"><a class="project-link primary" href="https://erikaboveri.netlify.app/" target="_blank" rel="noopener">Visitar →</a></div><div class="project-tags"><span>landing</span><span>responsive</span></div></div>
+        </article>
+
+        <article class="project-card" data-category="web">
+          <div class="project-visual" data-fallback="Eros · Landing"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind">Web</span></div><h2>Landing Eros</h2><p>Landing publicada para mostrar identidad, contenido y presencia web en una pieza compacta.</p><div class="project-links"><a class="project-link primary" href="https://djeros.netlify.app/" target="_blank" rel="noopener">Visitar →</a></div><div class="project-tags"><span>landing</span><span>web</span></div></div>
+        </article>
+
+        <article class="project-card" data-category="web">
+          <div class="project-visual" data-fallback="Logan · Landing"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind">Web</span></div><h2>Landing Logan</h2><p>Proyecto web de presentación enfocado en una experiencia directa, simple y publicable.</p><div class="project-links"><a class="project-link primary" href="https://loganproject.netlify.app/" target="_blank" rel="noopener">Visitar →</a></div><div class="project-tags"><span>landing</span><span>frontend</span></div></div>
+        </article>
+
+        <article class="project-card" data-category="web">
+          <div class="project-visual" data-fallback="MoveDJ · Landing"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind">Web</span></div><h2>MoveDJ</h2><p>Landing para proyecto musical, organizada alrededor de identidad y presencia digital.</p><div class="project-links"><a class="project-link primary" href="https://movedj.netlify.app/" target="_blank" rel="noopener">Visitar →</a></div><div class="project-tags"><span>música</span><span>landing</span></div></div>
+        </article>
+
+        <article class="project-card" data-category="web branding">
+          <div class="project-visual" data-fallback="Proyecto Estampa"></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind brand">Web + marca</span></div><h2>Proyecto Estampa</h2><p>Presencia web para proyecto visual, combinando presentación de marca y contenido.</p><div class="project-links"><a class="project-link primary" href="https://proyectoestampa.netlify.app/" target="_blank" rel="noopener">Visitar →</a></div><div class="project-tags"><span>branding</span><span>web</span></div></div>
+        </article>
+
+        <article class="project-card" data-category="branding">
+          <div class="project-visual" data-fallback="Identidad DesarrollAMO"><img src="https://i.imgur.com/J3WWHwy.png" alt="Exploración de identidad visual DesarrollAMO" loading="lazy" /></div>
+          <div class="project-body"><div class="project-meta"><span class="project-kind brand">Branding</span></div><h2>Exploraciones de identidad</h2><p>Logos, símbolos y piezas visuales creadas durante la evolución de la identidad DesarrollAMO.</p><div class="project-links"><a class="project-link primary" href="#identidad">Ver identidad ↓</a></div><div class="project-tags"><span>logo</span><span>identidad</span><span>visual</span></div></div>
+        </article>
+      </div>
+      <div class="gallery-empty" id="galleryEmpty">No encontramos proyectos con ese filtro. Probá otra categoría o borrá la búsqueda.</div>
+      <p class="gallery-note"><strong>Regla de esta galería:</strong> los proyectos son visibles antes de que cargue JavaScript. El buscador y los filtros sólo mejoran la navegación; nunca controlan la existencia visual del contenido.</p>
+    </section>
+
+    <section id="identidad" style="margin-top:34px">
+      <p class="gallery-eyebrow">IDENTIDAD · ARCHIVO VISUAL</p>
+      <div class="project-grid">
+        <article class="project-card" data-category="branding"><div class="project-visual" data-fallback="DAMO 01"><img src="https://i.imgur.com/J3WWHwy.png" alt="Logo DAMO 1" loading="lazy" /></div><div class="project-body"><h2>Exploración 01</h2><p>Una de las primeras rutas visuales conservadas en el archivo de marca.</p></div></article>
+        <article class="project-card" data-category="branding"><div class="project-visual" data-fallback="DAMO 02"><img src="https://i.imgur.com/837ggsD.png" alt="Logo DAMO 2" loading="lazy" /></div><div class="project-body"><h2>Exploración 02</h2><p>Variación de símbolo y composición dentro del sistema visual.</p></div></article>
+        <article class="project-card" data-category="branding"><div class="project-visual" data-fallback="DAMO 03"><img src="https://i.imgur.com/2M8cDpt.png" alt="Logo DAMO 3" loading="lazy" /></div><div class="project-body"><h2>Exploración 03</h2><p>Archivo visual que muestra cómo la identidad fue evolucionando con el proyecto.</p></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="amo-footer">
+    <div class="amo-footer__inner">
+      <div class="amo-footer__brand"><a class="amo-brand" href="/">desarroll<span>AMO</span></a><p>Tecnología, diseño y automatización construidos alrededor de problemas reales.</p></div>
+      <nav class="amo-footer__links" aria-label="Navegación de pie"><a href="/">Inicio</a><a href="/clientes">Clientes</a><a href="/manifiesto">Manifiesto</a><a href="/servicios">Servicios</a><a href="/galeria">Galería</a><a href="https://github.com/amoedo7" target="_blank" rel="noopener">GitHub</a></nav>
     </div>
-  </section>
-
-  <!-- Videos -->
-  <section id="videos">
-    <h2>Videos Personalizados</h2>
-    <div class="gallery">
-      <!-- Video thumbnails -->
-    </div>
-  </section>
-
-  <!-- Chatbots -->
-  <section id="chatbots">
-    <h2>Chats Inteligentes</h2>
-    <div class="gallery">
-      <!-- Capturas de chats -->
-    </div>
-  </section>
-
-  <!-- Hojas -->
-  <section id="hojas">
-    <h2>Hojas de Cálculo Automatizadas</h2>
-    <div class="gallery">
-      <!-- Gráficos o capturas -->
-    </div>
-  </section>
-
-  <!-- Automatizaciones -->
-  <section id="automatizaciones">
-    <h2>Automatizaciones con n8n</h2>
-    <div class="gallery">
-      <!-- Diagramas de flujo o capturas -->
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 DAMO - Todos los derechos reservados
+    <div class="amo-footer__bottom"><span>© 2026 DesarrollAMO</span><span>Construimos · probamos · publicamos</span></div>
   </footer>
-
-  <!-- Lightbox modals (puedes duplicar y adaptar según cantidad) -->
-  <!-- Lightbox Logos -->
-<div id="img1" class="lightbox"><a href="#"><img src="https://i.imgur.com/J3WWHwy.png" alt="DAMO Logo1" /></a></div>
-<div id="img2" class="lightbox"><a href="#"><img src="https://i.imgur.com/24AObLy.png" alt="DAMO Logo2" /></a></div>
-<div id="img3" class="lightbox"><a href="#"><img src="https://i.imgur.com/24AObLy.png" alt="DAMO Logo3" /></a></div>
-<div id="img4" class="lightbox"><a href="#"><img src="https://i.imgur.com/837ggsD.png" alt="DAMO Logo4" /></a></div>
-<div id="img5" class="lightbox"><a href="#"><img src="https://i.imgur.com/2M8cDpt.png" alt="DAMO Logo5" /></a></div>
-<div id="img6" class="lightbox"><a href="#"><img src="https://i.imgur.com/rhMOKw3.png" alt="DAMO Logo6" /></a></div>
-<div id="img7" class="lightbox"><a href="#"><img src="https://i.imgur.com/onQ2K5v.png" alt="DAMO Logo7" /></a></div>
-<div id="img8" class="lightbox"><a href="#"><img src="https://i.imgur.com/xF67XIZ.png" alt="DAMO Logo8" /></a></div>
-<div id="img9" class="lightbox"><a href="#"><img src="https://i.imgur.com/iOG9cEX.png" alt="AA Logo9" /></a></div>
-
-<!-- Lightbox Imágenes IA -->
-<div id="img10" class="lightbox"><a href="#"><img src="https://i.imgur.com/UwpRAgX.png" alt="IA1" /></a></div>
-<div id="img11" class="lightbox"><a href="#"><img src="https://i.imgur.com/MSL9v2A.png" alt="IA2" /></a></div>
-<div id="img12" class="lightbox"><a href="#"><img src="https://i.imgur.com/WocOrND.png" alt="IA3" /></a></div>
-<div id="img13" class="lightbox"><a href="#"><img src="https://i.imgur.com/zT11AcI.png" alt="IA4" /></a></div>
-<div id="img14" class="lightbox"><a href="#"><img src="https://i.imgur.com/dMrtcFu.png" alt="IA5" /></a></div>
-<div id="img15" class="lightbox"><a href="#"><img src="https://i.imgur.com/rotCYM0.png" alt="IA6" /></a></div>
-<div id="img16" class="lightbox"><a href="#"><img src="https://i.imgur.com/LjU2c1t.png" alt="IA7" /></a></div>
-<div id="img17" class="lightbox"><a href="#"><img src="https://i.imgur.com/ErBcP4h.png" alt="IA8" /></a></div>
-<div id="img18" class="lightbox"><a href="#"><img src="https://i.imgur.com/QKNmU7o.png" alt="IA9" /></a></div>
-<div id="img19" class="lightbox"><a href="#"><img src="https://i.imgur.com/9LO4Y9P.png" alt="IA10" /></a></div>
-<div id="img20" class="lightbox"><a href="#"><img src="https://i.imgur.com/sRvww8t.png" alt="IA11" /></a></div>
-<div id="img21" class="lightbox"><a href="#"><img src="https://i.imgur.com/uz5xdFb.png" alt="IA12" /></a></div>
-<div id="img22" class="lightbox"><a href="#"><img src="https://i.imgur.com/xdpDzpU.png" alt="IA13" /></a></div>
-<div id="img23" class="lightbox"><a href="#"><img src="https://i.imgur.com/swi4WP5.png" alt="IA14" /></a></div>
-<div id="img24" class="lightbox"><a href="#"><img src="https://i.imgur.com/nRCFb27.png" alt="IA15" /></a></div>
-
-<script src="static/script.js"></script>
+  <script src="/static/galeria.js" defer></script>
 </body>
 </html>
