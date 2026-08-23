@@ -1,0 +1,48 @@
+name: Apply site hotfix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/site-hotfix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Patch Servicios shell
+        run: python tools/apply_site_hotfix.py
+
+      - name: Validate resilient gallery
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          gallery = Path('galeria.html').read_text(encoding='utf-8')
+          assert '/static/site-shell.css' in gallery
+          assert '/static/galeria.css' in gallery
+          assert '/static/galeria.js' in gallery
+          assert 'static/script.js' not in gallery
+          assert 'fade-in' not in gallery
+          assert gallery.count('class="project-card"') >= 14
+          assert 'class="amo-header"' in gallery
+          assert 'class="amo-footer"' in gallery
+          print('OK: gallery is static-first and independent from global script.js')
+          PY
+
+      - name: Commit deterministic hotfix
+        run: |
+          git config user.name "DesarrollAMO Site Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add servicios.html
+          if git diff --cached --quiet; then
+            echo "No Servicios changes needed"
+            exit 0
+          fi
+          git commit -m "fix(servicios): use isolated global header and footer"
+          git push
