@@ -2,9 +2,12 @@ name: Apply site hotfix
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - fix/commercial-contact-funnel
     paths:
       - '.github/workflows/site-hotfix.yml'
+      - 'tools/apply_site_hotfix.py'
 
 permissions:
   contents: write
@@ -16,8 +19,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Patch Servicios shell
+      - name: Patch Servicios shell and contact funnel
         run: python tools/apply_site_hotfix.py
+
+      - name: Validate commercial funnel
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          services = Path('servicios.html').read_text(encoding='utf-8')
+          assert 'href="/#contacto"' not in services
+          assert services.count('https://www.instagram.com/desarrollamoficial') >= 4
+          assert 'el cobro se canaliza por CobrAMO' in services
+          print('OK: Servicios has an actionable contact path and explicit payment handoff')
+          PY
 
       - name: Validate resilient gallery
         run: |
@@ -44,5 +58,5 @@ jobs:
             echo "No Servicios changes needed"
             exit 0
           fi
-          git commit -m "fix(servicios): use isolated global header and footer"
+          git commit -m "fix(servicios): make commercial contact funnel actionable"
           git push
