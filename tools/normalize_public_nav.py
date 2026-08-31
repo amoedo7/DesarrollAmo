@@ -4,20 +4,20 @@ import re
 CONTACT_URL = 'https://www.instagram.com/desarrollamoficial'
 
 NAV_ITEMS = (
-    '<a href="/">Inicio</a>'
-    '<a href="/servicios">Servicios</a>'
-    '<a href="/galeria">Galería</a>'
-    '<a href="/manifiesto">Manifiesto</a>'
-    '<a href="/inversiones">Inversiones</a>'
+    '<a href="index.html">Inicio</a>'
+    '<a href="servicios.html">Servicios</a>'
+    '<a href="galeria.html">Galería</a>'
+    '<a href="manifiesto.html">Manifiesto</a>'
+    '<a href="inversiones.html">Inversiones</a>'
 )
 
 
 def active_nav(page: str) -> str:
     html = NAV_ITEMS
     current = {
-        'servicios.html': '/servicios',
-        'galeria.html': '/galeria',
-        'inversiones.html': '/inversiones',
+        'servicios.html': 'servicios.html',
+        'galeria.html': 'galeria.html',
+        'inversiones.html': 'inversiones.html',
     }.get(page)
     if current:
         html = html.replace(
@@ -31,9 +31,9 @@ def active_nav(page: str) -> str:
 def mobile_nav(page: str) -> str:
     html = NAV_ITEMS
     current = {
-        'servicios.html': '/servicios',
-        'galeria.html': '/galeria',
-        'inversiones.html': '/inversiones',
+        'servicios.html': 'servicios.html',
+        'galeria.html': 'galeria.html',
+        'inversiones.html': 'inversiones.html',
     }.get(page)
     if current:
         html = html.replace(
@@ -94,10 +94,9 @@ def patch(path: Path) -> None:
         if n_mobile != 1:
             raise SystemExit(f'{page}: menú móvil ambiguo')
     else:
-        marker = contact
-        text = text.replace(marker, marker + details, 1)
+        text = text.replace(contact, contact + details, 1)
 
-    assert text.count('href="/inversiones"') >= 2
+    assert text.count('href="inversiones.html"') >= 2
     assert text.count('class="amo-menu"') == 1
     path.write_text(text, encoding='utf-8')
     print(f'OK: {page}')
