@@ -8,6 +8,7 @@ on:
     paths:
       - '.github/workflows/site-hotfix.yml'
       - 'tools/apply_site_hotfix.py'
+      - 'tools/normalize_public_nav.py'
 
 permissions:
   contents: write
@@ -21,6 +22,23 @@ jobs:
 
       - name: Patch Servicios shell and contact funnel
         run: python tools/apply_site_hotfix.py
+
+      - name: Normalize public navigation
+        run: python tools/normalize_public_nav.py
+
+      - name: Validate public navigation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          for filename in ('servicios.html', 'galeria.html', 'inversiones.html'):
+              text = Path(filename).read_text(encoding='utf-8')
+              assert text.count('href="/inversiones"') >= 2, filename
+              assert text.count('class="amo-menu"') == 1, filename
+              assert 'href="/servicios"' in text, filename
+              assert 'href="/galeria"' in text, filename
+              assert 'href="/manifiesto"' in text, filename
+          print('OK: top and mobile navigation are consistent')
+          PY
 
       - name: Validate commercial funnel
         run: |
@@ -53,10 +71,10 @@ jobs:
         run: |
           git config user.name "DesarrollAMO Site Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add servicios.html
+          git add servicios.html galeria.html inversiones.html
           if git diff --cached --quiet; then
-            echo "No Servicios changes needed"
+            echo "No public page changes needed"
             exit 0
           fi
-          git commit -m "fix(servicios): make commercial contact funnel actionable"
+          git commit -m "fix(nav): keep public top menu consistent"
           git push
