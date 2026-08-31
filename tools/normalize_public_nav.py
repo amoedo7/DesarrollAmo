@@ -11,34 +11,23 @@ NAV_ITEMS = (
     '<a href="inversiones.html">Inversiones</a>'
 )
 
+CURRENT = {
+    'index.html': 'index.html',
+    'servicios.html': 'servicios.html',
+    'galeria.html': 'galeria.html',
+    'manifiesto.html': 'manifiesto.html',
+    'inversiones.html': 'inversiones.html',
+}
 
-def active_nav(page: str) -> str:
+
+def build_nav(page: str, mobile: bool = False) -> str:
     html = NAV_ITEMS
-    current = {
-        'servicios.html': 'servicios.html',
-        'galeria.html': 'galeria.html',
-        'inversiones.html': 'inversiones.html',
-    }.get(page)
+    current = CURRENT.get(page)
     if current:
+        attrs = ' aria-current="page"' if mobile else ' aria-current="page" class="is-active"'
         html = html.replace(
             f'<a href="{current}">',
-            f'<a href="{current}" aria-current="page" class="is-active">',
-            1,
-        )
-    return html
-
-
-def mobile_nav(page: str) -> str:
-    html = NAV_ITEMS
-    current = {
-        'servicios.html': 'servicios.html',
-        'galeria.html': 'galeria.html',
-        'inversiones.html': 'inversiones.html',
-    }.get(page)
-    if current:
-        html = html.replace(
-            f'<a href="{current}">',
-            f'<a href="{current}" aria-current="page">',
+            f'<a href="{current}"{attrs}>',
             1,
         )
     return html
@@ -50,7 +39,7 @@ def patch(path: Path) -> None:
 
     desktop = (
         '<nav class="amo-nav" aria-label="Navegación principal">'
-        + active_nav(page)
+        + build_nav(page)
         + '</nav>'
     )
     text, n_desktop = re.subn(
@@ -80,7 +69,7 @@ def patch(path: Path) -> None:
     details = (
         '<details class="amo-menu"><summary>Menú</summary>'
         '<nav class="amo-menu__panel" aria-label="Navegación móvil">'
-        + mobile_nav(page)
+        + build_nav(page, mobile=True)
         + '</nav></details>'
     )
     if '<details class="amo-menu">' in text:
@@ -96,11 +85,12 @@ def patch(path: Path) -> None:
     else:
         text = text.replace(contact, contact + details, 1)
 
-    assert text.count('href="inversiones.html"') >= 2
+    for target in CURRENT.values():
+        assert f'href="{target}"' in text
     assert text.count('class="amo-menu"') == 1
     path.write_text(text, encoding='utf-8')
     print(f'OK: {page}')
 
 
-for filename in ('servicios.html', 'galeria.html', 'inversiones.html'):
+for filename in CURRENT:
     patch(Path(filename))
