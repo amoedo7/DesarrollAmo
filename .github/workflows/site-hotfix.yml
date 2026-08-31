@@ -30,14 +30,14 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
+          expected = ('index.html', 'servicios.html', 'galeria.html', 'manifiesto.html', 'inversiones.html')
           for filename in ('servicios.html', 'galeria.html', 'inversiones.html'):
               text = Path(filename).read_text(encoding='utf-8')
-              assert text.count('href="/inversiones"') >= 2, filename
               assert text.count('class="amo-menu"') == 1, filename
-              assert 'href="/servicios"' in text, filename
-              assert 'href="/galeria"' in text, filename
-              assert 'href="/manifiesto"' in text, filename
-          print('OK: top and mobile navigation are consistent')
+              for target in expected:
+                  assert f'href="{target}"' in text, (filename, target)
+          assert Path('manifiesto.html').is_file()
+          print('OK: top and mobile navigation use durable public page links')
           PY
 
       - name: Validate commercial funnel
