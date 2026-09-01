@@ -1,8 +1,13 @@
 import { getStore } from "@netlify/blobs";
+import {
+  VISIBILITY_UNIT_PRICE_ARS,
+  parseVisibilityUnits,
+  verifyMercadoPagoSignature,
+  visibilityAmountFromUnits,
+} from "./rankeamo-security.mts";
 
 const STORE = "rankeamo-v1";
-const MIN_AMOUNT = 1000;
-const MAX_AMOUNT = 100000000;
+const MAX_WEBHOOK_BYTES = 256 * 1024;
 
 function json(data: unknown, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -26,16 +31,16 @@ function cleanName(value: unknown) {
   return name;
 }
 
-function parseAmount(value: unknown) {
-  const amount = Number(value);
-  if (!Number.isFinite(amount) || amount < MIN_AMOUNT || amount > MAX_AMOUNT) {
-    throw new Error(`El aporte debe ser de al menos $${MIN_AMOUNT.toLocaleString("es-AR")} ARS.`);
-  }
-  return Math.round(amount * 100) / 100;
-}
-
 function token() {
   return Netlify.env.get("MERCADOPAGO_ACCESS_TOKEN")?.trim() || "";
+}
+
+function webhookSecret() {
+  return (
+    Netlify.env.get("MERCADOPAGO_WEBHOOK_SECRET")?.trim() ||
+    Netlify.env.get("MP_WEBHOOK_SECRET")?.trim() ||
+    ""
+  );
 }
 
 async function listEntries() {
@@ -84,8 +89,10 @@ async function checkout(req: Request) {
   try {
     const projectName = cleanName(body.projectName);
     const url = normalizeUrl(body.url);
-    const amount = parseAmount(body.amount);
+    const visibilityUnits = parseVisibilityUnits(body.visibilityUnits);
+    const amount = visibilityAmountFromUnits(visibilityUnits);
     const id = crypto.randomUUID();
+    const idempotencyKey = crypto.randomUUID();
     const origin = new URL(req.url).origin;
     const store = getStore(STORE, { consistency: "strong" });
 
@@ -93,8 +100,10 @@ async function checkout(req: Request) {
       id,
       projectName,
       url,
+      visibilityUnits,
       amount,
       currency: "ARS",
+      idempotencyKey,
       status: "pending",
       createdAt: new Date().toISOString(),
     };
@@ -105,6 +114,7 @@ async function checkout(req: Request) {
       headers: {
         authorization: `Bearer ${accessToken}`,
         "content-type": "application/json",
+        "x-idempotency-key": idempotencyKey,
       },
       body: JSON.stringify({
         items: [
@@ -112,9 +122,9 @@ async function checkout(req: Request) {
             id: "rankeamo-position",
             title: `RankeAMO · ${projectName}`,
             description: "Posición de visibilidad en RankeAMO",
-            quantity: 1,
+            quantity: visibilityUnits,
             currency_id: "ARS",
-            unit_price: amount,
+            unit_price: VISIBILITY_UNIT_PRICE_ARS,
           },
         ],
         external_reference: id,
@@ -142,31 +152,67 @@ async function checkout(req: Request) {
 }
 
 async function webhook(req: Request) {
-  if (req.method !== "POST" && req.method !== "GET") return new Response("ok", { status: 200 });
+  if (req.method !== "POST") return new Response("Método no permitido", { status: 405 });
   const accessToken = token();
-  if (!accessToken) return new Response("ok", { status: 200 });
+  const secret = webhookSecret();
+  if (!accessToken || !secret) {
+    console.error("RankeAMO webhook is missing Mercado Pago credentials");
+    return new Response("Webhook no configurado", { status: 503 });
+  }
+
+  const contentLength = Number(req.headers.get("content-length") || 0);
+  if (Number.isFinite(contentLength) && contentLength > MAX_WEBHOOK_BYTES) {
+    return new Response("Payload demasiado grande", { status: 413 });
+  }
 
   let body: any = {};
-  if (req.method === "POST") {
-    try { body = await req.json(); } catch {}
+  try {
+    const rawBody = await req.text();
+    if (rawBody.length > MAX_WEBHOOK_BYTES) return new Response("Payload demasiado grande", { status: 413 });
+    body = JSON.parse(rawBody);
+  } catch {
+    return new Response("JSON inválido", { status: 400 });
   }
 
   const requestUrl = new URL(req.url);
-  const type = body?.type || requestUrl.searchParams.get("type") || requestUrl.searchParams.get("topic");
-  const paymentId = String(body?.data?.id || requestUrl.searchParams.get("data.id") || requestUrl.searchParams.get("id") || "").trim();
+  const queryType = requestUrl.searchParams.get("type") || requestUrl.searchParams.get("topic") || "";
+  const bodyType = String(body?.type || "").trim();
+  const queryPaymentId = String(requestUrl.searchParams.get("data.id") || "").trim();
+  const bodyPaymentId = String(body?.data?.id || "").trim();
+  const signature = req.headers.get("x-signature") || "";
+  const requestId = req.headers.get("x-request-id") || "";
 
-  if (type && type !== "payment") return new Response("ok", { status: 200 });
-  if (!paymentId || !/^\d+$/.test(paymentId)) return new Response("ok", { status: 200 });
+  if ((queryType && queryType !== "payment") || (bodyType && bodyType !== "payment")) {
+    return new Response("ok", { status: 200 });
+  }
+  if (!queryPaymentId || !/^\d+$/.test(queryPaymentId)) return new Response("Notificación inválida", { status: 400 });
+  if (bodyPaymentId && bodyPaymentId !== queryPaymentId) return new Response("Notificación inválida", { status: 401 });
+
+  if (!verifyMercadoPagoSignature({
+    signature,
+    requestId,
+    dataId: queryPaymentId,
+    secret,
+  })) {
+    return new Response("Firma inválida", { status: 401 });
+  }
+
+  const paymentId = queryPaymentId;
 
   try {
     const paymentRes = await fetch(`https://api.mercadopago.com/v1/payments/${encodeURIComponent(paymentId)}`, {
       headers: { authorization: `Bearer ${accessToken}` },
     });
-    if (!paymentRes.ok) return new Response("ok", { status: 200 });
+    if (!paymentRes.ok) {
+      console.error("RankeAMO payment lookup error", { paymentId, status: paymentRes.status });
+      return new Response("No se pudo verificar el pago", { status: 502 });
+    }
 
     const payment: any = await paymentRes.json();
     const ref = String(payment?.external_reference || "").trim();
-    if (!ref) return new Response("ok", { status: 200 });
+    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(ref)) {
+      return new Response("ok", { status: 200 });
+    }
 
     const store = getStore(STORE, { consistency: "strong" });
     const existing: any = await store.get(`entries/${ref}`, { type: "json" });
@@ -207,6 +253,7 @@ async function webhook(req: Request) {
     if (pending) await store.delete(`pending/${ref}`);
   } catch (error) {
     console.error("RankeAMO webhook error", error);
+    return new Response("Error temporal", { status: 500 });
   }
 
   return new Response("ok", { status: 200 });
