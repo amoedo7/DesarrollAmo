@@ -3,6 +3,10 @@ name: Production smoke
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/production-smoke.yml'
   schedule:
     - cron: '17 7 * * *'
   workflow_dispatch:
@@ -11,7 +15,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: production-smoke
+  group: production-smoke-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -19,20 +23,48 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - name: Check public pages
+      - name: Check public pages and freshness markers
         shell: bash
         run: |
           set -euo pipefail
-          for url in \
-            https://desarrollamo.com.ar/ \
-            https://desarrollamo.com.ar/servicios \
-            https://desarrollamo.com.ar/galeria
-          do
-            echo "Checking $url"
+
+          check_page() {
+            local url="$1"
+            shift
+            local body
             body="$(mktemp)"
+
+            echo "Checking $url"
+            local code
             code="$(curl --fail-with-body --location --silent --show-error \
               --connect-timeout 10 --max-time 25 \
               --output "$body" --write-out '%{http_code}' "$url")"
             test "$code" = "200"
-            grep -qi 'DesarrollAMO' "$body"
-          done
+            grep -Fqi 'DesarrollAMO' "$body"
+
+            for marker in "$@"; do
+              if ! grep -Fqi -- "$marker" "$body"; then
+                echo "::error::Production is stale or incomplete at $url; missing marker: $marker"
+                rm -f "$body"
+                exit 1
+              fi
+            done
+
+            rm -f "$body"
+          }
+
+          check_page https://desarrollamo.com.ar/ \
+            'Inversiones DesarrollAMO' \
+            'Ver inversiones'
+          check_page https://desarrollamo.com.ar/servicios \
+            'CobrAMO' \
+            'amo-header'
+          check_page https://desarrollamo.com.ar/galeria \
+            'project-card' \
+            'amo-footer'
+          check_page https://desarrollamo.com.ar/manifiesto \
+            'Manifiesto' \
+            'amo-header'
+          check_page https://desarrollamo.com.ar/inversiones \
+            'Todavía no aceptamos inversiones públicas' \
+            'CAMO'
