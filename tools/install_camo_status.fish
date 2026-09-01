@@ -12,4 +12,5 @@ if not contains "$HOME/AMO_AI/bin" $PATH
     fish_add_path "$HOME/AMO_AI/bin"
 end
 ln -sf $target "$HOME/AMO_AI/bin/camo-status"
-echo "CAMO Status v2 instalado. Ejecutá: camo-status"
+echo "CAMO Status v2.1 instalado · caché 120 s · metadata 6 h"
+echo "Ejecutá: camo-status   |   Forzar red: camo-status --fresh"
