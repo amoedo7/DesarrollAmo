@@ -29,32 +29,37 @@ jobs:
         run: |
           grep -F 'tools/camo_status.py' tools/install_camo_status.fish
           grep -F -- '--self-test' tools/install_camo_status.fish
-      - name: Live CAMO telemetry smoke test
+      - name: Live CAMO telemetry and cache smoke test
         env:
           HOME: ${{ runner.temp }}/camo-home
         run: |
           mkdir -p "$HOME"
-          python tools/camo_status.py --json > "$RUNNER_TEMP/camo.json"
+          python tools/camo_status.py --json > "$RUNNER_TEMP/camo-live.json"
+          python tools/camo_status.py --json > "$RUNNER_TEMP/camo-cached.json"
           python - <<'PY'
           import json, os
           from pathlib import Path
-          data = json.loads((Path(os.environ['RUNNER_TEMP']) / 'camo.json').read_text())
-          assert data['schema'] == 'camo.status.v2'
-          assert data['price_usd'] is not None and data['price_usd'] > 0
-          assert data['liquidity_usd'] is not None and data['liquidity_usd'] > 0
-          assert data['onchain_rpc_ok'] is True
-          assert data['supply'] is not None and data['supply'] > 0
-          assert data['reserve_camo'] is not None and data['reserve_camo'] > 0
-          assert data['reserve_quote'] is not None and data['reserve_quote'] > 0
+          root = Path(os.environ['RUNNER_TEMP'])
+          live = json.loads((root / 'camo-live.json').read_text())
+          cached = json.loads((root / 'camo-cached.json').read_text())
+          assert live['schema'] == 'camo.status.v2.1'
+          assert live['price_usd'] is not None and live['price_usd'] > 0
+          assert live['liquidity_usd'] is not None and live['liquidity_usd'] > 0
+          assert live['onchain_rpc_ok'] is True
+          assert live['supply'] is not None and live['supply'] > 0
+          assert live['reserve_camo'] is not None and live['reserve_camo'] > 0
+          assert live['reserve_quote'] is not None and live['reserve_quote'] > 0
+          assert live['cache_used'] is False
+          assert cached['cache_used'] is True
+          assert cached['cache_age_seconds'] <= 120
           print(json.dumps({
-              'price_usd': data['price_usd'],
-              'liquidity_usd': data['liquidity_usd'],
-              'supply': data['supply'],
-              'holders': data['holders'],
-              'reserve_camo': data['reserve_camo'],
-              'reserve_quote': data['reserve_quote'],
-              'pool_created_at': data['pool_created_at'],
-              'last_trade_at': data['last_trade_at'],
-              'liquidity_state': data['liquidity_state'],
+              'price_usd': live['price_usd'],
+              'liquidity_usd': live['liquidity_usd'],
+              'supply': live['supply'],
+              'holders': live['holders'],
+              'reserve_camo': live['reserve_camo'],
+              'reserve_quote': live['reserve_quote'],
+              'cache_second_run': cached['cache_used'],
+              'cache_age_seconds': cached['cache_age_seconds'],
           }, indent=2))
           PY
