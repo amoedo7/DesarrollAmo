@@ -1,0 +1,31 @@
+name: CAMO status checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/camo_status.py'
+      - 'tools/install_camo_status.fish'
+      - '.github/workflows/camo-status.yml'
+  pull_request:
+    paths:
+      - 'tools/camo_status.py'
+      - 'tools/install_camo_status.fish'
+      - '.github/workflows/camo-status.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile Python
+        run: python -m py_compile tools/camo_status.py
+      - name: Run offline self-test
+        run: python tools/camo_status.py --self-test
+      - name: Check Termux installer target
+        run: |
+          grep -F 'tools/camo_status.py' tools/install_camo_status.fish
+          grep -F -- '--self-test' tools/install_camo_status.fish
