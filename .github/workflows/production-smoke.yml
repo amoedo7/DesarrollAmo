@@ -3,6 +3,10 @@ name: Production smoke
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/production-smoke.yml'
   schedule:
     - cron: '17 7 * * *'
   workflow_dispatch:
@@ -11,7 +15,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: production-smoke
+  group: production-smoke-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -29,7 +33,6 @@ jobs:
             shift
             local body
             body="$(mktemp)"
-            trap 'rm -f "$body"' RETURN
 
             echo "Checking $url"
             local code
@@ -42,9 +45,12 @@ jobs:
             for marker in "$@"; do
               if ! grep -Fqi -- "$marker" "$body"; then
                 echo "::error::Production is stale or incomplete at $url; missing marker: $marker"
+                rm -f "$body"
                 exit 1
               fi
             done
+
+            rm -f "$body"
           }
 
           check_page https://desarrollamo.com.ar/ \
