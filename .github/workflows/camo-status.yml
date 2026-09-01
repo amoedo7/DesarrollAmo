@@ -29,3 +29,32 @@ jobs:
         run: |
           grep -F 'tools/camo_status.py' tools/install_camo_status.fish
           grep -F -- '--self-test' tools/install_camo_status.fish
+      - name: Live CAMO telemetry smoke test
+        env:
+          HOME: ${{ runner.temp }}/camo-home
+        run: |
+          mkdir -p "$HOME"
+          python tools/camo_status.py --json > "$RUNNER_TEMP/camo.json"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          data = json.loads((Path(os.environ['RUNNER_TEMP']) / 'camo.json').read_text())
+          assert data['schema'] == 'camo.status.v2'
+          assert data['price_usd'] is not None and data['price_usd'] > 0
+          assert data['liquidity_usd'] is not None and data['liquidity_usd'] > 0
+          assert data['onchain_rpc_ok'] is True
+          assert data['supply'] is not None and data['supply'] > 0
+          assert data['reserve_camo'] is not None and data['reserve_camo'] > 0
+          assert data['reserve_quote'] is not None and data['reserve_quote'] > 0
+          print(json.dumps({
+              'price_usd': data['price_usd'],
+              'liquidity_usd': data['liquidity_usd'],
+              'supply': data['supply'],
+              'holders': data['holders'],
+              'reserve_camo': data['reserve_camo'],
+              'reserve_quote': data['reserve_quote'],
+              'pool_created_at': data['pool_created_at'],
+              'last_trade_at': data['last_trade_at'],
+              'liquidity_state': data['liquidity_state'],
+          }, indent=2))
+          PY
