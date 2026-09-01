@@ -1,0 +1,38 @@
+name: RankeAMO payment security
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'netlify/functions/rankeamo.mts'
+      - 'netlify/functions/rankeamo-security.mts'
+      - 'tests/rankeamo-security.test.mjs'
+      - 'rankeamo/index.html'
+      - 'package.json'
+      - '.github/workflows/rankeamo-security.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'netlify/functions/rankeamo.mts'
+      - 'netlify/functions/rankeamo-security.mts'
+      - 'tests/rankeamo-security.test.mjs'
+      - 'rankeamo/index.html'
+      - 'package.json'
+      - '.github/workflows/rankeamo-security.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test payment security invariants
+        run: npm test
+      - name: Check Netlify function syntax
+        run: node --experimental-strip-types --check netlify/functions/rankeamo.mts
