@@ -1,0 +1,45 @@
+name: Capture production site
+
+on:
+  push:
+    branches:
+      - capture-production-20260902
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Mirror current production
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf production-capture
+          mkdir -p production-capture
+          cd production-capture
+          wget \
+            --mirror \
+            --page-requisites \
+            --no-parent \
+            --domains desarrollamo.com.ar \
+            --execute robots=off \
+            --user-agent='Mozilla/5.0 DesarrollAMO production backup' \
+            https://desarrollamo.com.ar/
+          cd ..
+          test -s production-capture/desarrollamo.com.ar/index.html
+          grep -q 'DesarrollAMO' production-capture/desarrollamo.com.ar/index.html
+          find production-capture -type f -print | sort > production-capture/FILES.txt
+          sha256sum $(find production-capture/desarrollamo.com.ar -type f -print | sort) > production-capture/SHA256SUMS.txt
+
+      - name: Upload exact production snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: desarrollamo-production-20260902
+          path: production-capture/
+          if-no-files-found: error
+          retention-days: 7
