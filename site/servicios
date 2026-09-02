@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head><script src="https://cdn.tailwindcss.com"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#05080d" name="theme-color"/>
+<meta content="Servicios de DesarrollAMO: webs, apps, automatizaciones, IA, contenido, branding e integraciones a medida." name="description"/>
+<title>Servicios · DesarrollAMO</title>
+<style>
+    :root{--bg:#05080d;--bg2:#070c12;--panel:#0a1018;--panel2:#0d1520;--panel3:#081019;--line:#172635;--line2:#22394c;--text:#e8f2f8;--muted:#7890a3;--muted2:#526b7c;--green:#72ffb5;--blue:#67b8ff;--pink:#ff5ca8;--amber:#ffd36a;--red:#ff7285;--cyan:#72e7ff;--purple:#c492ff;--white:#f8fbff;--shadow:0 18px 48px rgba(0,0,0,.23)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--text);background:radial-gradient(circle at 50% -18%,rgba(103,184,255,.15),transparent 35%),radial-gradient(circle at 8% 24%,rgba(255,92,168,.075),transparent 26%),radial-gradient(circle at 93% 42%,rgba(114,255,181,.05),transparent 24%),var(--bg);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(rgba(72,109,139,.027) 1px,transparent 1px),linear-gradient(90deg,rgba(72,109,139,.027) 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(to bottom,black,transparent 88%)}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}button,a{-webkit-tap-highlight-color:transparent}::selection{background:rgba(103,184,255,.28);color:var(--white)}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 11px rgba(114,255,181,.65)}
+    .shell{width:min(1600px,100%);margin:auto;padding:8px}.ticker{height:29px;border:1px solid #172431;overflow:hidden;display:flex;align-items:center;background:#080d13;white-space:nowrap;margin-bottom:8px}.ticker-track{display:inline-flex;gap:34px;min-width:max-content;animation:ticker 36s linear infinite;padding-left:100%}.ticker span{font-size:9px;color:#71889a;letter-spacing:.07em;text-transform:uppercase}.ticker b{color:var(--green);font-weight:800}.ticker .pink b{color:var(--pink)}.ticker .blue b{color:var(--blue)}.ticker .amber b{color:var(--amber)}@keyframes ticker{to{transform:translateX(-100%)}}
+    .panel,.metric,.hero{border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,24,34,.95),rgba(8,13,20,.97));box-shadow:var(--shadow)}.panel{position:relative;overflow:hidden}.ph{min-height:34px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 10px;background:rgba(8,15,22,.72)}.pt{font-size:10px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}.ps{font-size:8px;color:#668094;letter-spacing:.06em;text-transform:uppercase}.body{padding:10px}.label{font-size:8px;color:#71889a;letter-spacing:.12em;text-transform:uppercase}.sub{font-size:9px;color:#60798d;margin-top:4px}
+    .hero{min-height:220px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);position:relative;overflow:hidden;margin-bottom:8px;background:radial-gradient(circle at 72% 50%,rgba(103,184,255,.10),transparent 24%),radial-gradient(circle at 15% 90%,rgba(255,92,168,.07),transparent 25%),linear-gradient(180deg,rgba(14,23,33,.97),rgba(7,12,18,.98))}.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 49.9%,rgba(88,126,154,.08) 50%,transparent 50.1%)}.hero-main{padding:24px 22px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}.eyebrow{display:flex;gap:8px;align-items:center;margin-bottom:12px;font-size:9px;letter-spacing:.12em;color:#7d95a7;text-transform:uppercase}.eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--pink);box-shadow:0 0 14px rgba(255,92,168,.65);animation:softPulse 2s ease-in-out infinite}@keyframes softPulse{50%{opacity:.45;transform:scale(.75)}}.hero h1{margin:0;max-width:900px;font-size:clamp(31px,5.2vw,68px);line-height:.93;letter-spacing:-.075em;font-weight:950}.hero h1 .blue{color:var(--blue)}.hero h1 .pink{color:var(--pink)}.hero p{margin:16px 0 0;max-width:760px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:clamp(14px,1.4vw,18px);line-height:1.55;color:#9cb0be}.hero-cta{display:flex;flex-wrap:wrap;gap:8px;margin-top:19px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:9px 13px;border-radius:7px;border:1px solid #274056;background:#0a141e;font-size:9px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;transition:.2s ease;cursor:pointer}.btn:hover{transform:translateY(-1px);border-color:#40627e;background:#0d1a26}.btn.primary{color:#071014;background:var(--green);border-color:var(--green);box-shadow:0 0 24px rgba(114,255,181,.13)}.btn.primary:hover{background:#91ffc6}.btn.pink{color:#fff;background:rgba(255,92,168,.13);border-color:rgba(255,92,168,.36)}.hero-side{border-left:1px solid var(--line);padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:7px;align-content:center;position:relative;z-index:1}.hero-chip{min-height:78px;padding:9px;border:1px solid #1b2d3c;background:rgba(7,15,22,.76);display:flex;flex-direction:column;justify-content:space-between;transition:.2s ease}.hero-chip:hover{border-color:#29465c;background:#0a131d}.hero-chip strong{font-size:13px;letter-spacing:-.03em}.hero-chip small{font-size:8px;color:#657e91;line-height:1.35}.hero-chip i{width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 9px currentColor}.hero-chip:nth-child(2) i{background:var(--pink)}.hero-chip:nth-child(3) i{background:var(--green)}.hero-chip:nth-child(4) i{background:var(--amber)}
+    .metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-bottom:8px}.metric{padding:10px;min-height:82px;position:relative;overflow:hidden;transition:.2s ease}.metric:hover{border-color:#2a465b;transform:translateY(-1px)}.metric:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:.34}.metric:nth-child(2):after{background:linear-gradient(90deg,transparent,var(--pink),transparent)}.metric:nth-child(3):after{background:linear-gradient(90deg,transparent,var(--green),transparent)}.metric:nth-child(4):after{background:linear-gradient(90deg,transparent,var(--amber),transparent)}.metric:nth-child(5):after{background:linear-gradient(90deg,transparent,var(--cyan),transparent)}.metric:nth-child(6):after{background:linear-gradient(90deg,transparent,var(--purple),transparent)}.metric strong{display:block;margin-top:6px;font-size:15px;letter-spacing:-.035em}.metric small{display:block;margin-top:5px;color:#60798d;font-size:8px;line-height:1.35}.available{color:var(--green);font-size:8px;margin-top:4px;display:flex;align-items:center;gap:5px}.available i{width:5px;height:5px;border-radius:50%;background:var(--green)}
+    .main-grid{display:grid;grid-template-columns:minmax(215px,.75fr) minmax(430px,1.85fr) minmax(260px,.92fr);gap:8px;margin-bottom:8px}.problem-list{display:grid;gap:6px}.problem{text-align:left;border:1px solid #172a39;background:#081019;padding:9px 10px;cursor:pointer;display:grid;grid-template-columns:20px 1fr auto;align-items:center;gap:7px;transition:.18s ease}.problem:hover,.problem.active{border-color:#31506a;background:#0b1520}.problem.active{box-shadow:inset 2px 0 0 var(--pink)}.problem .n{color:#58778d;font-size:9px}.problem .txt{font-size:9px;font-weight:800;line-height:1.25}.problem .arr{color:#49677d;font-size:10px}.problem.active .arr{color:var(--pink)}.problem-note{margin-top:8px;border-top:1px solid #14232f;padding-top:8px;font-size:8px;line-height:1.55;color:#5d778a}
+    .core-wrap{height:540px;position:relative;background:linear-gradient(rgba(70,110,140,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(70,110,140,.045) 1px,transparent 1px),radial-gradient(circle at 50% 50%,rgba(103,184,255,.08),transparent 32%);background-size:28px 28px,28px 28px,auto}#coreGraph{width:100%;height:100%;display:block}.edge{fill:none;stroke:#29455a;stroke-width:1.25;stroke-opacity:.67;stroke-dasharray:4 7;animation:dash 16s linear infinite}.edge.active{stroke:var(--pink);stroke-width:1.8;stroke-opacity:.85;filter:drop-shadow(0 0 5px rgba(255,92,168,.35))}@keyframes dash{to{stroke-dashoffset:-120}}.core-ring{fill:none;stroke:#315873;stroke-width:1;opacity:.32;animation:ringPulse 3.3s ease-out infinite;transform-origin:center;transform-box:fill-box}.core-ring.r2{animation-delay:1.65s}@keyframes ringPulse{0%{transform:scale(.72);opacity:.48}100%{transform:scale(2.1);opacity:0}}.node{cursor:pointer;outline:none}.node circle{stroke:#36536a;stroke-width:1.3;fill:#09131d;transition:.2s ease}.node:hover circle,.node.active circle{stroke:var(--pink);fill:#111825;filter:drop-shadow(0 0 8px rgba(255,92,168,.27))}.node text{fill:#a9c0d0;font-size:11px;font-weight:800;letter-spacing:.02em;pointer-events:none}.node .micro{fill:#60798d;font-size:7px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}.node-core circle{fill:#0c1722;stroke:var(--blue);stroke-width:1.8;filter:drop-shadow(0 0 12px rgba(103,184,255,.25))}.node-core text{fill:#edf8ff;font-size:14px;font-weight:950}.node-core .micro{fill:var(--green);font-size:7px}.packet{fill:var(--green);filter:drop-shadow(0 0 5px rgba(114,255,181,.7));opacity:.9}.packet.pink{fill:var(--pink);filter:drop-shadow(0 0 5px rgba(255,92,168,.7))}.core-legend{position:absolute;left:9px;bottom:9px;display:flex;flex-wrap:wrap;gap:8px;background:rgba(5,8,13,.76);border:1px solid #183047;padding:6px 7px;font-size:7px;color:#69869a}.core-legend i{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:4px;background:var(--blue)}.core-legend span:nth-child(2) i{background:var(--pink)}.core-legend span:nth-child(3) i{background:var(--green)}.core-caption{position:absolute;right:9px;top:9px;text-align:right;color:#506b7f;font-size:7px;line-height:1.4;letter-spacing:.05em;text-transform:uppercase}
+    .detail{display:flex;flex-direction:column;min-height:100%}.detail-head{padding-bottom:9px;border-bottom:1px solid #172635}.detail-kicker{font-size:8px;color:var(--pink);letter-spacing:.11em;text-transform:uppercase}.detail h2{font-size:24px;line-height:1;letter-spacing:-.055em;margin:7px 0 8px}.detail p{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#94aab9;font-size:12px;line-height:1.55;margin:0}.detail-grid{display:grid;gap:7px;margin-top:10px}.detail-box{border:1px solid #182b39;background:#081019;padding:8px}.detail-box .label{margin-bottom:5px}.detail-box div:last-child{font-size:9px;line-height:1.5;color:#b0c2ce}.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.tag{border:1px solid #20384a;background:#0b1620;padding:4px 6px;color:#86a0b2;font-size:7px;letter-spacing:.04em;text-transform:uppercase}.detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:auto;padding-top:12px}.detail-actions .btn{padding-left:7px;padding-right:7px}
+    .lower-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:8px;margin-bottom:8px}.table-wrap{overflow-x:auto;scrollbar-width:thin}.matrix{width:100%;border-collapse:collapse;min-width:760px;font-size:9px}.matrix th{text-align:left;padding:7px 6px;color:#698397;font-weight:800;border-bottom:1px solid #1b2d3b;letter-spacing:.06em;text-transform:uppercase;font-size:7px}.matrix td{padding:8px 6px;border-bottom:1px solid #12212e;color:#9eb3c1;vertical-align:top}.matrix td:first-child{font-weight:900;color:#d7e6ef}.matrix td:last-child{color:var(--green)}.matrix tr:hover td{background:#09121a}.workflow{display:grid;gap:7px}.step{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;padding:7px;border:1px solid #172a39;background:#081019;position:relative}.step:not(:last-child):after{content:"";position:absolute;left:20px;top:35px;width:1px;height:9px;background:#31506a}.step .num{width:26px;height:26px;border:1px solid #274357;display:grid;place-items:center;font-size:8px;color:var(--blue);background:#0a141d}.step strong{display:block;font-size:9px;letter-spacing:.035em}.step small{display:block;color:#60798d;font-size:8px;line-height:1.4;margin-top:3px}
+    .result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px}.result{min-height:94px;border:1px solid #172635;background:linear-gradient(180deg,#0b131d,#071018);padding:10px;position:relative;overflow:hidden}.result:before{content:"";position:absolute;right:-20px;top:-20px;width:70px;height:70px;border:1px solid rgba(103,184,255,.09);border-radius:50%}.result:nth-child(2):before,.result:nth-child(6):before{border-color:rgba(255,92,168,.1)}.result:nth-child(3):before,.result:nth-child(7):before{border-color:rgba(114,255,181,.1)}.result:nth-child(4):before,.result:nth-child(8):before{border-color:rgba(255,211,106,.1)}.result strong{display:block;font-size:11px;margin-top:8px;letter-spacing:-.02em}.result small{display:block;margin-top:5px;color:#60798d;font-size:8px;line-height:1.4}
+    .command{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;padding:17px;border:1px solid #264056;background:radial-gradient(circle at 88% 50%,rgba(114,255,181,.08),transparent 26%),radial-gradient(circle at 10% 100%,rgba(255,92,168,.07),transparent 22%),#081019;margin-bottom:8px;box-shadow:var(--shadow)}.command .label{color:var(--green)}.command h2{margin:5px 0 6px;font-size:clamp(20px,3vw,34px);letter-spacing:-.055em}.command p{margin:0;color:#839cac;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:12px;line-height:1.5}.command-actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.footer{padding:8px 3px 24px;display:flex;justify-content:space-between;gap:12px;color:#526b7c;font-size:8px}.footer b{color:#7894a8}.footer a:hover{color:#a9c1d0}
+    @media(max-width:1120px){.metrics{grid-template-columns:repeat(3,1fr)}.main-grid{grid-template-columns:minmax(200px,.72fr) minmax(420px,1.5fr)}.detail-panel{grid-column:1/-1}.detail{display:grid;grid-template-columns:1fr 1.15fr;gap:10px}.detail-actions{grid-column:1/-1;margin-top:0}.detail-grid{margin-top:0}.lower-grid{grid-template-columns:1fr}}
+    @media(max-width:780px){.topnav,.shell{padding:5px}.ticker{margin-bottom:5px}.hero{grid-template-columns:1fr;margin-bottom:5px}.hero-main{padding:20px 14px 17px}.hero-side{border-left:0;border-top:1px solid var(--line);padding:8px;grid-template-columns:repeat(2,1fr)}.hero h1{font-size:clamp(34px,11vw,53px)}.hero p{font-size:14px}.metrics{grid-template-columns:repeat(2,1fr);gap:5px;margin-bottom:5px}.metric{min-height:77px;padding:8px}.metric strong{font-size:13px}.main-grid{grid-template-columns:1fr;gap:5px;margin-bottom:5px}.problem-list{grid-template-columns:1fr 1fr}.problem{grid-template-columns:18px 1fr;padding:8px}.problem .arr{display:none}.problem-note{grid-column:1/-1}.core-wrap{height:470px}.detail-panel{grid-column:auto}.detail{display:flex}.detail h2{font-size:22px}.detail-grid{margin-top:10px}.detail-actions{grid-column:auto}.lower-grid{gap:5px;margin-bottom:5px}.result-grid{grid-template-columns:repeat(2,1fr);gap:5px;margin-bottom:5px}.result{min-height:88px;padding:9px}.command{grid-template-columns:1fr;gap:11px;padding:14px;margin-bottom:5px}.command-actions{justify-content:flex-start}.footer{flex-direction:column;padding:10px 2px 20px}.ph{min-height:32px}.pt{font-size:9px}.ps{font-size:7px}}
+    @media(max-width:420px){.hero-side{grid-template-columns:1fr 1fr}.hero-chip{min-height:70px}.problem-list{grid-template-columns:1fr}.problem-note{grid-column:auto}.core-wrap{height:430px}.core-caption{display:none}.core-legend{right:9px;justify-content:center}.result-grid{grid-template-columns:1fr 1fr}.result strong{font-size:10px}.detail-actions,.command-actions{grid-template-columns:1fr;display:grid;width:100%}.btn{width:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track,.edge,.core-ring,.eyebrow .pulse{animation:none!important}.btn,.metric,.hero-chip,.problem,.node circle{transition:none!important}}
+  
+    /* === DesarrollAMO ecosystem map v4: pannable / zoomable / expandable === */
+    .core-wrap{height:760px;min-height:620px;position:relative;overflow:hidden;background:#071019;border-top:1px solid rgba(103,184,255,.08);isolation:isolate}
+    #coreGraph{width:100%;height:100%;display:block;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y;background:radial-gradient(circle at 50% 48%,rgba(103,184,255,.055),transparent 34%)}
+    #coreGraph.is-dragging{cursor:grabbing}
+    .core-wrap.is-exploring #coreGraph{touch-action:none}
+    .map-edge{fill:none;stroke:#24455d;stroke-width:1.3;stroke-opacity:.58;stroke-dasharray:5 9;vector-effect:non-scaling-stroke;transition:stroke .18s ease,stroke-opacity .18s ease,stroke-width .18s ease}
+    .map-edge.branch-edge{stroke:#315975;stroke-opacity:.67}
+    .map-edge.cross-edge{stroke:#6c617d;stroke-opacity:.24;stroke-dasharray:2 12}
+    .map-edge.active{stroke:var(--pink);stroke-width:2.1;stroke-opacity:.96;filter:drop-shadow(0 0 5px rgba(255,92,168,.38))}
+    .map-node{cursor:pointer;outline:none}
+    .map-node .hit{fill:transparent;stroke:transparent}
+    .map-node .shape{fill:#09131d;stroke:#34546c;stroke-width:1.35;vector-effect:non-scaling-stroke;transition:.18s ease}
+    .map-node:hover .shape,.map-node.active .shape{stroke:var(--pink);fill:#111824;filter:drop-shadow(0 0 9px rgba(255,92,168,.34))}
+    .map-node text{pointer-events:none;font-family:'JetBrains Mono',monospace;dominant-baseline:middle}
+    .map-node .title{fill:#c7dbe8;font-size:14px;font-weight:900;letter-spacing:.02em}
+    .map-node .sub{fill:#607d90;font-size:8px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+    .map-node.branch .shape{fill:#09141e;stroke:#45677e;stroke-width:1.5}
+    .map-node.branch .title{font-size:15px;fill:#d5e9f5}
+    .map-node.branch .sub{font-size:8px}
+    .map-node.branch .orbit{fill:none;stroke:#2a465b;stroke-width:1;stroke-opacity:.28;vector-effect:non-scaling-stroke}
+    .map-node.module .shape{fill:#09121b;stroke:#2d485d;stroke-width:1.1}
+    .map-node.module .title{font-size:11px;fill:#b8cedc}
+    .map-node.module .sub{font-size:7px}
+    .map-node.module .module-dot{fill:var(--blue);opacity:.72;filter:drop-shadow(0 0 4px rgba(103,184,255,.45))}
+    .map-node.module.active .module-dot{fill:var(--pink)}
+    .map-node.capability .module-dot{fill:#FFD166}
+    .map-node.core .core-disc{fill:#0b1823;stroke:var(--blue);stroke-width:2;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 14px rgba(103,184,255,.31))}
+    .map-node.core .core-orbit{fill:none;stroke:#315873;stroke-width:1.2;stroke-opacity:.30;vector-effect:non-scaling-stroke}
+    .map-node.core .title{fill:#f0f9ff;font-size:20px;font-weight:950}
+    .map-node.core .sub{fill:var(--green);font-size:8px}
+    .map-pulse{fill:none;stroke:var(--blue);stroke-width:1;opacity:.25;transform-origin:center;transform-box:fill-box;animation:mapPulse 4s ease-out infinite}
+    .map-pulse.p2{animation-delay:2s}
+    @keyframes mapPulse{0%{transform:scale(.75);opacity:.35}100%{transform:scale(2.8);opacity:0}}
+    .map-packet{fill:var(--green);filter:drop-shadow(0 0 5px rgba(114,255,181,.7));opacity:.85}
+    .map-packet.pink{fill:var(--pink);filter:drop-shadow(0 0 5px rgba(255,92,168,.7))}
+    .map-hud{position:absolute;right:12px;top:12px;display:grid;gap:6px;z-index:6}
+    .map-hud-row{display:flex;gap:5px;justify-content:flex-end}
+    .map-control{border:1px solid #23425a;background:rgba(5,10,16,.90);color:#a9c4d5;min-width:38px;height:38px;padding:0 10px;border-radius:7px;font:800 12px 'JetBrains Mono',monospace;box-shadow:0 8px 24px rgba(0,0,0,.22);cursor:pointer;backdrop-filter:blur(8px)}
+    .map-control:hover,.map-control:focus-visible{border-color:var(--blue);color:#eefaff;outline:none}
+    .map-control.active{border-color:var(--pink);color:#fff;background:rgba(255,92,168,.12)}
+    .map-control.wide{min-width:72px}
+    .map-breadcrumb{position:absolute;left:12px;top:12px;z-index:5;max-width:55%;padding:8px 10px;border:1px solid #173249;background:rgba(5,10,16,.78);color:#7f9bad;font:600 8px 'JetBrains Mono',monospace;letter-spacing:.04em;text-transform:uppercase;backdrop-filter:blur(7px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .map-breadcrumb strong{color:#dbeaf3}
+    .map-hint{position:absolute;left:12px;bottom:50px;z-index:5;padding:7px 9px;border:1px solid #173249;background:rgba(5,10,16,.76);color:#607f93;font:600 7px 'JetBrains Mono',monospace;letter-spacing:.04em;backdrop-filter:blur(7px)}
+    .map-scale{position:absolute;right:12px;bottom:50px;z-index:5;padding:7px 9px;border:1px solid #173249;background:rgba(5,10,16,.76);color:#8eabbc;font:800 8px 'JetBrains Mono',monospace}
+    .core-legend{left:12px;right:12px;bottom:10px;justify-content:center;gap:14px;padding:8px 10px;font-size:8px;background:rgba(5,8,13,.86);z-index:5}
+    .core-legend span:nth-child(4) i{background:#FFD166}
+    .map-depth-note{position:absolute;left:50%;transform:translateX(-50%);top:51px;z-index:4;color:#38566a;font:600 7px 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
+    .core-wrap:fullscreen{height:100vh!important;width:100vw;background:#061019}
+    .core-wrap:fullscreen #coreGraph{height:100vh}
+    @media(max-width:780px){.core-wrap{height:690px;min-height:650px}.map-hud{right:8px;top:8px}.map-breadcrumb{left:8px;top:8px;max-width:46%;font-size:7px}.map-control{height:36px;min-width:36px;padding:0 8px;font-size:11px}.map-control.wide{min-width:64px}.map-hint{left:8px;bottom:52px;max-width:68%;font-size:6.5px}.map-scale{right:8px;bottom:52px}.core-legend{left:8px;right:8px;bottom:8px;font-size:7px;gap:8px}.map-depth-note{top:49px;font-size:6px}}
+    @media(max-width:420px){.core-wrap{height:660px;min-height:620px}.map-control{height:34px;min-width:34px;padding:0 7px}.map-control.wide{min-width:60px}.map-hint{display:none}.map-scale{bottom:48px}.core-legend{bottom:7px}.map-depth-note{display:none}}
+    @media(prefers-reduced-motion:reduce){.map-pulse{animation:none!important}.map-edge,.map-node .shape{transition:none!important}}
+
+  </style>
+
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Crect width='64' height='48' rx='8' fill='%230b1020'/%3E%3Cpolygon points='8,40 20,16 32,40' fill='%237DD3FC'/%3E%3Cpolygon points='24,40 36,12 48,40' fill='%23FF77B4'/%3E%3Cpolygon points='40,40 52,20 60,40' fill='%23FF77B4'/%3E%3Ccircle cx='60' cy='26' r='9' fill='%23FFD166'/%3E%3C/svg%3E" rel="icon"/><style>
+.amo-footer{
+  position: relative;
+  z-index: 999;
+  padding: 16px 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.58);
+  color: rgba(229,231,235,.95);
+  border-top: 1px solid rgba(255,255,255,.14);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: light){
+  .amo-footer{
+    background: rgba(255,255,255,.78);
+    color: rgba(17,24,39,.92);
+    border-top: 1px solid rgba(0,0,0,.10);
+  }
+}
+.amo-footer-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.amo-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  color: inherit;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.amo-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.22);
+}
+.amo-sky{ color:#7DD3FC; }
+.amo-pink{ color:#FF5AA5; }
+.amo-year{ opacity:.75; }
+.amo-legal{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
+  font-size: 12px;
+}
+.amo-legal a{
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+.amo-legal a:hover{ opacity: 1; border-bottom-color: rgba(229,231,235,.4); }
+</style><link rel="stylesheet" href="/static/site-global.css"></head>
+<body class="amo-page-under-header"><svg aria-hidden="true" focusable="false" height="0" style="position:absolute;left:-9999px;visibility:hidden" width="0">
+<defs>
+<!-- Gradiente del sol -->
+<radialgradient cx="50%" cy="60%" id="amo-sun-grad" r="60%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="1"></stop>
+<stop offset="60%" stop-color="#FF9F6E" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#FF77B4" stop-opacity="0"></stop>
+</radialgradient>
+<!-- Halo suave -->
+<radialgradient cx="50%" cy="65%" id="amo-halo-grad" r="80%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#FFD166" stop-opacity="0"></stop>
+</radialgradient>
+<!-- Glow -->
+<filter height="200%" id="soft-glow" width="200%" x="-50%" y="-50%">
+<fegaussianblur in="SourceGraphic" result="blur" stddeviation="4"></fegaussianblur>
+<femerge>
+<femergenode in="blur"></femergenode>
+<femergenode in="SourceGraphic"></femergenode>
+</femerge>
+</filter>
+<style>
+      @keyframes sunriseShift {
+        0% { transform: translateY(6px); opacity: .85 }
+        100% { transform: translateY(0); opacity: 1 }
+      }
+      .amo-sunrise {
+        transform-origin: 50% 70%;
+        animation: sunriseShift 5s ease-out forwards
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .amo-sunrise { animation: none }
+      }
+    </style>
+</defs>
+<!-- LOGO A-M-O -->
+<symbol id="logo-desarrollamo" viewbox="0 0 80 48">
+<!-- Sol (O) con halo -->
+<ellipse class="amo-sunrise" cx="68" cy="28" fill="url(#amo-halo-grad)" rx="11" ry="9"></ellipse>
+<circle class="amo-sunrise" cx="68" cy="26" fill="url(#amo-sun-grad)" filter="url(#soft-glow)" r="9"></circle>
+<!-- Pirámide A (izquierda, celeste marca EXACTO: #7DD3FC) -->
+<polygon fill="#7DD3FC" points="8,40 20,16 32,40"></polygon>
+<!-- Pirámides M (rosas) -->
+<polygon fill="#FF77B4" points="24,40 36,12 48,40"></polygon>
+<polygon fill="#FF77B4" points="40,40 52,20 60,40"></polygon>
+<!-- Base -->
+<rect fill="rgba(255,255,255,0.15)" height="2" width="64" x="8" y="40"></rect>
+</symbol>
+</svg>
+<header class="fixed inset-x-0 top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/5 border-b border-white/10">
+<div class="max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
+<a aria-label="Ir al inicio" class="flex items-center gap-3" href="https://desarrollamo.com.ar/">
+<svg aria-hidden="true" class="drop-shadow" height="28" viewbox="0 0 64 48" width="38"><use href="#logo-desarrollamo"></use></svg>
+<span class="font-semibold tracking-tight"><span class="text-sky-300">Desarroll</span><span class="text-pink-400">AMO</span></span>
+</a>
+<nav aria-label="Principal" class="hidden md:flex items-center gap-6 text-sm">
+<a class="hover:text-sky-300" href="/">Inicio</a>
+<a aria-current="page" class="hover:text-sky-300" href="/servicios">Servicios</a>
+<a class="hover:text-sky-300" href="/galeria">Galería</a>
+<a class="hover:text-sky-300" href="/manifiesto">Manifiesto</a>
+<a class="hover:text-sky-300" href="https://www.instagram.com/desarrollamoficial" rel="noopener noreferrer" target="_blank">Contacto</a>
+</nav>
+<button class="md:hidden px-3 py-2 border border-white/20 rounded-md" id="menuBtn">Menú</button>
+</div>
+<nav aria-label="Principal móvil" class="hidden md:hidden border-t border-white/10 bg-black/50" id="mobileMenu">
+<div class="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+<a class="px-3 py-2 rounded-md bg-white/10" href="/">Inicio</a>
+<a aria-current="page" class="px-3 py-2 rounded-md bg-white/10" href="/servicios">Servicios</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/galeria">Galería</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/manifiesto">Manifiesto</a>
+<a class="px-3 py-2 rounded-md bg-pink-500 text-white" href="https://www.instagram.com/desarrollamoficial" rel="noopener noreferrer" target="_blank">Contacto</a>
+</div>
+</nav>
+</header>
+<div class="shell">
+<div aria-label="Capacidades DesarrollAMO" class="ticker"><div class="ticker-track"><span><b>WEB</b> · sitios y sistemas</span><span class="pink"><b>APPS</b> · herramientas útiles</span><span class="blue"><b>AUTOMATIZACIÓN</b> · menos trabajo manual</span><span><b>IA / BOTS</b> · asistentes y procesos</span><span class="amber"><b>CONTENIDO</b> · piezas que comunican</span><span class="pink"><b>BRANDING</b> · identidad visual</span><span class="blue"><b>INTEGRACIONES</b> · sistemas conectados</span><span><b>DESARROLLAMO</b> · traducimos problemas a tecnología</span></div></div>
+<section aria-labelledby="hero-title" class="hero"><div class="hero-main"><div class="eyebrow"><i class="pulse"></i> DESARROLLAMO // SERVICES CONTROL</div><h1 id="hero-title">Tu problema.<br/><span class="blue">Nuestro sistema.</span><br/><span class="pink">Una solución real.</span></h1><p>No necesitás saber qué tecnología usar. Contanos qué querés lograr, qué te hace perder tiempo o qué idea querés construir. DesarrollAMO traduce eso a una solución digital a medida.</p><div class="hero-cta"><a class="btn primary" href="/#contacto">CONTARME QUÉ NECESITÁS <span>→</span></a><a class="btn" href="/galeria">VER PROYECTOS</a></div></div><div aria-label="Principios del servicio" class="hero-side"><div class="hero-chip"><i></i><strong>A MEDIDA</strong><small>Sin obligarte a encajar en un paquete prefabricado.</small></div><div class="hero-chip"><i></i><strong>FUNCIONAL</strong><small>Diseño, código y automatización orientados a resolver algo.</small></div><div class="hero-chip"><i></i><strong>ESCALABLE</strong><small>Empezar simple y ampliar cuando el proyecto lo necesite.</small></div><div class="hero-chip"><i></i><strong>CLARO</strong><small>Problema → propuesta → construcción → entrega.</small></div></div></section>
+<section aria-label="Áreas principales" class="metrics"><article class="metric"><div class="label">01 · construcción</div><strong>WEB</strong><small>Landing · catálogo · sitio · sistema web</small><div class="available"><i></i> DISPONIBLE</div></article><article class="metric"><div class="label">02 · producto</div><strong>APPS</strong><small>Android · utilidades · herramientas internas</small><div class="available"><i></i> DISPONIBLE</div></article><article class="metric"><div class="label">03 · eficiencia</div><strong>AUTOMATIZACIÓN</strong><small>Workflows · scripts · tareas repetitivas</small><div class="available"><i></i> DISPONIBLE</div></article><article class="metric"><div class="label">04 · inteligencia</div><strong>IA / BOTS</strong><small>Asistentes · clasificación · agentes · flujos</small><div class="available"><i></i> DISPONIBLE</div></article><article class="metric"><div class="label">05 · comunicación</div><strong>CONTENIDO</strong><small>Visual · video · copy · piezas digitales</small><div class="available"><i></i> DISPONIBLE</div></article><article class="metric"><div class="label">06 · identidad</div><strong>BRANDING</strong><small>Marca · diseño · sistemas visuales</small><div class="available"><i></i> DISPONIBLE</div></article></section>
+<section class="main-grid">
+<aside class="panel"><div class="ph"><span class="pt">QUÉ RESOLVEMOS</span><span class="ps">ELEGÍ UN PROBLEMA</span></div><div class="body"><div class="problem-list" id="problemList"><button class="problem active" data-service="web" type="button"><span class="n">01</span><span class="txt">Necesito vender o mostrar algo online</span><span class="arr">→</span></button><button class="problem" data-service="automation" type="button"><span class="n">02</span><span class="txt">Pierdo tiempo en tareas manuales</span><span class="arr">→</span></button><button class="problem" data-service="apps" type="button"><span class="n">03</span><span class="txt">Necesito una herramienta o app propia</span><span class="arr">→</span></button><button class="problem" data-service="ai" type="button"><span class="n">04</span><span class="txt">Quiero incorporar IA a un proceso</span><span class="arr">→</span></button><button class="problem" data-service="content" type="button"><span class="n">05</span><span class="txt">Necesito comunicar mejor mi proyecto</span><span class="arr">→</span></button><button class="problem" data-service="branding" type="button"><span class="n">06</span><span class="txt">Mi marca necesita una identidad más sólida</span><span class="arr">→</span></button><button class="problem" data-service="systems" type="button"><span class="n">07</span><span class="txt">Tengo herramientas que no se hablan entre sí</span><span class="arr">→</span></button><button class="problem" data-service="custom" type="button"><span class="n">08</span><span class="txt">Tengo una idea rara y no sé cómo hacerla</span><span class="arr">→</span></button></div><div class="problem-note">No hace falta que llegues con un brief técnico. El punto de entrada puede ser simplemente un problema, una tarea tediosa o una idea.</div></div></aside>
+
+<section aria-label="Mapa interactivo del ecosistema DesarrollAMO" class="panel"><div class="ph"><span class="pt">DESARROLLAMO CORE · ECOSYSTEM MAP</span><span class="ps">ZOOM · ARRASTRÁ · EXPLORÁ</span></div><div class="core-wrap" id="mapViewport"><svg aria-labelledby="coreTitle coreDesc" id="coreGraph" role="img" preserveAspectRatio="xMidYMid meet"><title id="coreTitle">Mapa interactivo del ecosistema DesarrollAMO</title><desc id="coreDesc">Mapa navegable con servicios, productos, oficinas y sistemas conectados alrededor de DesarrollAMO.</desc><defs>
+<pattern id="smallGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#153046" stroke-width="1" opacity=".28"/></pattern>
+<pattern id="mapGrid" width="200" height="200" patternUnits="userSpaceOnUse"><rect width="200" height="200" fill="url(#smallGrid)"/><path d="M 200 0 L 0 0 0 200" fill="none" stroke="#24465f" stroke-width="1.2" opacity=".28"/></pattern>
+<radialGradient id="coreGlow"><stop offset="0" stop-color="#67b8ff" stop-opacity=".13"/><stop offset=".48" stop-color="#67b8ff" stop-opacity=".035"/><stop offset="1" stop-color="#67b8ff" stop-opacity="0"/></radialGradient>
+</defs><g id="mapWorld"><rect x="0" y="0" width="1800" height="1250" fill="#071019"/><rect x="0" y="0" width="1800" height="1250" fill="url(#mapGrid)"/><ellipse cx="900" cy="625" rx="410" ry="340" fill="url(#coreGlow)"/><g id="edgeLayer"></g><g id="packetLayer"></g><g id="nodeLayer"></g></g></svg>
+<div class="map-breadcrumb" id="mapBreadcrumb"><strong>DesarrollAMO</strong> · vista general</div>
+<div class="map-depth-note">el ecosistema continúa fuera de la vista · mové el mapa</div>
+<div class="map-hud" aria-label="Controles del mapa"><div class="map-hud-row"><button class="map-control" data-map-action="zoom-in" type="button" aria-label="Acercar">+</button><button class="map-control" data-map-action="zoom-out" type="button" aria-label="Alejar">−</button><button class="map-control" data-map-action="home" type="button" aria-label="Volver a la vista inicial">⌂</button><button class="map-control wide" data-map-action="fit" type="button">TODO</button></div><div class="map-hud-row"><button class="map-control wide" id="mapExplore" data-map-action="explore" type="button">✋ MOVER</button><button class="map-control" data-map-action="fullscreen" type="button" aria-label="Pantalla completa">⛶</button></div></div>
+<div class="map-hint">Desktop: arrastrá · Ctrl/⌘ + rueda · doble click. Móvil: tocá MOVER para arrastrar y pellizcar.</div><div class="map-scale" id="mapScale">100%</div>
+<div class="core-legend"><span><i></i> área</span><span><i></i> selección</span><span><i></i> flujo</span><span><i></i> módulo</span></div></div></section>
+<aside class="panel detail-panel"><div class="ph"><span class="pt">SERVICIO SELECCIONADO</span><span class="ps" id="serviceCode">WEB / 01</span></div><div aria-live="polite" class="body detail"><div class="detail-head"><div class="detail-kicker" id="detailKicker">PRESENCIA + CONVERSIÓN</div><h2 id="detailTitle">Desarrollo web</h2><p id="detailDescription">Sitios y sistemas web construidos alrededor de un objetivo: mostrar, vender, captar, ordenar o automatizar.</p></div><div class="detail-grid"><div class="detail-box"><div class="label">PUEDE INCLUIR</div><div id="detailIncludes">Landing · sitio · catálogo · sistema · integraciones</div></div><div class="detail-box"><div class="label">BENEFICIO</div><div id="detailBenefit">Convertir una idea o negocio en una experiencia web útil y profesional.</div></div><div class="detail-box"><div class="label">FORMATO</div><div id="detailFormat">A medida · alcance definido antes de construir</div></div><div class="detail-box"><div class="label">CAPACIDADES RELACIONADAS</div><div class="tags" id="detailTags"><span class="tag">UI</span><span class="tag">SEO</span><span class="tag">RESPONSIVE</span><span class="tag">INTEGRACIONES</span></div></div></div><div class="detail-actions"><a class="btn primary" href="/#contacto">CONSULTAR</a><a class="btn" href="/galeria">VER GALERÍA</a></div></div></aside>
+</section>
+<section class="lower-grid"><div class="panel"><div class="ph"><span class="pt">CAPABILITIES MATRIX</span><span class="ps">QUÉ PODEMOS CONSTRUIR</span></div><div class="body table-wrap"><table class="matrix"><thead><tr><th>CAPACIDAD</th><th>PARA QUÉ SIRVE</th><th>PUEDE ENTREGARSE COMO</th><th>MODALIDAD</th></tr></thead><tbody><tr><td>Desarrollo web</td><td>Presencia, venta, captación, información</td><td>Landing · sitio · sistema</td><td>A medida</td></tr><tr><td>Aplicaciones</td><td>Resolver una tarea desde el móvil</td><td>Android · utilidad · herramienta interna</td><td>A medida</td></tr><tr><td>Automatización</td><td>Reducir tareas repetitivas</td><td>Workflow · script · integración</td><td>A medida</td></tr><tr><td>IA / Bots</td><td>Asistir, clasificar, responder, procesar</td><td>Bot · agente · asistente · flujo</td><td>A medida</td></tr><tr><td>Catálogos</td><td>Mostrar productos o servicios</td><td>Catálogo web · buscador · filtros</td><td>A medida</td></tr><tr><td>Contenido</td><td>Comunicar una idea o propuesta</td><td>Visual · video · copy · piezas</td><td>A medida</td></tr><tr><td>Branding / Diseño</td><td>Dar identidad coherente al proyecto</td><td>Logo · sistema visual · piezas</td><td>A medida</td></tr><tr><td>Sistemas internos</td><td>Ordenar procesos e información</td><td>Panel · dashboard · herramienta</td><td>A medida</td></tr><tr><td>Integraciones</td><td>Conectar herramientas y datos</td><td>API · webhook · sincronización</td><td>A medida</td></tr><tr><td>Scripts</td><td>Resolver tareas concretas rápido</td><td>Script local · CLI · proceso</td><td>A medida</td></tr><tr><td>Datos / Hojas</td><td>Organizar y transformar información</td><td>Hoja automatizada · importación · reporte</td><td>A medida</td></tr><tr><td>Idea personalizada</td><td>Construir algo que no encaja en una categoría</td><td>Prototipo · producto · experimento funcional</td><td>Consultar</td></tr></tbody></table></div></div><div class="panel"><div class="ph"><span class="pt">WORKFLOW</span><span class="ps">DE IDEA A ENTREGA</span></div><div class="body workflow"><div class="step"><div class="num">01</div><div><strong>NECESIDAD</strong><small>Qué querés lograr o qué problema querés eliminar.</small></div></div><div class="step"><div class="num">02</div><div><strong>DIAGNÓSTICO</strong><small>Traducimos el problema a una solución concreta.</small></div></div><div class="step"><div class="num">03</div><div><strong>PROPUESTA</strong><small>Definimos alcance, entregable y forma de trabajo.</small></div></div><div class="step"><div class="num">04</div><div><strong>CONSTRUCCIÓN</strong><small>Diseño, desarrollo e integración.</small></div></div><div class="step"><div class="num">05</div><div><strong>PRUEBA</strong><small>Comprobamos que funcione en el escenario real.</small></div></div><div class="step"><div class="num">06</div><div><strong>ENTREGA</strong><small>Publicación, instalación o entrega del sistema.</small></div></div><div class="step"><div class="num">07</div><div><strong>MEJORA</strong><small>Iteramos cuando el proyecto lo necesita.</small></div></div></div></div></section>
+<section aria-label="Resultados posibles" class="result-grid"><article class="result"><div class="label">RESULTADO</div><strong>AHORRAR TIEMPO</strong><small>Automatizar pasos que hoy consumen atención humana.</small></article><article class="result"><div class="label">RESULTADO</div><strong>VENDER MEJOR</strong><small>Presentar una oferta de forma clara y fácil de accionar.</small></article><article class="result"><div class="label">RESULTADO</div><strong>ORDENAR</strong><small>Convertir información dispersa en un sistema utilizable.</small></article><article class="result"><div class="label">RESULTADO</div><strong>PROFESIONALIZAR</strong><small>Mejorar presencia, flujo y experiencia de un proyecto.</small></article><article class="result"><div class="label">RESULTADO</div><strong>VALIDAR UNA IDEA</strong><small>Construir una versión funcional antes de complicarla.</small></article><article class="result"><div class="label">RESULTADO</div><strong>CONECTAR</strong><small>Hacer que herramientas aisladas compartan información.</small></article><article class="result"><div class="label">RESULTADO</div><strong>AUTOMATIZAR</strong><small>Transformar reglas repetibles en procesos que se ejecutan solos.</small></article><article class="result"><div class="label">RESULTADO</div><strong>CREAR ALGO NUEVO</strong><small>Cuando la solución todavía no tiene un nombre estándar.</small></article></section>
+<section class="command" id="start-project"><div><div class="label">START PROJECT // INPUT ABIERTO</div><h2>Contame qué necesitás.</h2><p>No hace falta elegir una tecnología ni un paquete. Describí el problema, la tarea o la idea. Nosotros hacemos el resto del mapa.</p></div><div class="command-actions"><a class="btn primary" href="/#contacto">CONSULTAR PRESUPUESTO →</a><a class="btn pink" href="/galeria">VER GALERÍA</a></div></section>
+</div><footer class="amo-footer">
+<div class="amo-footer-inner">
+<a class="amo-link" href="/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="amo-logo">
+<svg height="22" style="display:block" viewbox="0 0 78 48" width="30">
+<polygon fill="#7DD3FC" points="8,40 20,16 32,40"></polygon>
+<polygon fill="#FF5AA5" points="24,40 36,12 48,40"></polygon>
+<polygon fill="#FF5AA5" points="40,40 52,20 60,40"></polygon>
+<circle cx="69" cy="29" fill="#FFD166" opacity="0.16" r="10.5"></circle>
+<circle cx="69" cy="29" fill="#FFD166" r="7.8"></circle>
+</svg>
+</span>
+<span class="amo-brand">
+<span class="amo-sky">Desarroll</span><span class="amo-pink">AMO</span><span class="amo-sky">.</span>
+</span>
+</a>
+<span class="amo-year">© <span id="amoYear"></span></span>
+<nav aria-label="Enlaces legales y de ayuda" class="amo-legal">
+<a href="/faq">FAQ</a>
+<a href="/terms">Términos</a>
+<a href="/privacy">Privacidad</a>
+<a href="/cookies">Cookies</a>
+<a href="/payments">Pagos</a>
+<a href="/licenses">Licencias</a>
+</nav>
+</div>
+<script>document.getElementById('amoYear').textContent = new Date().getFullYear();</script>
+</footer>
+<script>
+(()=>{
+const services={
+ web:{code:'WEB / 01',kicker:'PRESENCIA + CONVERSIÓN',title:'Desarrollo web',description:'Sitios y sistemas web construidos alrededor de un objetivo: mostrar, vender, captar, ordenar o automatizar.',includes:'Landing · sitio · catálogo · sistema · integraciones',benefit:'Convertir una idea o negocio en una experiencia web útil y profesional.',format:'A medida · alcance definido antes de construir',tags:['UI','SEO','RESPONSIVE','INTEGRACIONES']},
+ apps:{code:'APPS / 02',kicker:'HERRAMIENTA + MOVILIDAD',title:'Aplicaciones',description:'Apps y utilidades pensadas para resolver una tarea concreta de forma simple desde un dispositivo.',includes:'Android · utilidades · herramientas internas · prototipos',benefit:'Llevar un proceso o herramienta al formato que realmente necesitás usar.',format:'A medida · funcionalidad primero',tags:['ANDROID','OFFLINE','UTILITIES','UX']},
+ automation:{code:'AUTO / 03',kicker:'MENOS MANUAL + MÁS FLUJO',title:'Automatizaciones',description:'Procesos que conectan pasos repetitivos para reducir trabajo manual, errores y tiempo perdido.',includes:'Workflows · scripts · integraciones · webhooks · tareas programadas',benefit:'Que las tareas repetibles dejen de depender de hacer siempre lo mismo a mano.',format:'A medida · según proceso',tags:['WORKFLOWS','SCRIPTS','APIS','WEBHOOKS']},
+ ai:{code:'AI / 04',kicker:'ASISTENCIA + DECISIÓN',title:'IA y bots',description:'IA aplicada donde aporta valor: asistir, clasificar, resumir, responder, extraer o coordinar información.',includes:'Bots · asistentes · agentes · clasificación · procesamiento de texto',benefit:'Agregar capacidad inteligente sin convertir todo el proyecto en “IA por moda”.',format:'A medida · IA sólo donde tiene sentido',tags:['AGENTS','BOTS','LLM','AUTOMATION']},
+ content:{code:'CONTENT / 05',kicker:'COMUNICACIÓN + PRESENCIA',title:'Contenido digital',description:'Piezas visuales, video y texto para explicar mejor qué hacés, vender una idea o darle forma a una presencia digital.',includes:'Visuales · video · copy · piezas para web y redes',benefit:'Comunicar con más claridad y coherencia sin separar contenido del producto.',format:'Por pieza o sistema de contenido',tags:['VISUAL','VIDEO','COPY','SOCIAL']},
+ branding:{code:'BRAND / 06',kicker:'IDENTIDAD + COHERENCIA',title:'Branding y diseño',description:'Sistemas visuales que hacen que un proyecto se reconozca y se sienta coherente en todos sus puntos de contacto.',includes:'Logo · identidad · paleta · componentes · piezas',benefit:'Pasar de “cosas sueltas” a una identidad que se reconoce como una misma marca.',format:'A medida · desde identidad base hasta sistema visual',tags:['LOGO','IDENTITY','UI','DESIGN']},
+ systems:{code:'SYSTEMS / 07',kicker:'ORDEN + CONEXIÓN',title:'Sistemas e integraciones',description:'Herramientas internas, paneles e integraciones para que información y procesos dejen de vivir aislados.',includes:'Paneles · APIs · datos · dashboards · sincronizaciones',benefit:'Ordenar la operación y hacer que los sistemas compartan la información correcta.',format:'A medida · según ecosistema',tags:['DATA','API','DASHBOARD','SYNC']},
+ business:{code:'BUSINESS / 08',kicker:'NEGOCIO + COBRO + MEDICIÓN',title:'Negocio y operación',description:'La capa que convierte producción en propuesta, cobro, control y aprendizaje comercial.',includes:'Presupuestos · cobros · pagos · contaduría · ranking',benefit:'Conectar lo que construimos con una operación comercial medible.',format:'Ecosistema interno + herramientas públicas',tags:['REVENUE','PAYMENTS','OPS','METRICS']},
+ custom:{code:'CUSTOM / 09',kicker:'IDEA + PROTOTIPO',title:'Idea personalizada',description:'Cuando lo que querés construir no entra limpio en una categoría, combinamos las capacidades necesarias alrededor del problema.',includes:'Web + app + automatización + IA + diseño, según haga falta',benefit:'No descartar una buena idea sólo porque no existe un paquete con su nombre.',format:'Diagnóstico primero · propuesta después',tags:['PROTOTYPE','CUSTOM','BUILD','EXPERIMENT']}
+};
+
+const mapNodes=[
+{id:'core',label:'DesarrollAMO',sub:'BUILD · AUTOMATE · CREATE',x:900,y:625,type:'core'},
+{id:'business',parent:'core',label:'NEGOCIO',sub:'COBRO · OPERACIÓN',x:900,y:145,type:'branch',service:'business'},
+{id:'web',parent:'core',label:'WEB',sub:'SITIOS · SISTEMAS',x:430,y:270,type:'branch',service:'web'},
+{id:'apps',parent:'core',label:'APPS',sub:'ANDROID · TOOLS',x:1370,y:270,type:'branch',service:'apps'},
+{id:'automation',parent:'core',label:'AUTO',sub:'WORKFLOWS · SCRIPTS',x:275,y:625,type:'branch',service:'automation'},
+{id:'ai',parent:'core',label:'IA / BOTS',sub:'AGENTES · ASISTENTES',x:1525,y:625,type:'branch',service:'ai'},
+{id:'content',parent:'core',label:'CONTENIDO',sub:'VISUAL · VIDEO · COPY',x:455,y:965,type:'branch',service:'content'},
+{id:'branding',parent:'core',label:'BRANDING',sub:'IDENTIDAD · DISEÑO',x:1345,y:965,type:'branch',service:'branding'},
+{id:'systems',parent:'core',label:'SISTEMAS',sub:'DATA · INFRA · SEGURIDAD',x:900,y:1110,type:'branch',service:'systems'},
+
+{id:'cobramo',label:'CobrAMO',sub:'COBROS',x:590,y:65,parent:'business',type:'module',summary:'Vía pública de cobro y referencia de pagos dentro del ecosistema.',tags:['PAGOS','COBRO']},
+{id:'pagoamo',label:'PagoAMO',sub:'PAGOS',x:735,y:35,parent:'business',type:'module',summary:'Capa orientada a flujos y operaciones de pago.',tags:['PAGOS','OPERACIÓN']},
+{id:'contaduria',label:'ContaduríaAMO',sub:'NÚMEROS',x:900,y:30,parent:'business',type:'module',summary:'Control y organización económica para propuestas, monedas y operación.',tags:['FINANZAS','CONTROL']},
+{id:'rankingiamo',label:'RankingIAMO',sub:'INGRESOS REALES',x:1080,y:45,parent:'business',type:'module',summary:'Ranking auditable de agentes y experimentos según dinero realmente cobrado.',tags:['REVENUE','AUDITORÍA']},
+{id:'presupuestamo',label:'PresupuestAMO',sub:'PROPUESTAS',x:1225,y:95,parent:'business',type:'module',summary:'Sistema para convertir necesidades en presupuestos y propuestas accionables.',tags:['VENTAS','PROPUESTAS']},
+
+{id:'clientes',label:'Clientes',sub:'TRABAJOS REALES',x:155,y:135,parent:'web',type:'capability',summary:'Sitios y soluciones construidos para clientes reales.',tags:['PORTFOLIO','CLIENTES']},
+{id:'landings',label:'Landings',sub:'CONVERSIÓN',x:310,y:90,parent:'web',type:'capability',summary:'Páginas enfocadas en comunicar, captar o vender con claridad.',tags:['WEB','CONVERSIÓN']},
+{id:'cvs',label:'CVs online',sub:'PERFILES',x:485,y:90,parent:'web',type:'capability',summary:'Currículums y perfiles profesionales publicados como experiencias web.',tags:['WEB','CV']},
+{id:'catalogos',label:'Catálogos',sub:'PRODUCTOS',x:180,y:335,parent:'web',type:'capability',summary:'Catálogos y vitrinas digitales con navegación, filtros y presentación.',tags:['CATÁLOGO','WEB']},
+{id:'galeria',label:'Galería',sub:'PORTFOLIO',x:420,y:440,parent:'web',type:'capability',summary:'Portfolio visual de trabajos, aplicaciones, imágenes y herramientas.',tags:['PORTFOLIO','VISUAL']},
+
+{id:'storeamo',label:'StoreAMO',sub:'CATÁLOGO APPS',x:1170,y:80,parent:'apps',type:'module',summary:'Catálogo y puerta de entrada para aplicaciones del ecosistema.',tags:['APPS','STORE']},
+{id:'factoryamo',label:'FactoryAMO',sub:'FÁBRICA',x:1350,y:70,parent:'apps',type:'module',summary:'Cabina y flujo para llevar una idea de aplicación hacia construcción y publicación.',tags:['FACTORY','APPS']},
+{id:'qramo',label:'QrAMO',sub:'QR TOOL',x:1540,y:140,parent:'apps',type:'module',summary:'Aplicación para crear, leer y revisar códigos QR.',tags:['ANDROID','QR']},
+{id:'wifiamo',label:'WifiAMO',sub:'RED ANDROID',x:1610,y:300,parent:'apps',type:'module',summary:'Herramienta móvil para diagnóstico y comprensión de redes Wi‑Fi.',tags:['ANDROID','NETWORK']},
+{id:'chessi',label:'Chessi',sub:'AJEDREZ',x:1540,y:430,parent:'apps',type:'module',summary:'Aplicación de ajedrez con reglas, niveles y asistencia sobre tablero.',tags:['ANDROID','CHESS']},
+{id:'gastamo',label:'GastAMO',sub:'FINANZAS LOCAL',x:1325,y:465,parent:'apps',type:'module',summary:'Registro local y rápido de ingresos, gastos y categorías.',tags:['ANDROID','LOCAL']},
+{id:'mesaamo',label:'MesaAMO',sub:'MEDIOS',x:1160,y:390,parent:'apps',type:'module',summary:'Gestión y trabajo con medios desde Android.',tags:['ANDROID','MEDIA']},
+
+{id:'circuitamo',label:'CircuitAMO',sub:'FABRICACIÓN',x:70,y:460,parent:'automation',type:'module',summary:'Circuitos repetibles para crear, probar, versionar y publicar aplicaciones.',tags:['PIPELINE','AUTOMATION']},
+{id:'depositamo',label:'DepositAMO',sub:'DIGERIR · MEJORAR',x:45,y:625,parent:'automation',type:'module',summary:'Entrada para examinar material, entenderlo y rescatar mejoras seguras para el entorno.',tags:['ANÁLISIS','MEJORA']},
+{id:'transferamo',label:'TransferAMO',sub:'TRANSFERENCIA',x:95,y:790,parent:'automation',type:'module',summary:'Flujos de transferencia y handshake mediante QR y medios locales.',tags:['TRANSFER','QR']},
+{id:'tokenamo',label:'TokenAMO',sub:'CONSUMO LLM',x:280,y:865,parent:'automation',type:'module',summary:'Medición del consumo de modelos por llamada, motivo, tiempo y resultado.',tags:['TOKENS','METRICS']},
+{id:'operamo',label:'OperAMO',sub:'OPERACIÓN',x:455,y:785,parent:'automation',type:'module',summary:'Capa de operación y ejecución de tareas dentro del entorno DesarrollAMO.',tags:['OPS','AUTOMATION']},
+
+{id:'damo',label:'DAMO',sub:'ORQUESTADOR',x:1725,y:460,parent:'ai',type:'module',summary:'Orquestador central que coordina oficinas, herramientas y agentes.',tags:['OPENCLAW','ORCHESTRATOR']},
+{id:'iamo',label:'IAMO',sub:'AGENTES',x:1760,y:625,parent:'ai',type:'module',summary:'Familia de agentes autónomos orientados a experimentar, ejecutar y aprender.',tags:['AGENTS','AUTONOMY']},
+{id:'consejoamo',label:'ConsejoAMO',sub:'14 ROLES',x:1705,y:795,parent:'ai',type:'module',summary:'Consejo de roles para evaluar decisiones desde perspectivas distintas.',tags:['REASONING','ROLES']},
+{id:'poolamo',label:'PoolAMO',sub:'MODELOS',x:1510,y:875,parent:'ai',type:'module',summary:'Pool de proveedores y modelos para elegir capacidad y sostener failover.',tags:['MODELS','ROUTING']},
+{id:'investigamo',label:'InvestigAMO',sub:'INVESTIGACIÓN',x:1320,y:815,parent:'ai',type:'module',summary:'Oficina para investigación, búsqueda y análisis estructurado.',tags:['RESEARCH','OSINT']},
+{id:'inpromptamo',label:'InpromptAMO',sub:'PROMPTS',x:1230,y:690,parent:'ai',type:'module',summary:'Capa dedicada a instrucciones, prompts y diseño de interacción con modelos.',tags:['PROMPTING','AI']},
+
+{id:'marketingamo',label:'MarketingAMO',sub:'CRECIMIENTO',x:180,y:925,parent:'content',type:'module',summary:'Oficina enfocada en presencia, campañas y comunicación comercial.',tags:['MARKETING','CONTENT']},
+{id:'videamo',label:'VideAMO',sub:'VIDEO',x:280,y:1110,parent:'content',type:'module',summary:'Pipeline para edición, generación y preparación de piezas de video.',tags:['VIDEO','MEDIA']},
+{id:'renderamo',label:'RenderAMO',sub:'VISUAL',x:470,y:1195,parent:'content',type:'module',summary:'Capa de producción y renderizado visual.',tags:['RENDER','VISUAL']},
+{id:'camaramo',label:'CamarAMO',sub:'CAPTURA',x:625,y:1090,parent:'content',type:'module',summary:'Herramientas y flujos vinculados a captura y cámara.',tags:['CAMERA','MEDIA']},
+
+{id:'identidad',label:'Identidad visual',sub:'MARCA',x:1130,y:890,parent:'branding',type:'capability',summary:'Sistema visual coherente para que una marca sea reconocible.',tags:['IDENTITY','BRAND']},
+{id:'uiux',label:'UI / UX',sub:'EXPERIENCIA',x:1245,y:1145,parent:'branding',type:'capability',summary:'Diseño de interfaces y experiencias alrededor de tareas reales.',tags:['UI','UX']},
+{id:'logos',label:'Logos',sub:'SÍMBOLOS',x:1440,y:1160,parent:'branding',type:'capability',summary:'Exploración y construcción de símbolos e identidades de marca.',tags:['LOGO','DESIGN']},
+{id:'sistemasvisuales',label:'Sistemas visuales',sub:'COHERENCIA',x:1605,y:1030,parent:'branding',type:'capability',summary:'Paletas, componentes y reglas para sostener una identidad.',tags:['DESIGN SYSTEM','BRAND']},
+
+{id:'plataformamo',label:'PlataformAMO',sub:'PLATAFORMA',x:655,y:1220,parent:'systems',type:'module',summary:'Plataforma central para APIs, almacenamiento y presencia operativa.',tags:['PLATFORM','API']},
+{id:'meshamo',label:'MeshAMO',sub:'FAILOVER',x:815,y:1215,parent:'systems',type:'module',summary:'Malla de resiliencia con failover, breaker y backoff.',tags:['RESILIENCE','MESH']},
+{id:'guardamo',label:'GuardAMO',sub:'ROLLBACK',x:980,y:1215,parent:'systems',type:'module',summary:'Guardrails, rollback y kill switch para cambios seguros.',tags:['SECURITY','ROLLBACK']},
+{id:'notifyamo',label:'NotifyAMO',sub:'NOTIFICAR',x:1135,y:1180,parent:'systems',type:'module',summary:'Sistema para notificaciones y entrega de eventos.',tags:['NOTIFY','API']},
+{id:'server',label:'DesarrollAMO Server',sub:'CENTRAL',x:1085,y:1035,parent:'systems',type:'module',summary:'Servidor central pensado para APIs, archivos y servicios compartidos.',tags:['SERVER','INFRA']},
+{id:'securityamo',label:'SecurityAMO',sub:'SEGURIDAD',x:720,y:1025,parent:'systems',type:'module',summary:'Capa de seguridad del ecosistema y sus servicios.',tags:['SECURITY','AUDIT']}
+];
+const crossLinks=[['factoryamo','circuitamo'],['factoryamo','storeamo'],['presupuestamo','cobramo'],['rankingiamo','cobramo'],['damo','poolamo'],['damo','consejoamo'],['guardamo','damo'],['plataformamo','storeamo'],['tokenamo','damo']];
+
+const byId=Object.fromEntries(mapNodes.map(n=>[n.id,n]));
+const svg=document.getElementById('coreGraph'), viewport=document.getElementById('mapViewport'), edgeLayer=document.getElementById('edgeLayer'), packetLayer=document.getElementById('packetLayer'), nodeLayer=document.getElementById('nodeLayer');
+const refs={code:document.getElementById('serviceCode'),kicker:document.getElementById('detailKicker'),title:document.getElementById('detailTitle'),description:document.getElementById('detailDescription'),includes:document.getElementById('detailIncludes'),benefit:document.getElementById('detailBenefit'),format:document.getElementById('detailFormat'),tags:document.getElementById('detailTags')};
+const problemButtons=[...document.querySelectorAll('.problem')];
+const breadcrumb=document.getElementById('mapBreadcrumb'), scaleEl=document.getElementById('mapScale'), exploreBtn=document.getElementById('mapExplore');
+const WORLD={x:0,y:0,w:1800,h:1250}; let baseWidth=1120; let view={x:340,y:170,w:1120,h:760}; let selectedId='web'; let touchExplore=false; let lastDrag=false;
+const NS='http://www.w3.org/2000/svg';
+const E=(tag,attrs={})=>{const el=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);return el};
+function curve(a,b){const mx=(a.x+b.x)/2,my=(a.y+b.y)/2;const dx=b.x-a.x,dy=b.y-a.y;const bend=Math.min(85,Math.hypot(dx,dy)*.11);const nx=-dy/(Math.hypot(dx,dy)||1),ny=dx/(Math.hypot(dx,dy)||1);return `M${a.x},${a.y} Q${mx+nx*bend},${my+ny*bend} ${b.x},${b.y}`}
+function renderMap(){
+ edgeLayer.textContent='';packetLayer.textContent='';nodeLayer.textContent='';
+ for(const n of mapNodes){if(!n.parent)continue;const p=byId[n.parent];const path=E('path',{id:`edge-${n.parent}-${n.id}`,d:curve(p,n),class:`map-edge ${n.parent==='core'?'branch-edge':''}`,'data-from':n.parent,'data-to':n.id});edgeLayer.append(path)}
+ for(const [aId,bId] of crossLinks){const a=byId[aId],b=byId[bId];if(!a||!b)continue;edgeLayer.append(E('path',{d:curve(a,b),class:'map-edge cross-edge','data-from':aId,'data-to':bId}))}
+ ['business','web','apps','automation','ai','content','branding','systems'].forEach((id,i)=>{const c=E('circle',{r:'3.4',class:`map-packet ${i%2?'pink':''}`});const m=E('animateMotion',{dur:`${4.1+(i%4)*.55}s`,begin:`-${i*.47}s`,repeatCount:'indefinite'});m.append(E('mpath',{href:`#edge-core-${id}`}));c.append(m);packetLayer.append(c)});
+ for(const n of mapNodes){const g=E('g',{class:`map-node ${n.type}${n.id===selectedId?' active':''}`,'data-map-node':n.id,role:n.type==='core'?'img':'button',tabindex:n.type==='core'?'-1':'0',transform:`translate(${n.x} ${n.y})`,'aria-label':n.label});
+  if(n.type==='core'){
+   g.append(E('circle',{class:'map-pulse',r:'78'}),E('circle',{class:'map-pulse p2',r:'78'}),E('circle',{class:'core-orbit',r:'105'}),E('circle',{class:'core-orbit',r:'128'}),E('circle',{class:'core-disc',r:'78'}));
+   const t=E('text',{class:'title','text-anchor':'middle',y:'-5'});t.textContent=n.label;const s=E('text',{class:'sub','text-anchor':'middle',y:'22'});s.textContent=n.sub;g.append(t,s)
+  } else if(n.type==='branch'){
+   g.append(E('circle',{class:'orbit',r:'72'}),E('circle',{class:'shape',r:'58'}),E('circle',{class:'hit',r:'72'}));
+   const t=E('text',{class:'title','text-anchor':'middle',y:'-5'});t.textContent=n.label;const s=E('text',{class:'sub','text-anchor':'middle',y:'22'});s.textContent=n.sub;g.append(t,s)
+  } else {
+   g.append(E('rect',{class:'shape',x:'-72',y:'-27',width:'144',height:'54',rx:'18'}),E('rect',{class:'hit',x:'-82',y:'-37',width:'164',height:'74',rx:'22'}),E('circle',{class:'module-dot',cx:'-55',cy:'-11',r:'4'}));
+   const t=E('text',{class:'title','text-anchor':'middle',y:'-6'});t.textContent=n.label;const s=E('text',{class:'sub','text-anchor':'middle',y:'14'});s.textContent=n.sub;g.append(t,s)
+  }
+  if(n.type!=='core'){const run=()=>{if(lastDrag)return;selectNode(n.id)};g.addEventListener('click',run);g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();run()}})}nodeLayer.append(g)
+ }
+ updateActive();
+}
+function ancestors(id){const out=[];let n=byId[id];while(n){out.push(n.id);n=n.parent?byId[n.parent]:null}return out}
+function branchFor(n){while(n&&n.parent&&n.parent!=='core')n=byId[n.parent];return n&&n.parent==='core'?n:null}
+function detailFor(n){if(n.service&&services[n.service])return services[n.service];const b=branchFor(n);return {code:`${(b?.label||'ECOSISTEMA').toUpperCase()} / MAP`,kicker:'MÓDULO DEL ECOSISTEMA',title:n.label,description:n.summary||`Parte del ecosistema DesarrollAMO conectada con ${b?.label||'el núcleo'}.`,includes:n.sub||'Capacidad conectada',benefit:`Se integra con ${b?.label||'DesarrollAMO'} y con otros componentes del mapa.`,format:n.type==='capability'?'Capacidad / servicio':'Producto · oficina · módulo DesarrollAMO',tags:n.tags||[b?.label||'ECOSISTEMA']}}
+function selectNode(id){const n=byId[id];if(!n||n.type==='core')return;selectedId=id;const d=detailFor(n);refs.code.textContent=d.code;refs.kicker.textContent=d.kicker;refs.title.textContent=d.title;refs.description.textContent=d.description;refs.includes.textContent=d.includes;refs.benefit.textContent=d.benefit;refs.format.textContent=d.format;refs.tags.innerHTML=(d.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('');const b=branchFor(n);problemButtons.forEach(btn=>btn.classList.toggle('active',btn.dataset.service===(n.service||b?.service)));const chain=ancestors(id).reverse().map(k=>byId[k]?.label).filter(Boolean);breadcrumb.innerHTML=chain.map((x,i)=>i===0?`<strong>${x}</strong>`:x).join(' › ');updateActive()}
+function updateActive(){const chain=new Set(ancestors(selectedId));document.querySelectorAll('[data-map-node]').forEach(el=>el.classList.toggle('active',el.dataset.mapNode===selectedId));document.querySelectorAll('.map-edge').forEach(e=>{const from=e.dataset.from,to=e.dataset.to;e.classList.toggle('active',chain.has(from)&&chain.has(to))})}
+function viewportAspect(){return Math.max(.45,svg.clientWidth/Math.max(1,svg.clientHeight))}
+function setHome(){baseWidth=window.matchMedia('(max-width:780px)').matches?840:1120;const h=baseWidth/viewportAspect();view={x:900-baseWidth/2,y:625-h/2,w:baseWidth,h};clampView();applyView()}
+function fitAll(){const pad=55;const w=WORLD.w+pad*2,h=WORLD.h+pad*2,ar=viewportAspect();let vw=w,vh=vw/ar;if(vh<h){vh=h;vw=vh*ar}view={x:(WORLD.w-vw)/2,y:(WORLD.h-vh)/2,w:vw,h:vh};applyView()}
+function clampView(){const margin=130;view.w=Math.max(360,Math.min(2100,view.w));view.h=view.w/viewportAspect();const minX=WORLD.x-margin,maxX=WORLD.x+WORLD.w+margin-view.w,minY=WORLD.y-margin,maxY=WORLD.y+WORLD.h+margin-view.h;view.x=Math.min(Math.max(view.x,minX),Math.max(minX,maxX));view.y=Math.min(Math.max(view.y,minY),Math.max(minY,maxY))}
+function applyView(){svg.setAttribute('viewBox',`${view.x} ${view.y} ${view.w} ${view.h}`);scaleEl.textContent=`${Math.round(baseWidth/view.w*100)}%`}
+function zoomAt(factor,cx=svg.clientWidth/2,cy=svg.clientHeight/2){const pt=screenToWorld(cx,cy),nw=Math.max(360,Math.min(2100,view.w*factor)),nh=nw/viewportAspect(),rx=(pt.x-view.x)/view.w,ry=(pt.y-view.y)/view.h;view={x:pt.x-rx*nw,y:pt.y-ry*nh,w:nw,h:nh};clampView();applyView()}
+function screenToWorld(sx,sy){const r=svg.getBoundingClientRect();return{x:view.x+(sx-r.left)/r.width*view.w,y:view.y+(sy-r.top)/r.height*view.h}}
+function panPixels(dx,dy){const r=svg.getBoundingClientRect();view.x-=dx/r.width*view.w;view.y-=dy/r.height*view.h;clampView();applyView()}
+let pointers=new Map(),dragOrigin=null,pinch=null;
+svg.addEventListener('pointerdown',e=>{if(e.pointerType==='touch'&&!touchExplore)return;svg.setPointerCapture?.(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});lastDrag=false;if(pointers.size===1)dragOrigin={x:e.clientX,y:e.clientY};if(pointers.size===2){const a=[...pointers.values()];pinch={dist:Math.hypot(a[1].x-a[0].x,a[1].y-a[0].y),mid:{x:(a[0].x+a[1].x)/2,y:(a[0].y+a[1].y)/2},view:{...view}}}svg.classList.add('is-dragging')});
+svg.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;const prev=pointers.get(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointers.size===1){const dx=e.clientX-prev.x,dy=e.clientY-prev.y;if(dragOrigin&&Math.hypot(e.clientX-dragOrigin.x,e.clientY-dragOrigin.y)>6)lastDrag=true;panPixels(dx,dy)}else if(pointers.size===2&&pinch){lastDrag=true;const a=[...pointers.values()],dist=Math.hypot(a[1].x-a[0].x,a[1].y-a[0].y),mid={x:(a[0].x+a[1].x)/2,y:(a[0].y+a[1].y)/2};view={...pinch.view};const factor=pinch.dist/Math.max(10,dist);zoomAt(factor,pinch.mid.x,pinch.mid.y);panPixels(mid.x-pinch.mid.x,mid.y-pinch.mid.y)}});
+function endPointer(e){pointers.delete(e.pointerId);if(!pointers.size){svg.classList.remove('is-dragging');dragOrigin=null;pinch=null;setTimeout(()=>lastDrag=false,50)}else if(pointers.size===1){const p=[...pointers.values()][0];dragOrigin={...p};pinch=null}}
+svg.addEventListener('pointerup',endPointer);svg.addEventListener('pointercancel',endPointer);
+svg.addEventListener('wheel',e=>{if(!(e.ctrlKey||e.metaKey))return;e.preventDefault();zoomAt(e.deltaY>0?1.12:.88,e.clientX,e.clientY)},{passive:false});
+svg.addEventListener('dblclick',e=>{e.preventDefault();zoomAt(.72,e.clientX,e.clientY)});
+document.querySelectorAll('[data-map-action]').forEach(btn=>btn.addEventListener('click',()=>{const a=btn.dataset.mapAction;if(a==='zoom-in')zoomAt(.8);if(a==='zoom-out')zoomAt(1.25);if(a==='home')setHome();if(a==='fit')fitAll();if(a==='explore'){touchExplore=!touchExplore;viewport.classList.toggle('is-exploring',touchExplore);exploreBtn.classList.toggle('active',touchExplore);exploreBtn.textContent=touchExplore?'✓ LISTO':'✋ MOVER'}if(a==='fullscreen'){if(document.fullscreenElement)document.exitFullscreen?.();else viewport.requestFullscreen?.()}}));
+problemButtons.forEach(b=>b.addEventListener('click',()=>{const branch=mapNodes.find(n=>n.type==='branch'&&n.service===b.dataset.service);if(branch)selectNode(branch.id);else{const d=services[b.dataset.service]||services.custom;refs.code.textContent=d.code;refs.kicker.textContent=d.kicker;refs.title.textContent=d.title;refs.description.textContent=d.description;refs.includes.textContent=d.includes;refs.benefit.textContent=d.benefit;refs.format.textContent=d.format;refs.tags.innerHTML=d.tags.map(t=>`<span class="tag">${t}</span>`).join('');problemButtons.forEach(x=>x.classList.toggle('active',x===b))}}));
+const ro=new ResizeObserver(()=>{const cx=view.x+view.w/2,cy=view.y+view.h/2;view.h=view.w/viewportAspect();view.y=cy-view.h/2;view.x=cx-view.w/2;clampView();applyView()});ro.observe(svg);
+renderMap();setHome();selectNode('web');
+const menuBtn=document.getElementById('menuBtn'),menu=document.getElementById('mobileMenu');if(menuBtn&&menu){menuBtn.addEventListener('click',()=>menu.classList.toggle('hidden'));menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.add('hidden')))}
+})();
+</script>
+</body>
+</html>

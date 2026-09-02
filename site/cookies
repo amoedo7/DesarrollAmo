@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Política de cookies — DesarrollAMO</title>
+<meta name="description" content="Política de cookies de DesarrollAMO: qué cookies usa este sitio, con qué finalidad y cómo gestionarlas." />
+<link rel="canonical" href="https://desarrollamo.com.ar/cookies" />
+<meta property="og:title" content="Política de cookies — DesarrollAMO" />
+<meta property="og:description" content="Política de cookies de DesarrollAMO: qué cookies usa este sitio, con qué finalidad y cómo gestionarlas." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://desarrollamo.com.ar/cookies" />
+<meta name="theme-color" content="#0b1020" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Crect width='64' height='48' rx='8' fill='%230b1020'/%3E%3Cpolygon points='8,40 20,16 32,40' fill='%237DD3FC'/%3E%3Cpolygon points='24,40 36,12 48,40' fill='%23FF77B4'/%3E%3Cpolygon points='40,40 52,20 60,40' fill='%23FF77B4'/%3E%3Ccircle cx='60' cy='26' r='9' fill='%23FFD166'/%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-500">
+
+<a href="#top" class="skip-link">Saltar al contenido</a>
+
+<!-- Logo SVG (idéntico al home) -->
+<svg width="0" height="0" style="position:absolute;left:-9999px;visibility:hidden" aria-hidden="true" focusable="false">
+<defs>
+<radialGradient id="amo-sun-grad" cx="50%" cy="60%" r="60%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="1" />
+<stop offset="60%" stop-color="#FF9F6E" stop-opacity="0.9" />
+<stop offset="100%" stop-color="#FF77B4" stop-opacity="0" />
+</radialGradient>
+<radialGradient id="amo-halo-grad" cx="50%" cy="65%" r="80%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="0.25"/>
+<stop offset="100%" stop-color="#FFD166" stop-opacity="0"/>
+</radialGradient>
+<filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+<feMerge>
+<feMergeNode in="blur"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+<symbol id="logo-desarrollamo" viewBox="0 0 80 48">
+<ellipse cx="68" cy="28" rx="11" ry="9" fill="url(#amo-halo-grad)"></ellipse>
+<circle cx="68" cy="26" r="9" fill="url(#amo-sun-grad)" filter="url(#soft-glow)"></circle>
+<polygon points="8,40 20,16 32,40" fill="#7DD3FC"/>
+<polygon points="24,40 36,12 48,40" fill="#FF77B4"/>
+<polygon points="40,40 52,20 60,40" fill="#FF77B4"/>
+<rect x="8" y="40" width="64" height="2" fill="rgba(255,255,255,0.15)"/>
+</symbol>
+</defs>
+</svg>
+
+<!-- Header (idéntico al home) -->
+<header class="fixed inset-x-0 top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/5 border-b border-white/10">
+<div class="max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
+<a href="https://desarrollamo.com.ar/" class="flex items-center gap-3" aria-label="Ir al inicio">
+<svg width="38" height="28" viewBox="0 0 64 48" class="drop-shadow" aria-hidden="true"><use href="#logo-desarrollamo"></use></svg>
+<span class="font-semibold tracking-tight"><span class="text-sky-300">Desarroll</span><span class="text-pink-400">AMO</span></span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Principal">
+<a class="hover:text-sky-300" href="/">Inicio</a>
+<a class="hover:text-sky-300" href="/servicios">Servicios</a>
+<a class="hover:text-sky-300" href="/galeria">Galería</a>
+<a class="hover:text-sky-300" href="/manifiesto">Manifiesto</a>
+<a class="hover:text-sky-300" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">Contacto</a>
+</nav>
+<button id="menuBtn" class="md:hidden px-3 py-2 border border-white/20 rounded-md">Menú</button>
+</div>
+<nav id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-black/50" aria-label="Principal móvil">
+<div class="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+<a class="px-3 py-2 rounded-md bg-white/10" href="/">Inicio</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/servicios">Servicios</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/galeria">Galería</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/manifiesto">Manifiesto</a>
+<a class="px-3 py-2 rounded-md bg-pink-500 text-white" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">Contacto</a>
+</div>
+</nav>
+</header>
+
+<main id="top" class="flex-grow pt-24"><div class="relative z-10 max-w-5xl mx-auto px-6 py-12 space-y-12">
+
+<section class="glass-bg rounded-3xl p-12 shadow-xl text-center">
+<h1 class="hero-title text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-sky-300">
+Política de cookies
+</h1>
+<p class="text-lg max-w-3xl mx-auto leading-relaxed text-gray-200/90">
+Resumen claro: este sitio usa muy pocas cookies y ninguna con fines publicitarios.
+</p>
+<p class="text-xs text-gray-300/70 mt-4">Última actualización: 20 de agosto de 2026.</p>
+</section>
+
+  <nav aria-label="Migas" class="text-sm text-gray-200/80 mb-6">
+    <a href="/" class="hover:text-sky-300">Inicio</a>
+    <span aria-hidden="true">›</span>
+    <a href="/faq" class="hover:text-sky-300">Ayuda</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page" class="text-gray-200">Cookies</span>
+  </nav>
+
+  <section id="resumen" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3 text-sky-300">Resumen rápido</h2>
+    <div class="p-5 rounded-xl bg-white/10 border border-white/10">
+      <ul class="space-y-2 text-gray-200">
+        <li><strong>Cookies propias:</strong> ninguna con fines de marketing. Solo cookies estrictamente necesarias si las requiere el funcionamiento técnico.</li>
+        <li><strong>Cookies de terceros:</strong> ninguna instalada por este sitio de forma directa. Proveedores externos (como Netlify o imgur) pueden tener las propias cuando el navegador hace una petición a sus recursos.</li>
+        <li><strong>Banner de consentimiento:</strong> no se muestra porque no se instalan cookies no esenciales. Si en el futuro se incorporara alguna que requiera consentimiento, esta página se actualiza y aparece el banner.</li>
+      </ul>
+    </div>
+  </section>
+
+  <nav class="toc mb-10 p-5 rounded-xl bg-white/10 border border-white/10" aria-label="Índice">
+    <h2 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-3">En esta página</h2>
+    <ol class="space-y-1 text-sm list-decimal pl-5">
+      <li><a href="#que-son">Qué son las cookies</a></li>
+      <li><a href="#auditoria">Auditoría real</a></li>
+      <li><a href="#estrictamente-necesarias">Cookies estrictamente necesarias</a></li>
+      <li><a href="#terceros">Cookies de terceros</a></li>
+      <li><a href="#consentimiento">¿Por qué no hay banner?</a></li>
+      <li><a href="#gestionar">Cómo gestionar las cookies en tu navegador</a></li>
+      <li><a href="#cambios">Cambios a esta política</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ol>
+  </nav>
+
+  <section id="que-son" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">1. Qué son las cookies</h2>
+    <p>Las cookies son pequeños archivos que un sitio web puede guardar en tu navegador para recordar información entre páginas o visitas. También existen tecnologías similares como <em>localStorage</em> o <em>sessionStorage</em>.</p>
+  </section>
+
+  <section id="auditoria" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">2. Auditoría real</h2>
+    <p>Auditoría técnica del sitio (desarrollamo.com.ar) a la fecha de esta política:</p>
+    <ul class="list-disc pl-6 space-y-1 mt-2">
+      <li>Sin scripts de Google Analytics, Plausible, Fathom u otros.</li>
+      <li>Sin píxeles de Meta, TikTok, LinkedIn u otros.</li>
+      <li>Sin chat en vivo con cookies de sesión.</li>
+      <li>Sin localStorage ni sessionStorage propio.</li>
+      <li>Sin formularios que persistan datos en el navegador.</li>
+      <li>Sin botones de compartir sociales que inyecten cookies (los enlaces son directos a Instagram, email y WhatsApp).</li>
+    </ul>
+    <p class="mt-3">Por eso no hay banner de cookies: no se instalan cookies no esenciales propias ni de terceros dentro del propio sitio.</p>
+  </section>
+
+  <section id="estrictamente-necesarias" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">3. Cookies estrictamente necesarias</h2>
+    <p>Netlify, como proveedor de hosting, puede establecer cookies técnicas para el funcionamiento de la red de distribución de contenido (CDN), autenticación de sesiones administrativas y protección contra abuso. Estas cookies no se usan para rastrear al visitante entre sitios.</p>
+    <p class="mt-3">Si en el futuro alguna funcionalidad del sitio requiriera una cookie estrictamente necesaria, se documenta acá.</p>
+  </section>
+
+  <section id="terceros" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">4. Cookies de terceros</h2>
+    <p>El home del sitio carga dos recursos externos que técnicamente pueden estar asociados a cookies del proveedor:</p>
+    <ul class="list-disc pl-6 space-y-1 mt-2">
+      <li><strong>Imgur</strong>: video de fondo (<code>i.imgur.com/ApmTXJL.mp4</code>) y foto de perfil (<code>i.imgur.com/DDdnPGd.png</code>). Imgur puede registrar la petición estándar del navegador.</li>
+      <li><strong>Tailwind CSS CDN</strong>: hoja de estilos. Es una solicitud de recurso estático y no ejecuta scripts de tracking.</li>
+    </ul>
+    <p class="mt-3">Estas integraciones podrían reemplazarse por recursos auto-hospedados si se quiere minimizar aún más la superficie de terceros.</p>
+  </section>
+
+  <section id="consentimiento" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">5. ¿Por qué no hay banner de consentimiento?</h2>
+    <p>La normativa argentina y los principios generalmente aplicables indican que <strong>no se requiere consentimiento</strong> cuando solo se utilizan cookies estrictamente necesarias para el funcionamiento del servicio solicitado por el usuario. Como este sitio no instala cookies de analítica, publicidad ni tracking social, no se muestra banner.</p>
+    <p class="mt-3">Si se incorpora alguna herramienta que sí requiera consentimiento (por ejemplo, un analytics que use cookies), esta página se actualiza y aparece el banner correspondiente con opciones de Aceptar, Rechazar y Configurar.</p>
+  </section>
+
+  <section id="gestionar" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">6. Cómo gestionar las cookies en tu navegador</h2>
+    <p>Podés configurar tu navegador para bloquear o eliminar cookies. Los pasos habituales:</p>
+    <ul class="list-disc pl-6 space-y-1 mt-2">
+      <li><strong>Chrome</strong>: Configuración → Privacidad y seguridad → Cookies y otros datos de sitios.</li>
+      <li><strong>Firefox</strong>: Preferencias → Privacidad y seguridad.</li>
+      <li><strong>Safari</strong>: Preferencias → Privacidad.</li>
+      <li><strong>Edge</strong>: Configuración → Cookies y permisos del sitio.</li>
+    </ul>
+    <p class="mt-3">Bloquear cookies puede afectar el funcionamiento de algunos sitios, incluido este.</p>
+  </section>
+
+  <section id="cambios" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">7. Cambios a esta política</h2>
+    <p>Esta política puede actualizarse. Si se incorpora alguna cookie o tecnología que requiera consentimiento, se actualiza esta página y aparece el banner correspondiente.</p>
+  </section>
+
+  <section id="contacto" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">8. Contacto</h2>
+    <ul class="space-y-2 text-gray-200 mt-3">
+      <li><strong>Email:</strong> <a class="text-sky-300 hover:underline" href="mailto:desarrollamoficial@gmail.com">desarrollamoficial@gmail.com</a></li>
+      <li><strong>Instagram:</strong> <a class="text-sky-300 hover:underline" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">@desarrollamoficial</a></li>
+    </ul>
+  </section>
+
+</div></main>
+
+<!-- footer replaced -->
+
+<script>
+document.documentElement.classList.add('dark');
+const btn=document.getElementById('menuBtn');const menu=document.getElementById('mobileMenu');if(btn&&menu){function toggleMenu(){const nowHidden=menu.classList.toggle('hidden');btn.setAttribute('aria-expanded',String(!nowHidden));}btn.addEventListener('click',toggleMenu);menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(!menu.classList.contains('hidden'))toggleMenu();}));}
+</script>
+
+
+
+<style>
+.amo-footer{
+  position: relative;
+  z-index: 999;
+  padding: 16px 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.58);
+  color: rgba(229,231,235,.95);
+  border-top: 1px solid rgba(255,255,255,.14);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: light){
+  .amo-footer{
+    background: rgba(255,255,255,.78);
+    color: rgba(17,24,39,.92);
+    border-top: 1px solid rgba(0,0,0,.10);
+  }
+}
+.amo-footer-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.amo-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  color: inherit;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.amo-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.22);
+}
+.amo-sky{ color:#7DD3FC; }
+.amo-pink{ color:#FF5AA5; }
+.amo-year{ opacity:.75; }
+.amo-legal{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
+  font-size: 12px;
+}
+.amo-legal a{
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+.amo-legal a:hover{ opacity: 1; border-bottom-color: rgba(229,231,235,.4); }
+</style>
+<footer class="amo-footer">
+<div class="amo-footer-inner">
+<a class="amo-link" href="/" target="_blank" rel="noopener noreferrer">
+<span class="amo-logo" aria-hidden="true">
+<svg width="30" height="22" viewBox="0 0 78 48" style="display:block">
+<polygon points="8,40 20,16 32,40" fill="#7DD3FC"></polygon>
+<polygon points="24,40 36,12 48,40" fill="#FF5AA5"></polygon>
+<polygon points="40,40 52,20 60,40" fill="#FF5AA5"></polygon>
+<circle cx="69" cy="29" r="10.5" fill="#FFD166" opacity="0.16"></circle>
+<circle cx="69" cy="29" r="7.8"  fill="#FFD166"></circle>
+</svg>
+</span>
+<span class="amo-brand">
+<span class="amo-sky">Desarroll</span><span class="amo-pink">AMO</span><span class="amo-sky">.</span>
+</span>
+</a>
+<span class="amo-year">© <span id="amoYear"></span></span>
+<nav class="amo-legal" aria-label="Enlaces legales y de ayuda">
+<a href="/faq">FAQ</a>
+<a href="/terms">Términos</a>
+<a href="/privacy">Privacidad</a>
+<a href="/cookies">Cookies</a>
+<a href="/payments">Pagos</a>
+<a href="/licenses">Licencias</a>
+</nav>
+</div>
+<script>document.getElementById('amoYear').textContent = new Date().getFullYear();</script>
+</footer>
+</body>
+</html>

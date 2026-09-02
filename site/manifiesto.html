@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Manifiesto — DesarrollAMO</title>
+<meta name="description" content="Framework operativo de DesarrollAMO. Un sistema abierto de evolucion constante."/>
+<link rel="canonical" href="manifiesto.html"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Crect width='64' height='48' rx='8' fill='%230b1020'/%3E%3Cpolygon points='8,40 20,16 32,40' fill='%237DD3FC'/%3E%3Cpolygon points='24,40 36,12 48,40' fill='%23FF77B4'/%3E%3Cpolygon points='40,40 52,20 60,40' fill='%23FF77B4'/%3E%3Ccircle cx='60' cy='26' r='9' fill='%23FFD166'/%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+document.documentElement.classList.add('dark');
+</script>
+
+<!-- SVG Logo Symbol (same as home) -->
+<svg width="0" height="0" style="position:absolute;left:-9999px;visibility:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="amo-sun-grad" cx="50%" cy="60%" r="60%">
+      <stop offset="0%" stop-color="#FFD166" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#FF9F6E" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FF77B4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="amo-halo-grad" cx="50%" cy="65%" r="80%">
+      <stop offset="0%" stop-color="#FFD166" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FFD166" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      @keyframes sunriseShift {
+        0% { transform: translateY(6px); opacity: .85 }
+        100% { transform: translateY(0); opacity: 1 }
+      }
+      .amo-sunrise { transform-origin: 50% 70%; animation: sunriseShift 5s ease-out forwards }
+      @media (prefers-reduced-motion: reduce) { .amo-sunrise { animation: none } }
+    </style>
+  </defs>
+  <symbol id="logo-desarrollamo" viewBox="0 0 80 48">
+    <ellipse cx="68" cy="28" rx="11" ry="9" fill="url(#amo-halo-grad)" class="amo-sunrise"/>
+    <circle cx="68" cy="26" r="9" fill="url(#amo-sun-grad)" filter="url(#soft-glow)" class="amo-sunrise"/>
+    <polygon points="8,40 20,16 32,40" fill="#7DD3FC"/>
+    <polygon points="24,40 36,12 48,40" fill="#FF77B4"/>
+    <polygon points="40,40 52,20 60,40" fill="#FF77B4"/>
+    <rect x="8" y="40" width="64" height="2" fill="rgba(255,255,255,0.15)"/>
+  </symbol>
+</svg>
+
+<style>
+/* Glassmorphism — same as home */
+.glass-bg{background:rgba(255,255,255,.1);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border:1px solid rgba(255,255,255,.1)}
+
+/* Fade-in animations */
+
+/* Nav — same as home */
+header.fixed{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(11,16,32,.7);border-bottom:1px solid rgba(255,255,255,.08)}
+
+/* Body matching home */
+body{background:#0B1020;color:#E8ECF7;font-family:'Inter',system-ui,sans-serif}
+
+/* Tipografía — más presencia */
+h1{font-size:clamp(3rem,5vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:700;line-height:1.15}
+
+/* Cards — glass morphism estilo home */
+.card-glass{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:1.5rem;transition:all .3s ease}
+.card-glass:hover{border-color:rgba(124,211,252,.25);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+
+/* Accent text */
+.text-sky{color:#7DD3FC}
+.text-pink{color:#FF77B4}
+.text-orange{color:#FFD166}
+.text-muted{color:rgba(232,236,247,.45)}
+
+/* Botones — matching home */
+.btn-pink{background:linear-gradient(135deg,#FF77B4,#E8478b);color:#fff;padding:.75rem 2rem;border-radius:9999px;font-weight:600;transition:all .3s;display:inline-block;text-base;box-shadow:0 4px 20px rgba(232,71,139,.35)}
+.btn-pink:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 8px 30px rgba(232,71,139,.5)}
+
+.btn-sky{background:rgba(125,211,252,.15);color:#7DD3FC;padding:.75rem 2rem;border-radius:9999px;font-weight:600;transition:all .3s;display:inline-block;text-base;border:1px solid rgba(125,211,252,.3)}
+.btn-sky:hover{background:rgba(125,211,252,.25);transform:translateY(-2px)}
+
+/* Dividers */
+.divider{width:60px;height:3px;background:linear-gradient(90deg,#7DD3FC,#FF77B4);margin:0 auto;border-radius:99px}
+
+/* Accent words in text */
+.accent-cyan{color:#7DD3FC;font-weight:600}
+.accent-pink{color:#FF77B4;font-weight:600}
+
+/* Scroll behavior */
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+<!-- Video fondo / overlay (mismo estilo home) -->
+<video autoplay muted loop playsinline class="fixed inset-0 w-full h-full object-cover brightness-30 z-0 pointer-events-none">
+  <source src="https://i.imgur.com/ApmTXJL.mp4" type="video/mp4"/>
+</video>
+<div class="fixed inset-0 bg-gradient-to-b from-[#0B1020]/60 via-transparent to-[#0B1020]/80 z-0 pointer-events-none"></div>
+
+<!-- HEADER — mismo estilo home -->
+<header class="fixed inset-x-0 top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/5 border-b border-white/10">
+<div class="max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
+<a href="https://desarrollamo.com.ar/" class="flex items-center gap-3" aria-label="Ir al inicio">
+<svg width="38" height="28" viewBox="0 0 64 48" class="drop-shadow" aria-hidden="true"><use href="#logo-desarrollamo"></use></svg>
+<span class="font-semibold tracking-tight"><span class="text-sky-300">Desarroll</span><span class="text-pink-400">AMO</span></span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Principal">
+<a class="hover:text-sky-300" href="/">Inicio</a>
+<a class="hover:text-sky-300" href="/servicios">Servicios</a>
+<a class="hover:text-sky-300" href="/galeria">Galería</a>
+<a class="hover:text-sky-300" href="/manifiesto">Manifiesto</a>
+<a class="hover:text-sky-300" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">Contacto</a>
+</nav>
+<button id="menuBtn" class="md:hidden px-3 py-2 border border-white/20 rounded-md">Menú</button>
+</div>
+<nav id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-black/50" aria-label="Principal móvil">
+<div class="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+<a class="px-3 py-2 rounded-md bg-white/10" href="/">Inicio</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/servicios">Servicios</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/galeria">Galería</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/manifiesto">Manifiesto</a>
+<a class="px-3 py-2 rounded-md bg-pink-500 text-white" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">Contacto</a>
+</div>
+</nav>
+</header>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main class="flex-grow pt-24 relative z-10">
+
+  <!-- HERO — Sección 0 / Portada -->
+  <section class="min-h-[70vh] flex flex-col justify-center items-center text-center px-6 py-20">
+    <div class="glass-bg rounded-3xl p-10 md:p-16 shadow-2xl max-w-3xl w-full">
+      <svg viewBox="0 0 80 48" class="mb-8 w-40 md:w-56 mx-auto drop-shadow" aria-hidden="true" focusable="false">
+        <use href="#logo-desarrollamo"/>
+      </svg>
+      <p class="text-xs tracking-[.3em] uppercase text-sky mb-6">DesarrollAMO.Manifiesto</p>
+      <h1 class="mb-6 text-white">
+        Tecnología con <span class="text-pink">alma</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-muted leading-relaxed max-w-xl mx-auto">
+        Construimos soluciones simples, poderosas y accesibles para que más personas conviertan sus ideas en realidad.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+        <a href="#manifiesto" class="btn-sky">Leer Manifiesto</a>
+        <a href="#sumarse" class="btn-pink">Sumarse</a>
+      </div>
+      <div class="divider mt-10"></div>
+    </div>
+  </section>
+
+  <!-- 1. APERTURA INSPIRADORA -->
+  <section class="px-6 py-20" id="manifiesto">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs tracking-[.3em] uppercase text-sky text-center mb-4">01 — Apertura inspiradora</p>
+      <div class="glass-bg rounded-3xl p-10 md:p-14 shadow-xl">
+        <h2 class="text-white mb-6 text-center">
+          Desarroll<span class="text-pink">AMO</span> no nace para seguir tendencias, <span class="text-orange">nace para crearlas.</span>
+        </h2>
+        <p class="text-lg text-gray-200 leading-relaxed text-center">
+          Somos el puente entre tu idea y su realización, el impulso que convierte sueños en realidades digitales.
+        </p>
+        <div class="divider mt-10 mb-6"></div>
+        <div class="flex flex-col md:flex-row gap-4 justify-center text-center">
+          <div class="card-glass p-5 flex-1">
+            <p class="text-sky font-semibold text-sm uppercase tracking-wider mb-1">Comunidad creativa</p>
+            <p class="text-muted text-sm">Juntos hacemos más</p>
+          </div>
+          <div class="card-glass p-5 flex-1">
+            <p class="text-pink font-semibold text-sm uppercase tracking-wider mb-1">Comunidad en movimiento</p>
+            <p class="text-muted text-sm">Siempre evolucionando</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. EL CONTEXTO — POR QUÉ EXISTIMOS -->
+  <section class="px-6 py-20">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs tracking-[.3em] uppercase text-sky text-center mb-4">02 — El contexto — Por qué existimos</p>
+      <div class="glass-bg rounded-3xl p-10 md:p-14 shadow-xl mb-6">
+        <p class="text-lg md:text-xl text-gray-200 leading-relaxed text-center mb-8">
+          La tecnología promete facilitar, pero a menudo complica. Se vuelve exclusiva, llena de jerga, interfaces hostiles y procesos interminables. Las buenas ideas quedan atrapadas en un <span class="text-orange font-semibold">"algún día"</span>.
+        </p>
+        <div class="divider mb-8"></div>
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <span class="text-pink text-xl mt-0.5">✗</span>
+            <p class="text-gray-200 text-base"><span class="text-white font-semibold">Fricción innecesaria:</span> flujos confusos, datos dispersos, herramientas que no conversan.</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="text-pink text-xl mt-0.5">✗</span>
+            <p class="text-gray-200 text-base"><span class="text-white font-semibold">Elitismo tecnológico:</span> soluciones diseñadas para devs, no para personas.</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="text-pink text-xl mt-0.5">✗</span>
+            <p class="text-gray-200 text-base"><span class="text-white font-semibold">Pérdida de tiempo:</span> lo que debería automatizarse, no se automatiza.</p>
+          </div>
+        </div>
+        <div class="divider mt-8 mb-6"></div>
+        <p class="text-center text-muted text-base italic">
+          DesarrollAMO existe para revertir esa inercia.
+        </p>
+      </div>
+      <div class="card-glass p-8 text-center">
+        <p class="text-sky text-2xl font-bold mb-2">Tecnología enfocada en personas</p>
+        <p class="text-muted text-sm">Esa es nuestra bandera</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. LO QUE DEFENDEMOS — NUESTROS PRINCIPIOS -->
+  <section class="px-6 py-20">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs tracking-[.3em] uppercase text-sky text-center mb-4">03 — Lo que defendemos — Nuestros principios</p>
+      <h2 class="text-white mb-10 text-center">Nuestros <span class="text-pink">principios</span></h2>
+      <div class="space-y-5">
+        <div class="card-glass p-7 flex items-start gap-5">
+          <span class="text-orange text-2xl mt-0.5">💡</span>
+          <div>
+            <p class="text-white font-semibold text-lg mb-1">Simplicidad</p>
+            <p class="text-muted">La máxima sofisticación es hacer las cosas fáciles.</p>
+          </div>
+        </div>
+        <div class="card-glass p-7 flex items-start gap-5">
+          <span class="text-pink text-2xl mt-0.5">🤝</span>
+          <div>
+            <p class="text-white font-semibold text-lg mb-1">Tecnología humana</p>
+            <p class="text-muted">Al servicio de las personas, no por encima de ellas.</p>
+          </div>
+        </div>
+        <div class="card-glass p-7 flex items-start gap-5">
+          <span class="text-sky text-2xl mt-0.5">🌍</span>
+          <div>
+            <p class="text-white font-semibold text-lg mb-1">Accesibilidad</p>
+            <p class="text-muted">La innovación no debe ser un privilegio, debe ser un derecho.</p>
+          </div>
+        </div>
+        <div class="card-glass p-7 flex items-start gap-5">
+          <span class="text-orange text-2xl mt-0.5">🧩</span>
+          <div>
+            <p class="text-white font-semibold text-lg mb-1">Colaboración</p>
+            <p class="text-muted">Juntos creamos más y mejor.</p>
+          </div>
+        </div>
+        <div class="card-glass p-7 flex items-start gap-5">
+          <span class="text-pink text-2xl mt-0.5">🧭</span>
+          <div>
+            <p class="text-white font-semibold text-lg mb-1">Adaptabilidad</p>
+            <p class="text-muted">Cada idea es única y merece una solución a su medida.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. NUESTRA VISIÓN Y PROPÓSITO -->
+  <section class="px-6 py-20">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs tracking-[.3em] uppercase text-sky text-center mb-4">04 — Nuestra visión y propósito</p>
+      <div class="glass-bg rounded-3xl p-10 md:p-14 shadow-xl text-center mb-6">
+        <h2 class="text-white mb-6">
+          De la idea a la <span class="text-pink">realidad</span>
+        </h2>
+        <p class="text-lg text-gray-200 leading-relaxed mb-8 max-w-2xl mx-auto">
+          Un mundo donde cualquiera pueda transformar una idea en una solución real, con herramientas comprensibles, útiles y sostenibles. No hacemos tecnología para presumirla: <span class="accent-cyan">la hacemos para usarla.</span>
+        </p>
+        <div class="divider mb-8"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="card-glass p-6 text-center">
+            <p class="text-orange text-2xl font-bold mb-2">↑</p>
+            <p class="text-sky font-semibold text-sm mb-1">Velocidad de prototipado</p>
+            <p class="text-muted text-xs">t → valor entregado ↑</p>
+          </div>
+          <div class="card-glass p-6 text-center">
+            <p class="text-pink text-2xl font-bold mb-2">↓</p>
+            <p class="text-sky font-semibold text-sm mb-1">Complejidad → Simplicidad</p>
+            <p class="text-muted text-xs">reducción de fricción</p>
+          </div>
+          <div class="card-glass p-6 text-center">
+            <p class="text-sky text-2xl font-bold mb-2">{ }</p>
+            <p class="text-sky font-semibold text-sm mb-1">Adaptive JSON</p>
+            <p class="text-muted text-xs">estructura flexible • crecimiento</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. NUESTRO MÉTODO -->
+  <section class="px-6 py-20">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs tracking-[.3em] uppercase text-sky text-center mb-4">05 — Nuestro método</p>
+      <h2 class="text-white mb-10 text-center">Cómo <span class="text-pink">operamos</span></h2>
+      <div class="space-y-5">
+        <div class="card-glass p-7 flex items-start gap-5">
+          <span class="accent-cyan text-2xl font-bold mt-0.5">01</span>
+          <div>
+            <p class="text-white font-semibold text-lg mb-1">Escuchar y mapear</p>
+            <p class="text-muted">Entendemos contexto, datos y objetivo.</p>
+          </div>
+        </div>
+        <div class="card-glass p-7 flex items-start gap-5">
+          <span class="accent-cyan text-2xl font-bold mt-0.5">02</span>
+          <div>
+            <p class="text-white font-semibold text-lg mb-1">Prototipo rápido</p>
+            <p class="text-muted">Probamos con usuarios reales.</p>
+          </div>
+        </div>
+        <div class="card-glass p-7 flex items-start gap-5">
+          <span class="accent-cyan text-2xl font-bold mt-0.5">03</span>
+          <div>
+            <p class="text-white font-semibold text-lg mb-1">Iteración guiada por datos</p>
+            <p class="text-muted">Medimos y ajustamos.</p>
+          </div>
+        </div>
+        <div class="card-glass p-7 flex items-start gap-5">
+          <span class="accent-cyan text-2xl font-bold mt-0.5">04</span>
+          <div>
+            <p class="text-white font-semibold text-lg mb-1">Entrega continua</p>
+            <p class="text-muted">Valor usable desde el día 1.</p>
+          </div>
+        </div>
+        <div class="card-glass p-7 flex items-start gap-5">
+          <span class="accent-cyan text-2xl font-bold mt-0.5">05</span>
+          <div>
+            <p class="text-white font-semibold text-lg mb-1">Documentación simple</p>
+            <p class="text-muted">Que cualquiera pueda continuar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PILARES -->
+  <section class="px-6 py-20">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs tracking-[.3em] uppercase text-sky text-center mb-4">06 — Pilares</p>
+      <h2 class="text-white mb-10 text-center">Lo que nos <span class="text-orange">sostiene</span></h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-glass p-8 text-center">
+          <p class="text-sky text-3xl mb-4">⚙️</p>
+          <h3 class="text-white font-bold text-lg mb-3">Simplicidad funcional</h3>
+          <p class="text-muted text-sm leading-relaxed">Cada clic tiene un porqué. Nada sobra.</p>
+        </div>
+        <div class="card-glass p-8 text-center">
+          <p class="text-pink text-3xl mb-4">♿</p>
+          <h3 class="text-white font-bold text-lg mb-3">Accesibilidad real</h3>
+          <p class="text-muted text-sm leading-relaxed">Interfaces claras, lenguaje sin jerga y guías prácticas.</p>
+        </div>
+        <div class="card-glass p-8 text-center">
+          <p class="text-orange text-3xl mb-4">📈</p>
+          <h3 class="text-white font-bold text-lg mb-3">Escalabilidad humana</h3>
+          <p class="text-muted text-sm leading-relaxed">Sistemas que crecen al ritmo de las personas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. NUESTROS COMPROMISOS -->
+  <section class="px-6 py-20">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs tracking-[.3em] uppercase text-sky text-center mb-4">07 — Nuestros compromisos</p>
+      <h2 class="text-white mb-10 text-center">Con lo que <span class="text-sky">contamos</span></h2>
+      <div class="glass-bg rounded-3xl p-10 shadow-xl">
+        <div class="space-y-6">
+          <div class="flex items-start gap-5">
+            <span class="text-sky text-xl mt-0.5">→</span>
+            <p class="text-gray-100 font-medium text-base"><span class="text-white font-semibold">Transparencia en decisiones:</span> explicamos el porqué detrás del cómo.</p>
+          </div>
+          <div class="flex items-start gap-5">
+            <span class="text-sky text-xl mt-0.5">→</span>
+            <p class="text-gray-100 font-medium text-base"><span class="text-white font-semibold">Propiedad de tus datos:</span> estructuras abiertas, exportables.</p>
+          </div>
+          <div class="flex items-start gap-5">
+            <span class="text-sky text-xl mt-0.5">→</span>
+            <p class="text-gray-100 font-medium text-base"><span class="text-white font-semibold">Tiempo bien invertido:</span> automatizamos lo repetitivo.</p>
+          </div>
+          <div class="flex items-start gap-5">
+            <span class="text-sky text-xl mt-0.5">→</span>
+            <p class="text-gray-100 font-medium text-base"><span class="text-white font-semibold">Diseño responsable:</span> accesible, inclusivo y útil.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. DEMOS RÁPIDAS -->
+  <section class="px-6 py-20">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs tracking-[.3em] uppercase text-sky text-center mb-4">08 — Demos rápidas</p>
+      <h2 class="text-white mb-10 text-center">Lo que <span class="text-pink">hacemos</span></h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-glass p-8 text-center">
+          <p class="text-3xl mb-4">💬</p>
+          <h3 class="text-white font-bold text-lg mb-2">Chatbot Krow</h3>
+          <p class="text-muted text-sm mb-4 leading-relaxed">Respuestas útiles desde JSON local. UX simple.</p>
+          <a href="/" class="btn-sky text-sm py-2 px-5">Ver más</a>
+        </div>
+        <div class="card-glass p-8 text-center">
+          <p class="text-3xl mb-4">🐄</p>
+          <h3 class="text-white font-bold text-lg mb-2">Gestor Ganadero</h3>
+          <p class="text-muted text-sm mb-4 leading-relaxed">Datos parentales, campos extra y vistas claras.</p>
+          <a href="/" class="btn-sky text-sm py-2 px-5">Ver más</a>
+        </div>
+        <div class="card-glass p-8 text-center">
+          <p class="text-3xl mb-4">📊</p>
+          <h3 class="text-white font-bold text-lg mb-2">KrowStation</h3>
+          <p class="text-muted text-sm mb-4 leading-relaxed">Orden y precios desde planillas desprolijas.</p>
+          <a href="/" class="btn-sky text-sm py-2 px-5">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. PREGUNTAS FRECUENTES -->
+  <section class="px-6 py-20">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs tracking-[.3em] uppercase text-sky text-center mb-4">09 — Preguntas frecuentes</p>
+      <h2 class="text-white mb-10 text-center"><span class="text-orange">FAQ</span></h2>
+      <div class="space-y-4">
+        <div class="card-glass p-7">
+          <p class="text-sky font-semibold text-base mb-2">¿Necesito saber programar?</p>
+          <p class="text-muted text-sm">No. Diseñamos para personas, no para desarrolladores. El código es nuestro trabajo, no el tuyo.</p>
+        </div>
+        <div class="card-glass p-7">
+          <p class="text-sky font-semibold text-base mb-2">¿Cómo evitamos quedar atados?</p>
+          <p class="text-muted text-sm">Estructuras abiertas y exportables. Tus datos son tuyos siempre. Sin vendor lock-in.</p>
+        </div>
+        <div class="card-glass p-7">
+          <p class="text-sky font-semibold text-base mb-2">¿En cuánto tiempo veo algo funcionando?</p>
+          <p class="text-muted text-sm">Valor usable desde el día 1. Prototipamos rápido y entregamos continuo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CIERRE Y LLAMADO -->
+  <section class="px-6 py-20" id="sumarse">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="glass-bg rounded-3xl p-12 md:p-16 shadow-2xl">
+        <h2 class="text-white mb-6">
+          No solo desarrollamos sistemas.<br>
+          <span class="text-pink">Desarrollamos posibilidades.</span>
+        </h2>
+        <p class="text-lg text-gray-200 leading-relaxed mb-8 max-w-xl mx-auto">
+          No importa si empezás con hoja en blanco o con caos de datos: en DesarrollAMO le damos forma, orden y vida. Convertimos lo complicado en claro, lo lento en rápido, lo imposible en usable.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a href="/" class="btn-pink">Quiero crear con DesarrollAMO</a>
+          <a href="#manifiesto" class="btn-sky">Ver principios</a>
+        </div>
+        <div class="divider mb-8"></div>
+        <h3 class="text-white font-bold text-lg mb-4">Contacto</h3>
+        <p class="text-muted text-sm mb-4">Contactanos por Instagram:</p>
+        <p class="text-sky font-semibold text-base mb-2">📷 Instagram: @desarrollamoficial</p>
+        <p class="text-muted text-xs mb-8">Política de respuesta: priorizamos perfiles reales. Si detectamos que un perfil es falso, no respondemos.</p>
+        <div class="divider mb-6"></div>
+        <p class="text-muted text-xs">Página desarrollada por <a href="/" class="text-sky hover:opacity-75 transition">DesarrollAMO</a>. © 2026</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER — mismo que home -->
+
+
+
+<!-- Animaciones fade-in -->
+<script>
+</script>
+
+<style>
+.amo-footer{
+  position: relative;
+  z-index: 999;
+  padding: 16px 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.58);
+  color: rgba(229,231,235,.95);
+  border-top: 1px solid rgba(255,255,255,.14);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: light){
+  .amo-footer{
+    background: rgba(255,255,255,.78);
+    color: rgba(17,24,39,.92);
+    border-top: 1px solid rgba(0,0,0,.10);
+  }
+}
+.amo-footer-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.amo-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  color: inherit;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.amo-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.22);
+}
+.amo-sky{ color:#7DD3FC; }
+.amo-pink{ color:#FF5AA5; }
+.amo-year{ opacity:.75; }
+.amo-legal{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
+  font-size: 12px;
+}
+.amo-legal a{
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+.amo-legal a:hover{ opacity: 1; border-bottom-color: rgba(229,231,235,.4); }
+</style>
+<footer class="amo-footer">
+<div class="amo-footer-inner">
+<a class="amo-link" href="/" target="_blank" rel="noopener noreferrer">
+<span class="amo-logo" aria-hidden="true">
+<svg width="30" height="22" viewBox="0 0 78 48" style="display:block">
+<polygon points="8,40 20,16 32,40" fill="#7DD3FC"></polygon>
+<polygon points="24,40 36,12 48,40" fill="#FF5AA5"></polygon>
+<polygon points="40,40 52,20 60,40" fill="#FF5AA5"></polygon>
+<circle cx="69" cy="29" r="10.5" fill="#FFD166" opacity="0.16"></circle>
+<circle cx="69" cy="29" r="7.8"  fill="#FFD166"></circle>
+</svg>
+</span>
+<span class="amo-brand">
+<span class="amo-sky">Desarroll</span><span class="amo-pink">AMO</span><span class="amo-sky">.</span>
+</span>
+</a>
+<span class="amo-year">© <span id="amoYear"></span></span>
+<nav class="amo-legal" aria-label="Enlaces legales y de ayuda">
+<a href="/faq">FAQ</a>
+<a href="/terms">Términos</a>
+<a href="/privacy">Privacidad</a>
+<a href="/cookies">Cookies</a>
+<a href="/payments">Pagos</a>
+<a href="/licenses">Licencias</a>
+</nav>
+</div>
+<script>document.getElementById('amoYear').textContent = new Date().getFullYear();</script>
+</footer>
+</body>
+</html>

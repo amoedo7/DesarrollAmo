@@ -1,0 +1,484 @@
+<!DOCTYPE html><html lang="es" class="scroll-smooth"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Galería · DesarrollAMO</title>
+<meta name="description" content="Portfolio de DesarrollAMO: webs de clientes, CVs online, imágenes IA, aplicaciones y herramientas."><link rel="canonical" href="/galeria">
+<script src="https://cdn.tailwindcss.com"></script><link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Crect width='64' height='48' rx='8' fill='%230b1020'/%3E%3Cpolygon points='8,40 20,16 32,40' fill='%237DD3FC'/%3E%3Cpolygon points='24,40 36,12 48,40' fill='%23FF77B4'/%3E%3Cpolygon points='40,40 52,20 60,40' fill='%23FF77B4'/%3E%3Ccircle cx='60' cy='26' r='9' fill='%23FFD166'/%3E%3C/svg%3E" rel="icon"/><link rel="stylesheet" href="/static/galeria.css"><style>
+.amo-footer{
+  position: relative;
+  z-index: 999;
+  padding: 16px 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.58);
+  color: rgba(229,231,235,.95);
+  border-top: 1px solid rgba(255,255,255,.14);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: light){
+  .amo-footer{
+    background: rgba(255,255,255,.78);
+    color: rgba(17,24,39,.92);
+    border-top: 1px solid rgba(0,0,0,.10);
+  }
+}
+.amo-footer-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.amo-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  color: inherit;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.amo-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.22);
+}
+.amo-sky{ color:#7DD3FC; }
+.amo-pink{ color:#FF5AA5; }
+.amo-year{ opacity:.75; }
+.amo-legal{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
+  font-size: 12px;
+}
+.amo-legal a{
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+.amo-legal a:hover{ opacity: 1; border-bottom-color: rgba(229,231,235,.4); }
+</style>
+<link rel="stylesheet" href="/static/site-global.css"></head><body class="gallery-page"><svg aria-hidden="true" focusable="false" height="0" style="position:absolute;left:-9999px;visibility:hidden" width="0">
+<defs>
+<!-- Gradiente del sol -->
+<radialgradient cx="50%" cy="60%" id="amo-sun-grad" r="60%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="1"></stop>
+<stop offset="60%" stop-color="#FF9F6E" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#FF77B4" stop-opacity="0"></stop>
+</radialgradient>
+<!-- Halo suave -->
+<radialgradient cx="50%" cy="65%" id="amo-halo-grad" r="80%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#FFD166" stop-opacity="0"></stop>
+</radialgradient>
+<!-- Glow -->
+<filter height="200%" id="soft-glow" width="200%" x="-50%" y="-50%">
+<fegaussianblur in="SourceGraphic" result="blur" stddeviation="4"></fegaussianblur>
+<femerge>
+<femergenode in="blur"></femergenode>
+<femergenode in="SourceGraphic"></femergenode>
+</femerge>
+</filter>
+<style>
+      @keyframes sunriseShift {
+        0% { transform: translateY(6px); opacity: .85 }
+        100% { transform: translateY(0); opacity: 1 }
+      }
+      .amo-sunrise {
+        transform-origin: 50% 70%;
+        animation: sunriseShift 5s ease-out forwards
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .amo-sunrise { animation: none }
+      }
+    </style>
+</defs>
+<!-- LOGO A-M-O -->
+<symbol id="logo-desarrollamo" viewbox="0 0 80 48">
+<!-- Sol (O) con halo -->
+<ellipse class="amo-sunrise" cx="68" cy="28" fill="url(#amo-halo-grad)" rx="11" ry="9"></ellipse>
+<circle class="amo-sunrise" cx="68" cy="26" fill="url(#amo-sun-grad)" filter="url(#soft-glow)" r="9"></circle>
+<!-- Pirámide A (izquierda, celeste marca EXACTO: #7DD3FC) -->
+<polygon fill="#7DD3FC" points="8,40 20,16 32,40"></polygon>
+<!-- Pirámides M (rosas) -->
+<polygon fill="#FF77B4" points="24,40 36,12 48,40"></polygon>
+<polygon fill="#FF77B4" points="40,40 52,20 60,40"></polygon>
+<!-- Base -->
+<rect fill="rgba(255,255,255,0.15)" height="2" width="64" x="8" y="40"></rect>
+</symbol>
+</svg><header class="fixed inset-x-0 top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/5 border-b border-white/10">
+<div class="max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
+<a aria-label="Ir al inicio" class="flex items-center gap-3" href="https://desarrollamo.com.ar/">
+<svg aria-hidden="true" class="drop-shadow" height="28" viewbox="0 0 64 48" width="38"><use href="#logo-desarrollamo"></use></svg>
+<span class="font-semibold tracking-tight"><span class="text-sky-300">Desarroll</span><span class="text-pink-400">AMO</span></span>
+</a>
+<nav aria-label="Principal" class="hidden md:flex items-center gap-6 text-sm">
+<a class="hover:text-sky-300" href="/">Inicio</a>
+<a class="hover:text-sky-300" href="/servicios">Servicios</a>
+<a aria-current="page" class="hover:text-sky-300" href="/galeria">Galería</a>
+<a class="hover:text-sky-300" href="/manifiesto">Manifiesto</a>
+<a class="hover:text-sky-300" href="https://www.instagram.com/desarrollamoficial" rel="noopener noreferrer" target="_blank">Contacto</a>
+</nav>
+<button class="md:hidden px-3 py-2 border border-white/20 rounded-md" id="menuBtn">Menú</button>
+</div>
+<nav aria-label="Principal móvil" class="hidden md:hidden border-t border-white/10 bg-black/50" id="mobileMenu">
+<div class="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+<a class="px-3 py-2 rounded-md bg-white/10" href="/">Inicio</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/servicios">Servicios</a>
+<a aria-current="page" class="px-3 py-2 rounded-md bg-white/10" href="/galeria">Galería</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/manifiesto">Manifiesto</a>
+<a class="px-3 py-2 rounded-md bg-pink-500 text-white" href="https://www.instagram.com/desarrollamoficial" rel="noopener noreferrer" target="_blank">Contacto</a>
+</div>
+</nav>
+</header>
+<main class="profile-shell">
+<section class="profile-top" aria-labelledby="profileName"><div class="brand-avatar"><div class="brand-avatar__inside"><svg width="88" height="62" viewBox="0 0 80 48" aria-label="Logo DesarrollAMO"><use href="#logo-desarrollamo"></use></svg></div></div>
+<div><div class="profile-id"><h1 id="profileName">desarrollamoficial</h1><span class="verified" aria-label="Perfil oficial">✓</span><div class="profile-actions"><a class="primary" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener">Contacto</a><a href="/servicios">Servicios</a></div></div>
+<div class="profile-stats"><span><strong>20</strong> webs</span><span><strong>6</strong> CVs</span><span><strong>15</strong> imágenes IA históricas</span></div>
+<div class="profile-bio"><strong>DesarrollAMO</strong><br><span class="tagline">Ideas → tecnología. Diseño, web, automatización e IA con trabajo real detrás.</span><br>Portfolio de clientes y laboratorio creativo · Rosario / mundo.</div></div></section>
+<section class="highlights" aria-label="Filtrar galería"><button class="highlight is-active" type="button" data-filter="all"><span class="highlight-ring"><span class="highlight-core">▦</span></span><span>Todo</span></button><button class="highlight" type="button" data-filter="web"><span class="highlight-ring"><span class="highlight-core">W</span></span><span>Webs</span></button><button class="highlight" type="button" data-filter="cv"><span class="highlight-ring"><span class="highlight-core">CV</span></span><span>CVs</span></button><button class="highlight" type="button" data-filter="ia"><span class="highlight-ring"><span class="highlight-core">✦</span></span><span>IA</span></button><button class="highlight" type="button" data-filter="app"><span class="highlight-ring"><span class="highlight-core">A</span></span><span>Apps</span></button><button class="highlight" type="button" data-filter="tool"><span class="highlight-ring"><span class="highlight-core">⌘</span></span><span>Scripts</span></button><button class="highlight" type="button" data-filter="brand"><span class="highlight-ring"><span class="highlight-core">AMO</span></span><span>Marca</span></button></section>
+<div class="gallery-bar"><div class="gallery-tabs"><span>▦ PUBLICACIONES</span><span>PORTFOLIO</span></div><label class="gallery-search" aria-label="Buscar"><input id="gallerySearch" type="search" placeholder="Buscar…" autocomplete="off"></label></div>
+<p class="gallery-count" id="galleryCount">52 piezas visibles</p>
+<section class="ig-grid" id="galleryGrid" aria-label="Portfolio"><article class="ig-card" data-category="web" data-name="reliance travel viajes y turismo">
+  <a class="ig-tile" href="https://reliancetravel.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Reliance Travel" data-kind="Web" data-desc="Viajes y turismo" data-url="https://reliancetravel.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/reliance-travel.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="https://d33wubrfki0l68.cloudfront.net/69d540447c677e5808c5db4e/screenshot_2026-04-07-17-35-02-0000.webp" alt="Vista previa de Reliance Travel" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Reliance Travel</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="remerasco catálogo y venta online">
+  <a class="ig-tile" href="https://remeraco.com.ar/" target="_blank" rel="noopener noreferrer" data-project data-title="RemerasCo" data-kind="Web" data-desc="Catálogo y venta online" data-url="https://remeraco.com.ar/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/remerasco.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/remerasco.svg" alt="Vista previa de RemerasCo" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>RemerasCo</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="casabosco arquitectura arquitectura · portfolio">
+  <a class="ig-tile" href="https://casaboscoarq.com.ar/" target="_blank" rel="noopener noreferrer" data-project data-title="CasaBosco Arquitectura" data-kind="Web" data-desc="Arquitectura · portfolio" data-url="https://casaboscoarq.com.ar/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/casabosco-arquitectura.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="https://d33wubrfki0l68.cloudfront.net/69cc7c050ecdb292bd7d81c3/screenshot_2026-04-01-01-59-35-0000.webp" alt="Vista previa de CasaBosco Arquitectura" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>CasaBosco Arquitectura</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="krow rosario landing comercial">
+  <a class="ig-tile" href="https://krowrosario.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Krow Rosario" data-kind="Web" data-desc="Landing comercial" data-url="https://krowrosario.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/krow-rosario.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="https://d33wubrfki0l68.cloudfront.net/691e3cad3bedd1f23f65139b/screenshot_2025-11-19-21-54-57-0000.webp" alt="Vista previa de Krow Rosario" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Krow Rosario</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="empanadas caseritas gastronomía">
+  <a class="ig-tile" href="https://empanadascaseritas.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Empanadas Caseritas" data-kind="Web" data-desc="Gastronomía" data-url="https://empanadascaseritas.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/empanadas-caseritas.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="https://d33wubrfki0l68.cloudfront.net/69ca07e031c80c5abd5f9a6d/screenshot_2026-03-30-05-19-29-0000.webp" alt="Vista previa de Empanadas Caseritas" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Empanadas Caseritas</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="yoga con jocha bienestar y clases">
+  <a class="ig-tile" href="https://jochalongo.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Yoga con Jocha" data-kind="Web" data-desc="Bienestar y clases" data-url="https://jochalongo.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/yoga-con-jocha.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="https://d33wubrfki0l68.cloudfront.net/69d8000c7287927aa5c7060d/screenshot_2026-04-09-19-37-49-0000.webp" alt="Vista previa de Yoga con Jocha" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Yoga con Jocha</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="gespasa argentina sitio corporativo">
+  <a class="ig-tile" href="https://gespasa-ar.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Gespasa Argentina" data-kind="Web" data-desc="Sitio corporativo" data-url="https://gespasa-ar.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/gespasa-argentina.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="https://d33wubrfki0l68.cloudfront.net/69d876a736af3a39bf00ce3d/screenshot_2026-04-10-04-03-52-0000.webp" alt="Vista previa de Gespasa Argentina" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Gespasa Argentina</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="erika boveri marca personal">
+  <a class="ig-tile" href="https://erikaboveri.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Erika Boveri" data-kind="Web" data-desc="Marca personal" data-url="https://erikaboveri.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/erika-boveri.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/erika-boveri.svg" alt="Vista previa de Erika Boveri" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Erika Boveri</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="tarot con kima servicios y agenda">
+  <a class="ig-tile" href="https://kima33.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Tarot con Kima" data-kind="Web" data-desc="Servicios y agenda" data-url="https://kima33.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/tarot-con-kima.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/tarot-con-kima.svg" alt="Vista previa de Tarot con Kima" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Tarot con Kima</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="eros dj música · artista">
+  <a class="ig-tile" href="https://djeros.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Eros DJ" data-kind="Web" data-desc="Música · artista" data-url="https://djeros.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/eros-dj.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="https://d33wubrfki0l68.cloudfront.net/69fa0ba41a26341a6ffae09c/screenshot_2026-05-05-15-24-22-0000.webp" alt="Vista previa de Eros DJ" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Eros DJ</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="logan landing de proyecto">
+  <a class="ig-tile" href="https://loganproject.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Logan" data-kind="Web" data-desc="Landing de proyecto" data-url="https://loganproject.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/logan.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/logan.svg" alt="Vista previa de Logan" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Logan</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="move dj música · eventos">
+  <a class="ig-tile" href="https://movedj.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Move DJ" data-kind="Web" data-desc="Música · eventos" data-url="https://movedj.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/move-dj.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="https://d33wubrfki0l68.cloudfront.net/69d65af176adc71551de0bb8/screenshot_2026-04-08-13-41-07-0000.webp" alt="Vista previa de Move DJ" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Move DJ</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="peluquería silvina belleza y contacto">
+  <a class="ig-tile" href="https://peluqueriasilvina.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Peluquería Silvina" data-kind="Web" data-desc="Belleza y contacto" data-url="https://peluqueriasilvina.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/peluqueria-silvina.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/peluqueria-silvina.svg" alt="Vista previa de Peluquería Silvina" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Peluquería Silvina</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="el máquina barbershop barbería">
+  <a class="ig-tile" href="https://elmaquinabarbershop.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="El Máquina Barbershop" data-kind="Web" data-desc="Barbería" data-url="https://elmaquinabarbershop.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/el-maquina-barbershop.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/el-maquina-barbershop.svg" alt="Vista previa de El Máquina Barbershop" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>El Máquina Barbershop</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="fierro argentino marca y catálogo">
+  <a class="ig-tile" href="https://fierroargentino.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Fierro Argentino" data-kind="Web" data-desc="Marca y catálogo" data-url="https://fierroargentino.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/fierro-argentino.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/fierro-argentino.svg" alt="Vista previa de Fierro Argentino" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Fierro Argentino</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="martí bermejo marca personal">
+  <a class="ig-tile" href="https://martibermejo.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Martí Bermejo" data-kind="Web" data-desc="Marca personal" data-url="https://martibermejo.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/marti-bermejo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/marti-bermejo.svg" alt="Vista previa de Martí Bermejo" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Martí Bermejo</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="makana proyecto musical">
+  <a class="ig-tile" href="https://makanafavelado.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Makana" data-kind="Web" data-desc="Proyecto musical" data-url="https://makanafavelado.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/makana.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/makana.svg" alt="Vista previa de Makana" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Makana</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="mercedes yáñez · reinvención autora · coach · médica">
+  <a class="ig-tile" href="https://reinvencionmer.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Mercedes Yáñez · Reinvención" data-kind="Web" data-desc="Autora · coach · médica" data-url="https://reinvencionmer.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/mercedes-yanez-reinvencion.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="https://d33wubrfki0l68.cloudfront.net/69e01360c33e3a67bfe1eafa/screenshot_2026-04-15-22-38-26-0000.webp" alt="Vista previa de Mercedes Yáñez · Reinvención" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Mercedes Yáñez · Reinvención</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="proyecto estampa identidad y producto">
+  <a class="ig-tile" href="https://proyectoestampa.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Proyecto Estampa" data-kind="Web" data-desc="Identidad y producto" data-url="https://proyectoestampa.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/proyecto-estampa.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/proyecto-estampa.svg" alt="Vista previa de Proyecto Estampa" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Proyecto Estampa</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="lukas proyecto web de cliente">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Lukas" data-kind="Web" data-desc="Proyecto web de cliente" data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/lukas.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/lukas.svg" alt="Vista previa de Lukas" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Lukas</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="cv" data-name="julia inés sidor genética · investigación">
+  <a class="ig-tile" href="https://cvjuliasidor.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Julia Inés Sidor" data-kind="CV online" data-desc="Genética · investigación" data-url="https://cvjuliasidor.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/julia-ines-sidor.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/julia-ines-sidor.svg" alt="Vista previa de Julia Inés Sidor" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Julia Inés Sidor</strong><small>CV online</small></span>
+  </a>
+</article><article class="ig-card" data-category="cv" data-name="lola jimeno fernández cv profesional">
+  <a class="ig-tile" href="https://cvlolajimenofernandez.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Lola Jimeno Fernández" data-kind="CV online" data-desc="CV profesional" data-url="https://cvlolajimenofernandez.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/lola-jimeno-fernandez.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/lola-jimeno-fernandez.svg" alt="Vista previa de Lola Jimeno Fernández" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Lola Jimeno Fernández</strong><small>CV online</small></span>
+  </a>
+</article><article class="ig-card" data-category="cv" data-name="marcos rubial cv profesional">
+  <a class="ig-tile" href="https://cvmarcosrubial.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Marcos Rubial" data-kind="CV online" data-desc="CV profesional" data-url="https://cvmarcosrubial.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/marcos-rubial.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/marcos-rubial.svg" alt="Vista previa de Marcos Rubial" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Marcos Rubial</strong><small>CV online</small></span>
+  </a>
+</article><article class="ig-card" data-category="cv" data-name="nadia martín cv profesional">
+  <a class="ig-tile" href="https://cvnadiamartin.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Nadia Martín" data-kind="CV online" data-desc="CV profesional" data-url="https://cvnadiamartin.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/nadia-martin.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/nadia-martin.svg" alt="Vista previa de Nadia Martín" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Nadia Martín</strong><small>CV online</small></span>
+  </a>
+</article><article class="ig-card" data-category="cv" data-name="felipe ignacio rubio cv profesional">
+  <a class="ig-tile" href="https://cvfeliperubio.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Felipe Ignacio Rubio" data-kind="CV online" data-desc="CV profesional" data-url="https://cvfeliperubio.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/felipe-ignacio-rubio.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/felipe-ignacio-rubio.svg" alt="Vista previa de Felipe Ignacio Rubio" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Felipe Ignacio Rubio</strong><small>CV online</small></span>
+  </a>
+</article><article class="ig-card" data-category="cv" data-name="agustín vitelli cv profesional">
+  <a class="ig-tile" href="https://cvagustinvitelli.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Agustín Vitelli" data-kind="CV online" data-desc="CV profesional" data-url="https://cvagustinvitelli.netlify.app/">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/agustin-vitelli.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/agustin-vitelli.svg" alt="Vista previa de Agustín Vitelli" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Agustín Vitelli</strong><small>CV online</small></span>
+  </a>
+</article><article class="ig-card" data-category="ia" data-name="archivo de imágenes ia 15 piezas históricas documentadas. los assets originales no estaban incluidos en el último deploy; la sección queda preservada sin inventar sustitutos.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Archivo de imágenes IA" data-kind="Imágenes IA" data-desc="15 piezas históricas documentadas. Los assets originales no estaban incluidos en el último deploy; la sección queda preservada sin inventar sustitutos." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/archivo-de-imagenes-ia.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/archivo-de-imagenes-ia.svg" alt="Vista previa de Archivo de imágenes IA" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Archivo de imágenes IA</strong><small>Imágenes IA</small></span>
+  </a>
+</article><article class="ig-card" data-category="brand" data-name="identidad desarrollamo sistema visual vigente: pirámides celestes/rosas y sol amarillo.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Identidad DesarrollAMO" data-kind="Marca" data-desc="Sistema visual vigente: pirámides celestes/rosas y sol amarillo." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/identidad-desarrollamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/identidad-desarrollamo.svg" alt="Vista previa de Identidad DesarrollAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Identidad DesarrollAMO</strong><small>Marca</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="storeamo producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="StoreAMO" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/storeamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/storeamo.svg" alt="Vista previa de StoreAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>StoreAMO</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="generalamo producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="GeneralAMO" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/generalamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/generalamo.svg" alt="Vista previa de GeneralAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>GeneralAMO</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="mesaamo producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="MesaAMO" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/mesaamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/mesaamo.svg" alt="Vista previa de MesaAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>MesaAMO</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="chessi producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Chessi" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/chessi.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/chessi.svg" alt="Vista previa de Chessi" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Chessi</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="wifiamo producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="WifiAMO" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/wifiamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/1000237095.jpg" alt="Vista previa de WifiAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>WifiAMO</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="nfcamo producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="NfcAMO" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/nfcamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/nfcamo.svg" alt="Vista previa de NfcAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>NfcAMO</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="calculamo producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="CalculAMO" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/calculamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/calculamo.svg" alt="Vista previa de CalculAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>CalculAMO</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="cronamo producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="CronAMO" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/cronamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/cronamo.svg" alt="Vista previa de CronAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>CronAMO</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="temporizamo producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="TemporizAMO" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/temporizamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/temporizamo.svg" alt="Vista previa de TemporizAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>TemporizAMO</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="notasamo producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="NotasAMO" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/notasamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/notasamo.svg" alt="Vista previa de NotasAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>NotasAMO</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="tareasamo producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="TareasAMO" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/tareasamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/tareasamo.svg" alt="Vista previa de TareasAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>TareasAMO</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="conversamo producto del ecosistema amo · mostrado sin enlace a repositorios.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="ConversAMO" data-kind="App" data-desc="Producto del ecosistema AMO · mostrado sin enlace a repositorios." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/conversamo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/conversamo.svg" alt="Vista previa de ConversAMO" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>ConversAMO</strong><small>App</small></span>
+  </a>
+</article><article class="ig-card" data-category="app" data-name="qramo crear, leer y revisar códigos qr desde android."><a class="ig-tile" href="#" aria-disabled="true" data-project data-title="QrAMO" data-kind="App" data-desc="Crear, leer y revisar códigos QR desde Android." data-url=""><span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/1000236824.jpg" alt="" loading="lazy"></span><img class="tile-image" src="/static/gallery-v3/1000236824.jpg" alt="Vista previa de QrAMO" loading="lazy"><span class="tile-shade"></span><span class="tile-meta"><strong>QrAMO</strong><small>App</small></span></a></article><article class="ig-card" data-category="app" data-name="redamo diagnóstico real de red android con interfaz de terminal."><a class="ig-tile" href="#" aria-disabled="true" data-project data-title="RedAMO" data-kind="App" data-desc="Diagnóstico real de red Android con interfaz de terminal." data-url=""><span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/1000237076.jpg" alt="" loading="lazy"></span><img class="tile-image" src="/static/gallery-v3/1000237076.jpg" alt="Vista previa de RedAMO" loading="lazy"><span class="tile-shade"></span><span class="tile-meta"><strong>RedAMO</strong><small>App</small></span></a></article><article class="ig-card" data-category="tool" data-name="ordenar excel a json transformación y limpieza de datos · sin código ni credenciales expuestas.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Ordenar Excel a JSON" data-kind="Herramienta" data-desc="Transformación y limpieza de datos · sin código ni credenciales expuestas." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/ordenar-excel-a-json.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/ordenar-excel-a-json.svg" alt="Vista previa de Ordenar Excel a JSON" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Ordenar Excel a JSON</strong><small>Herramienta</small></span>
+  </a>
+</article><article class="ig-card" data-category="tool" data-name="renombrador masivo orden de archivos por reglas · sin código ni credenciales expuestas.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Renombrador masivo" data-kind="Herramienta" data-desc="Orden de archivos por reglas · sin código ni credenciales expuestas." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/renombrador-masivo.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/renombrador-masivo.svg" alt="Vista previa de Renombrador masivo" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Renombrador masivo</strong><small>Herramienta</small></span>
+  </a>
+</article><article class="ig-card" data-category="tool" data-name="comparador de imágenes detección de duplicados · sin código ni credenciales expuestas.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Comparador de imágenes" data-kind="Herramienta" data-desc="Detección de duplicados · sin código ni credenciales expuestas." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/comparador-de-imagenes.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/comparador-de-imagenes.svg" alt="Vista previa de Comparador de imágenes" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Comparador de imágenes</strong><small>Herramienta</small></span>
+  </a>
+</article><article class="ig-card" data-category="tool" data-name="generador de presupuestos armado rápido de propuestas · sin código ni credenciales expuestas.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Generador de presupuestos" data-kind="Herramienta" data-desc="Armado rápido de propuestas · sin código ni credenciales expuestas." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/generador-de-presupuestos.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/generador-de-presupuestos.svg" alt="Vista previa de Generador de presupuestos" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Generador de presupuestos</strong><small>Herramienta</small></span>
+  </a>
+</article><article class="ig-card" data-category="tool" data-name="auditor web básico chequeos técnicos y de seguridad · sin código ni credenciales expuestas.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Auditor web básico" data-kind="Herramienta" data-desc="Chequeos técnicos y de seguridad · sin código ni credenciales expuestas." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/auditor-web-basico.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/auditor-web-basico.svg" alt="Vista previa de Auditor web básico" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Auditor web básico</strong><small>Herramienta</small></span>
+  </a>
+</article><article class="ig-card" data-category="tool" data-name="certificados a json conversión de información estructurada · sin código ni credenciales expuestas.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Certificados a JSON" data-kind="Herramienta" data-desc="Conversión de información estructurada · sin código ni credenciales expuestas." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/certificados-a-json.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/certificados-a-json.svg" alt="Vista previa de Certificados a JSON" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Certificados a JSON</strong><small>Herramienta</small></span>
+  </a>
+</article><article class="ig-card" data-category="tool" data-name="limpieza de productos normalización de catálogos · sin código ni credenciales expuestas.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Limpieza de productos" data-kind="Herramienta" data-desc="Normalización de catálogos · sin código ni credenciales expuestas." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/limpieza-de-productos.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/limpieza-de-productos.svg" alt="Vista previa de Limpieza de productos" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Limpieza de productos</strong><small>Herramienta</small></span>
+  </a>
+</article><article class="ig-card" data-category="tool" data-name="generador de landings base rápida para nuevos sitios · sin código ni credenciales expuestas.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Generador de landings" data-kind="Herramienta" data-desc="Base rápida para nuevos sitios · sin código ni credenciales expuestas." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/generador-de-landings.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/generador-de-landings.svg" alt="Vista previa de Generador de landings" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Generador de landings</strong><small>Herramienta</small></span>
+  </a>
+</article><article class="ig-card" data-category="tool" data-name="termuxnow.sh setup y automatización en termux · sin código ni credenciales expuestas.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="TermuxNow.sh" data-kind="Herramienta" data-desc="Setup y automatización en Termux · sin código ni credenciales expuestas." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/termuxnow-sh.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/termuxnow-sh.svg" alt="Vista previa de TermuxNow.sh" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>TermuxNow.sh</strong><small>Herramienta</small></span>
+  </a>
+</article><article class="ig-card" data-category="tool" data-name="mi pc powershell utilidad local para windows · sin código ni credenciales expuestas.">
+  <a class="ig-tile" href="#" aria-disabled="true" data-project data-title="Mi PC PowerShell" data-kind="Herramienta" data-desc="Utilidad local para Windows · sin código ni credenciales expuestas." data-url="">
+    <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/mi-pc-powershell.svg" alt="" loading="lazy"></span>
+    <img class="tile-image" src="/static/gallery-v3/mi-pc-powershell.svg" alt="Vista previa de Mi PC PowerShell" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Mi PC PowerShell</strong><small>Herramienta</small></span>
+  </a>
+</article></section><div class="empty" id="galleryEmpty">No hay resultados con ese filtro.</div>
+<p class="gallery-footnote"><strong>Portfolio primero.</strong> Las webs y CVs enlazan a las publicaciones públicas correspondientes. Apps y herramientas se muestran sin exponer repositorios, código, claves ni infraestructura interna. El archivo histórico de IA se conserva como categoría aunque sus assets originales no venían en el último deploy.</p>
+</main>
+<div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" data-close-modal aria-label="Cerrar">×</button><div class="modal-card"><div class="modal-media"><img id="modalImage" alt=""></div><div class="modal-body"><div class="modal-kicker" id="modalKind"></div><h2 id="modalTitle"></h2><p id="modalDesc"></p><div class="modal-actions"><a id="modalLink" target="_blank" rel="noopener">Abrir trabajo ↗</a><button data-close-modal>Volver</button></div></div></div></div>
+<footer class="amo-footer">
+<div class="amo-footer-inner">
+<a class="amo-link" href="/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="amo-logo">
+<svg height="22" style="display:block" viewbox="0 0 78 48" width="30">
+<polygon fill="#7DD3FC" points="8,40 20,16 32,40"></polygon>
+<polygon fill="#FF5AA5" points="24,40 36,12 48,40"></polygon>
+<polygon fill="#FF5AA5" points="40,40 52,20 60,40"></polygon>
+<circle cx="69" cy="29" fill="#FFD166" opacity="0.16" r="10.5"></circle>
+<circle cx="69" cy="29" fill="#FFD166" r="7.8"></circle>
+</svg>
+</span>
+<span class="amo-brand">
+<span class="amo-sky">Desarroll</span><span class="amo-pink">AMO</span><span class="amo-sky">.</span>
+</span>
+</a>
+<span class="amo-year">© <span id="amoYear"></span></span>
+<nav aria-label="Enlaces legales y de ayuda" class="amo-legal">
+<a href="/faq">FAQ</a>
+<a href="/terms">Términos</a>
+<a href="/privacy">Privacidad</a>
+<a href="/cookies">Cookies</a>
+<a href="/payments">Pagos</a>
+<a href="/licenses">Licencias</a>
+</nav>
+</div>
+<script>document.getElementById('amoYear').textContent = new Date().getFullYear();</script>
+</footer><script src="/static/galeria.js" defer></script></body></html>

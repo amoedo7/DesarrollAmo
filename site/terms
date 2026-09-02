@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Términos y condiciones — DesarrollAMO</title>
+<meta name="description" content="Términos y condiciones de DesarrollAMO: alcance, presupuestos, pagos, propiedad intelectual, IA, cancelaciones y jurisdicción." />
+<link rel="canonical" href="https://desarrollamo.com.ar/terms" />
+<meta property="og:title" content="Términos y condiciones — DesarrollAMO" />
+<meta property="og:description" content="Términos y condiciones de DesarrollAMO: alcance, presupuestos, pagos, propiedad intelectual, IA, cancelaciones y jurisdicción." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://desarrollamo.com.ar/terms" />
+<meta name="theme-color" content="#0b1020" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Crect width='64' height='48' rx='8' fill='%230b1020'/%3E%3Cpolygon points='8,40 20,16 32,40' fill='%237DD3FC'/%3E%3Cpolygon points='24,40 36,12 48,40' fill='%23FF77B4'/%3E%3Cpolygon points='40,40 52,20 60,40' fill='%23FF77B4'/%3E%3Ccircle cx='60' cy='26' r='9' fill='%23FFD166'/%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-500">
+
+<a href="#top" class="skip-link">Saltar al contenido</a>
+
+<!-- Logo SVG (idéntico al home) -->
+<svg width="0" height="0" style="position:absolute;left:-9999px;visibility:hidden" aria-hidden="true" focusable="false">
+<defs>
+<radialGradient id="amo-sun-grad" cx="50%" cy="60%" r="60%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="1" />
+<stop offset="60%" stop-color="#FF9F6E" stop-opacity="0.9" />
+<stop offset="100%" stop-color="#FF77B4" stop-opacity="0" />
+</radialGradient>
+<radialGradient id="amo-halo-grad" cx="50%" cy="65%" r="80%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="0.25"/>
+<stop offset="100%" stop-color="#FFD166" stop-opacity="0"/>
+</radialGradient>
+<filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+<feMerge>
+<feMergeNode in="blur"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+<symbol id="logo-desarrollamo" viewBox="0 0 80 48">
+<ellipse cx="68" cy="28" rx="11" ry="9" fill="url(#amo-halo-grad)"></ellipse>
+<circle cx="68" cy="26" r="9" fill="url(#amo-sun-grad)" filter="url(#soft-glow)"></circle>
+<polygon points="8,40 20,16 32,40" fill="#7DD3FC"/>
+<polygon points="24,40 36,12 48,40" fill="#FF77B4"/>
+<polygon points="40,40 52,20 60,40" fill="#FF77B4"/>
+<rect x="8" y="40" width="64" height="2" fill="rgba(255,255,255,0.15)"/>
+</symbol>
+</defs>
+</svg>
+
+<!-- Header (idéntico al home) -->
+<header class="fixed inset-x-0 top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/5 border-b border-white/10">
+<div class="max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
+<a href="https://desarrollamo.com.ar/" class="flex items-center gap-3" aria-label="Ir al inicio">
+<svg width="38" height="28" viewBox="0 0 64 48" class="drop-shadow" aria-hidden="true"><use href="#logo-desarrollamo"></use></svg>
+<span class="font-semibold tracking-tight"><span class="text-sky-300">Desarroll</span><span class="text-pink-400">AMO</span></span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Principal">
+<a class="hover:text-sky-300" href="/">Inicio</a>
+<a class="hover:text-sky-300" href="/servicios">Servicios</a>
+<a class="hover:text-sky-300" href="/galeria">Galería</a>
+<a class="hover:text-sky-300" href="/manifiesto">Manifiesto</a>
+<a class="hover:text-sky-300" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">Contacto</a>
+</nav>
+<button id="menuBtn" class="md:hidden px-3 py-2 border border-white/20 rounded-md">Menú</button>
+</div>
+<nav id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-black/50" aria-label="Principal móvil">
+<div class="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+<a class="px-3 py-2 rounded-md bg-white/10" href="/">Inicio</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/servicios">Servicios</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/galeria">Galería</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/manifiesto">Manifiesto</a>
+<a class="px-3 py-2 rounded-md bg-pink-500 text-white" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">Contacto</a>
+</div>
+</nav>
+</header>
+
+<main id="top" class="flex-grow pt-24"><div class="relative z-10 max-w-5xl mx-auto px-6 py-12 space-y-12">
+
+<section class="glass-bg rounded-3xl p-12 shadow-xl text-center">
+<h1 class="hero-title text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-sky-300">
+Términos y condiciones
+</h1>
+<p class="text-lg max-w-3xl mx-auto leading-relaxed text-gray-200/90">
+Lo que aplica cuando usamos el sitio o trabajamos juntos en un proyecto. Escrito en español claro, sin trampas.
+</p>
+<p class="text-xs text-gray-300/70 mt-4">Última actualización: 20 de agosto de 2026.</p>
+</section>
+
+  <nav aria-label="Migas" class="text-sm text-gray-200/80 mb-6">
+    <a href="/" class="hover:text-sky-300">Inicio</a>
+    <span aria-hidden="true">›</span>
+    <a href="/faq" class="hover:text-sky-300">Ayuda</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page" class="text-gray-200">Términos y condiciones</span>
+  </nav>
+
+  <nav class="toc mb-10 p-5 rounded-xl bg-white/10 border border-white/10" aria-label="Índice">
+    <h2 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-3">En esta página</h2>
+    <ol class="space-y-1 text-sm list-decimal pl-5">
+      <li><a href="#identidad">Identidad del prestador</a></li>
+      <li><a href="#alcance">Alcance y servicios a medida</a></li>
+      <li><a href="#presupuestos">Presupuestos y aceptación</a></li>
+      <li><a href="#pagos">Pagos, seña y medios</a></li>
+      <li><a href="#alcance-cambios">Modificaciones de alcance</a></li>
+      <li><a href="#plazos">Plazos y entregas</a></li>
+      <li><a href="#revisiones">Revisiones</a></li>
+      <li><a href="#cliente">Responsabilidades del cliente</a></li>
+      <li><a href="#material">Materiales aportados por el cliente</a></li>
+      <li><a href="#cancelacion">Cancelaciones</a></li>
+      <li><a href="#reembolsos">Reembolsos</a></li>
+      <li><a href="#propiedad">Propiedad intelectual</a></li>
+      <li><a href="#herramientas">Herramientas y componentes preexistentes</a></li>
+      <li><a href="#terceros">Software y servicios de terceros</a></li>
+      <li><a href="#ia">Uso de inteligencia artificial</a></li>
+      <li><a href="#apps">Apps y productos DesarrollAMO</a></li>
+      <li><a href="#prohibidos">Usos prohibidos</a></li>
+      <li><a href="#disponibilidad">Disponibilidad</a></li>
+      <li><a href="#soporte">Soporte y mantenimiento</a></li>
+      <li><a href="#garantias">Garantías</a></li>
+      <li><a href="#responsabilidad">Limitación de responsabilidad</a></li>
+      <li><a href="#derechos">Derechos que no pueden excluirse</a></li>
+      <li><a href="#modificaciones">Modificaciones de los términos</a></li>
+      <li><a href="#jurisdiccion">Legislación y jurisdicción</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ol>
+  </nav>
+
+  <section id="identidad" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">1. Identidad del prestador</h2>
+    <p>DesarrollAMO es una iniciativa de Juan Manuel Amoedo (CUIT <strong>20-36278837-7</strong>), con presencia pública en <a class="text-sky-300 hover:underline" href="https://desarrollamo.com.ar/">desarrollamo.com.ar</a>, Instagram <a class="text-sky-300 hover:underline" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">@desarrollamoficial</a>, email <a class="text-sky-300 hover:underline" href="mailto:desarrollamoficial@gmail.com">desarrollamoficial@gmail.com</a> y WhatsApp <a class="text-sky-300 hover:underline" href="https://wa.me/34604282816" target="_blank" rel="noopener noreferrer">+34 604 28 28 16</a>.</p>
+    <p class="mt-3"><em>Datos por confirmar y completar:</em> domicilio legal completo, tipo societario y número de inscripción registral. Estos datos se incluyen en cada presupuesto formal cuando corresponde.</p>
+  </section>
+
+  <section id="alcance" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">2. Alcance y servicios a medida</h2>
+    <p>DesarrollAMO ofrece servicios de desarrollo de software, diseño web, automatizaciones, integraciones y consultoría técnica. Cada proyecto se cotiza por separado según el alcance real acordado.</p>
+    <p class="mt-3">Lo que se entrega, en qué formato y con qué características se define en el presupuesto o contrato específico, que prevalece sobre estos términos en lo particular.</p>
+  </section>
+
+  <section id="presupuestos" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">3. Presupuestos y aceptación</h2>
+    <p>Cada presupuesto se envía por escrito (Instagram, email o documento) con alcance, plazo, precio y forma de pago. La aceptación se considera efectiva cuando el cliente confirma por el mismo canal y, según el caso, concreta la seña.</p>
+    <p class="mt-3">Los presupuestos tienen validez indicada en el documento. Pasado ese plazo, DesarrollAMO puede revisar precio y plazo.</p>
+  </section>
+
+  <section id="pagos" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">4. Pagos, seña y medios</h2>
+    <p>Los medios de pago aceptados y los datos verificados del titular están publicados en <a class="text-sky-300 hover:underline" href="https://cobramo.netlify.app/" target="_blank" rel="noopener noreferrer">cobramo.netlify.app</a>. Por regla general se solicita seña inicial para comenzar el trabajo y el resto contra entrega.</p>
+    <p class="mt-3">El detalle completo, incluyendo cancelaciones y reembolsos, está en <a class="text-sky-300 hover:underline" href="/payments">Pagos y reembolsos</a>.</p>
+  </section>
+
+  <section id="alcance-cambios" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">5. Modificaciones de alcance</h2>
+    <p>Si durante el proyecto se solicita algo que cambia materialmente el alcance, se conversa, se acuerda un nuevo precio o plazo, y se sigue. No se asumen silenciosamente tareas no contempladas.</p>
+  </section>
+
+  <section id="plazos" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">6. Plazos y entregas</h2>
+    <p>Los plazos se cuentan en días hábiles y empiezan desde la confirmación de la seña, salvo pacto distinto. Si surge un impedimento atribuible al cliente (falta de material, aprobaciones pendientes), el plazo se ajusta proporcionalmente.</p>
+  </section>
+
+  <section id="revisiones" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">7. Revisiones</h2>
+    <p>Cada presupuesto incluye una cantidad de rondas de revisión. Una ronda es un ciclo en el que el cliente indica cambios, se ajustan y se vuelve a entregar. Cambios fuera del alcance originalmente pactado se presupuestan aparte.</p>
+  </section>
+
+  <section id="cliente" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">8. Responsabilidades del cliente</h2>
+    <p>El cliente se compromete a:</p>
+    <ul class="list-disc pl-6 space-y-1 mt-2">
+      <li>Aportar los materiales e información necesarios en los plazos acordados.</li>
+      <li>Revisar y dar feedback dentro de los tiempos razonables.</li>
+      <li>Garantizar que tiene derecho sobre los materiales que entrega (ver siguiente sección).</li>
+      <li>Usar el trabajo entregado de forma legal y conforme a estos términos.</li>
+    </ul>
+  </section>
+
+  <section id="material" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">9. Materiales aportados por el cliente</h2>
+    <p>El cliente declara que tiene los derechos necesarios sobre los materiales que entrega (textos, imágenes, logos, audios, datos). DesarrollAMO no se hace responsable del uso de materiales que infrinjan derechos de terceros y queda autorizada a suspender el trabajo si detecta una infracción.</p>
+  </section>
+
+  <section id="cancelacion" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">10. Cancelaciones</h2>
+    <p>El cliente puede cancelar en cualquier momento. Las consecuencias dependen del estado del proyecto y se detallan en <a class="text-sky-300 hover:underline" href="/payments">Pagos y reembolsos</a>.</p>
+  </section>
+
+  <section id="reembolsos" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">11. Reembolsos</h2>
+    <p>Se aplican según lo indicado en <a class="text-sky-300 hover:underline" href="/payments">Pagos y reembolsos</a>. Los servicios personalizados, una vez iniciados, tienen reglas particulares.</p>
+  </section>
+
+  <section id="propiedad" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">12. Propiedad intelectual</h2>
+    <p>El cliente conserva sus materiales originales. Sobre los entregables creados específicamente para el proyecto, el cliente recibe una licencia de uso una vez completado el pago total, según lo pactado en el presupuesto o contrato.</p>
+    <p class="mt-3">DesarrollAMO conserva el derecho de mostrar el trabajo en su portfolio público, salvo acuerdo de confidencialidad firmado.</p>
+    <p class="mt-3">El detalle sobre herramientas preexistentes, software de terceros y licencias abiertas está en <a class="text-sky-300 hover:underline" href="/licenses">Licencias</a>.</p>
+  </section>
+
+  <section id="herramientas" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">13. Herramientas y componentes preexistentes</h2>
+    <p>DesarrollAMO puede reutilizar componentes, scripts o plantillas propias ya existentes para acelerar el trabajo. Esos componentes preexistentes siguen siendo de DesarrollAMO y se licencian al cliente bajo las condiciones del proyecto.</p>
+  </section>
+
+  <section id="terceros" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">14. Software y servicios de terceros</h2>
+    <p>Cuando el proyecto requiere usar software o servicios de terceros (CDN, hosting, librerías, APIs, plataformas de pago), cada uno mantiene sus propios términos y licencias. La página <a class="text-sky-300 hover:underline" href="/licenses">Licencias</a> lista los principales.</p>
+  </section>
+
+  <section id="ia" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">15. Uso de inteligencia artificial</h2>
+    <p>DesarrollAMO utiliza herramientas de IA como apoyo en el trabajo. La información que el cliente comparte se procesa según los términos de cada proveedor. La política detallada está en <a class="text-sky-300 hover:underline" href="/privacy">Privacidad</a>, sección "Cómo utilizamos inteligencia artificial".</p>
+    <p class="mt-3">El cliente es responsable del contenido que aporta y declara que su uso con IA no infringe derechos de terceros ni viola términos de uso de los proveedores involucrados.</p>
+  </section>
+
+  <section id="apps" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">16. Apps y productos DesarrollAMO</h2>
+    <p>Cuando se distribuye una app o producto DesarrollAMO, se publica su propia licencia y términos en el repositorio o página correspondiente. Estos términos rigen el uso del sitio y los servicios a medida, no necesariamente los productos distribuidos por separado.</p>
+  </section>
+
+  <section id="prohibidos" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">17. Usos prohibidos</h2>
+    <p>No se permite el uso de los servicios o productos DesarrollAMO para:</p>
+    <ul class="list-disc pl-6 space-y-1 mt-2">
+      <li>Actividades ilegales o que faciliten daño a terceros.</li>
+      <li>Spam, scraping agresivo o suplantación.</li>
+      <li>Distribución de malware o contenido que vulnere derechos.</li>
+      <li>Cualquier uso que viole los términos de proveedores externos involucrados.</li>
+    </ul>
+  </section>
+
+  <section id="disponibilidad" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">18. Disponibilidad</h2>
+    <p>El sitio y los servicios se esfuerzan por estar disponibles, pero no se garantiza disponibilidad ininterrumpida. Las tareas de mantenimiento se anuncian cuando es posible.</p>
+  </section>
+
+  <section id="soporte" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">19. Soporte y mantenimiento</h2>
+    <p>Cada proyecto puede incluir, según el presupuesto, un período breve de soporte post-entrega para ajustes y consultas. El mantenimiento evolutivo posterior se acuerda por separado.</p>
+  </section>
+
+  <section id="garantias" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">20. Garantías</h2>
+    <p>Se garantiza que el trabajo se entrega con diligencia razonable y conforme a lo pactado. No se garantiza un resultado comercial específico (tráfico, ventas, posicionamiento) salvo pacto expreso por escrito.</p>
+  </section>
+
+  <section id="responsabilidad" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">21. Limitación de responsabilidad</h2>
+    <p>La responsabilidad de DesarrollAMO por daños derivados del servicio se limita, como máximo, al monto efectivamente pagado por el proyecto específico que dio lugar al reclamo. No se responde por lucro cesante, daño indirecto o daño a la reputación fuera de lo que la ley permita limitar.</p>
+  </section>
+
+  <section id="derechos" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">22. Derechos que no pueden excluirse</h2>
+    <p>Estos términos no excluyen ni limitan derechos que la ley aplicable reconoce al consumidor y que no pueden ser renunciados. Si alguna cláusula resultara inválida o inaplicable, el resto sigue vigente.</p>
+  </section>
+
+  <section id="modificaciones" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">23. Modificaciones de los términos</h2>
+    <p>Estos términos pueden actualizarse. La fecha de la última actualización figura al inicio de esta página. Los cambios materiales se intentan comunicar por los canales habituales.</p>
+  </section>
+
+  <section id="jurisdiccion" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">24. Legislación y jurisdicción</h2>
+    <p>La relación se rige por la legislación argentina. Para cuestiones que no puedan resolverse amigablemente, las partes acuerdan someterse a los tribunales competentes en la República Argentina, sin perjuicio de los derechos del consumidor en su domicilio.</p>
+    <p class="mt-3"><em>Jurisdicción específica por confirmar</em> según el domicilio del prestador una vez completado el registro correspondiente.</p>
+  </section>
+
+  <section id="contacto" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">25. Contacto</h2>
+    <p>Para cualquier duda sobre estos términos:</p>
+    <ul class="space-y-2 text-gray-200 mt-3">
+      <li><strong>Instagram:</strong> <a class="text-sky-300 hover:underline" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">@desarrollamoficial</a></li>
+      <li><strong>Email:</strong> <a class="text-sky-300 hover:underline" href="mailto:desarrollamoficial@gmail.com">desarrollamoficial@gmail.com</a></li>
+      <li><strong>WhatsApp:</strong> <a class="text-sky-300 hover:underline" href="https://wa.me/34604282816" target="_blank" rel="noopener noreferrer">+34 604 28 28 28 16</a></li>
+    </ul>
+  </section>
+
+</div></main>
+
+<!-- footer replaced -->
+
+<script>
+document.documentElement.classList.add('dark');
+const btn=document.getElementById('menuBtn');const menu=document.getElementById('mobileMenu');if(btn&&menu){function toggleMenu(){const nowHidden=menu.classList.toggle('hidden');btn.setAttribute('aria-expanded',String(!nowHidden));}btn.addEventListener('click',toggleMenu);menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(!menu.classList.contains('hidden'))toggleMenu();}));}
+</script>
+
+
+
+<style>
+.amo-footer{
+  position: relative;
+  z-index: 999;
+  padding: 16px 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.58);
+  color: rgba(229,231,235,.95);
+  border-top: 1px solid rgba(255,255,255,.14);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: light){
+  .amo-footer{
+    background: rgba(255,255,255,.78);
+    color: rgba(17,24,39,.92);
+    border-top: 1px solid rgba(0,0,0,.10);
+  }
+}
+.amo-footer-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.amo-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  color: inherit;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.amo-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.22);
+}
+.amo-sky{ color:#7DD3FC; }
+.amo-pink{ color:#FF5AA5; }
+.amo-year{ opacity:.75; }
+.amo-legal{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
+  font-size: 12px;
+}
+.amo-legal a{
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+.amo-legal a:hover{ opacity: 1; border-bottom-color: rgba(229,231,235,.4); }
+</style>
+<footer class="amo-footer">
+<div class="amo-footer-inner">
+<a class="amo-link" href="/" target="_blank" rel="noopener noreferrer">
+<span class="amo-logo" aria-hidden="true">
+<svg width="30" height="22" viewBox="0 0 78 48" style="display:block">
+<polygon points="8,40 20,16 32,40" fill="#7DD3FC"></polygon>
+<polygon points="24,40 36,12 48,40" fill="#FF5AA5"></polygon>
+<polygon points="40,40 52,20 60,40" fill="#FF5AA5"></polygon>
+<circle cx="69" cy="29" r="10.5" fill="#FFD166" opacity="0.16"></circle>
+<circle cx="69" cy="29" r="7.8"  fill="#FFD166"></circle>
+</svg>
+</span>
+<span class="amo-brand">
+<span class="amo-sky">Desarroll</span><span class="amo-pink">AMO</span><span class="amo-sky">.</span>
+</span>
+</a>
+<span class="amo-year">© <span id="amoYear"></span></span>
+<nav class="amo-legal" aria-label="Enlaces legales y de ayuda">
+<a href="/faq">FAQ</a>
+<a href="/terms">Términos</a>
+<a href="/privacy">Privacidad</a>
+<a href="/cookies">Cookies</a>
+<a href="/payments">Pagos</a>
+<a href="/licenses">Licencias</a>
+</nav>
+</div>
+<script>document.getElementById('amoYear').textContent = new Date().getFullYear();</script>
+</footer>
+</body>
+</html>
