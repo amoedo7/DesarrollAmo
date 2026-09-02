@@ -6,20 +6,32 @@ on:
       - capture-production-20260902
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   capture:
+    if: ${{ !startsWith(github.event.head_commit.message, 'snapshot(site):') }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: capture-production-20260902
 
-      - name: Mirror current production
+      - name: Reconstruct approved CV
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf production-capture
+          cat cv-source/part-00 cv-source/part-01 cv-source/part-02 cv-source/part-03 > /tmp/cv.gz.b64
+          echo '3269e0cee9c2e71a30526d670bd172c87d9003a3d50efc7fce8443233e4015e2  /tmp/cv.gz.b64' | sha256sum -c -
+          base64 -d /tmp/cv.gz.b64 | gunzip > /tmp/amoedojuan.html
+          echo 'aa0d340811b39a999a36129e600cd33230563abacc770f88a063ef04065b54f5  /tmp/amoedojuan.html' | sha256sum -c -
+
+      - name: Mirror current production exactly
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf production-capture site
           mkdir -p production-capture
           cd production-capture
           wget \
@@ -33,13 +45,51 @@ jobs:
           cd ..
           test -s production-capture/desarrollamo.com.ar/index.html
           grep -q 'DesarrollAMO' production-capture/desarrollamo.com.ar/index.html
-          find production-capture -type f -print | sort > production-capture/FILES.txt
-          sha256sum $(find production-capture/desarrollamo.com.ar -type f -print | sort) > production-capture/SHA256SUMS.txt
+          cp -a production-capture/desarrollamo.com.ar site
 
-      - name: Upload exact production snapshot
+      - name: Add CV without changing existing pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p site/cvs/amoedojuan
+          cp /tmp/amoedojuan.html site/cvs/amoedojuan/index.html
+
+      - name: Validate preserved site and CV
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp production-capture/desarrollamo.com.ar/index.html site/index.html
+          grep -q 'Formas de pago' site/index.html
+          grep -q 'Tecnología que entiende' site/index.html
+          test -s site/cvs/amoedojuan/index.html
+          grep -q 'Juan Manuel Amoedo' site/cvs/amoedojuan/index.html
+          grep -q 'Proyecto Estampa' site/cvs/amoedojuan/index.html
+          grep -q 'Move DJ' site/cvs/amoedojuan/index.html
+          grep -q 'Puesto Catorce' site/cvs/amoedojuan/index.html
+          grep -q 'printButtonBottom' site/cvs/amoedojuan/index.html
+          test "$(grep -o 'data:image/jpeg;base64,' site/cvs/amoedojuan/index.html | wc -l)" -eq 1
+          echo 'aa0d340811b39a999a36129e600cd33230563abacc770f88a063ef04065b54f5  site/cvs/amoedojuan/index.html' | sha256sum -c -
+          printf 'Public files: '
+          find site -type f | wc -l
+
+      - name: Upload candidate site
         uses: actions/upload-artifact@v4
         with:
-          name: desarrollamo-production-20260902
-          path: production-capture/
+          name: desarrollamo-site-with-cv
+          path: site/
           if-no-files-found: error
           retention-days: 7
+
+      - name: Save production snapshot in branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'DesarrollAMO Site Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A site
+          if git diff --cached --quiet; then
+            echo 'Site snapshot already current'
+            exit 0
+          fi
+          git commit -m 'snapshot(site): preserve production and add Juan Amoedo CV'
+          git push origin HEAD:capture-production-20260902
