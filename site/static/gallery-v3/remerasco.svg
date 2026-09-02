@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#11100b"/><stop offset="1" stop-color="#05070c"/></linearGradient></defs>
+<rect width="400" height="400" fill="url(#g)"/><circle cx="340" cy="45" r="95" fill="#FF77B4" opacity=".10"/><circle cx="32" cy="340" r="125" fill="#FFD166" opacity=".08"/>
+<g transform="translate(80 35)"><rect x="54" y="62" width="132" height="105" rx="12" fill="#fff" opacity=".06"/><rect x="66" y="77" width="74" height="10" rx="5" fill="#FFD166" opacity=".72"/><rect x="66" y="98" width="106" height="7" rx="3.5" fill="#fff" opacity=".16"/><rect x="66" y="112" width="92" height="7" rx="3.5" fill="#fff" opacity=".12"/><rect x="66" y="139" width="48" height="14" rx="7" fill="#FF77B4" opacity=".76"/></g>
+<text x="26" y="300" font-family="Arial,system-ui,sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#FFD166">WEB</text>
+<text x="26" y="329" font-family="Arial,system-ui,sans-serif" font-size="24" font-weight="800" fill="#f8fafc">RemerasCo</text>
+<text x="26" y="353" font-family="Arial,system-ui,sans-serif" font-size="12" fill="#94a3b8">DesarrollAMO · portfolio</text>
+</svg>

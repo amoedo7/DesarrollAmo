@@ -1,0 +1,11 @@
+(()=>{'use strict';
+const cards=[...document.querySelectorAll('.ig-card')], filters=[...document.querySelectorAll('[data-filter]')], search=document.querySelector('#gallerySearch'), count=document.querySelector('#galleryCount'), empty=document.querySelector('#galleryEmpty');let active='all';
+const norm=s=>(s||'').toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+function apply(){try{let n=0,t=norm(search?.value);cards.forEach(c=>{let ok=(active==='all'||c.dataset.category===active)&&(!t||norm(c.dataset.name).includes(t));c.hidden=!ok;if(ok)n++});if(count)count.textContent=`${n} pieza${n===1?'':'s'} visible${n===1?'':'s'}`;empty?.classList.toggle('show',n===0)}catch(e){cards.forEach(c=>c.hidden=false)}}
+filters.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter||'all';filters.forEach(x=>x.classList.toggle('is-active',x===b));apply()}));search?.addEventListener('input',apply);
+const modal=document.querySelector('#projectModal'),mImg=document.querySelector('#modalImage'),mTitle=document.querySelector('#modalTitle'),mKind=document.querySelector('#modalKind'),mDesc=document.querySelector('#modalDesc'),mLink=document.querySelector('#modalLink');
+function close(){modal?.classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('[data-project]').forEach(a=>a.addEventListener('click',e=>{if(!modal)return; e.preventDefault();let img=a.querySelector('.tile-image');mImg.src=(img&&img.style.display!=='none'?img.src:a.querySelector('.tile-fallback img')?.src||'');mTitle.textContent=a.dataset.title||'';mKind.textContent=a.dataset.kind||'';mDesc.textContent=a.dataset.desc||'';let u=a.dataset.url||'';if(u){mLink.href=u;mLink.hidden=false}else{mLink.hidden=true}modal.classList.add('open');document.body.style.overflow='hidden'}));
+document.querySelectorAll('[data-close-modal]').forEach(b=>b.addEventListener('click',close));modal?.addEventListener('click',e=>{if(e.target===modal)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});apply();
+const mb=document.querySelector('#menuBtn'),mm=document.querySelector('#mobileMenu');mb?.addEventListener('click',()=>mm?.classList.toggle('hidden'));
+})();

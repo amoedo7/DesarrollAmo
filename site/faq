@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Preguntas frecuentes — DesarrollAMO</title>
+<meta name="description" content="Preguntas frecuentes sobre DesarrollAMO: proyectos, presupuestos, IA, pagos, propiedad intelectual y apps." />
+<link rel="canonical" href="https://desarrollamo.com.ar/faq" />
+<meta property="og:title" content="Preguntas frecuentes — DesarrollAMO" />
+<meta property="og:description" content="Preguntas frecuentes sobre DesarrollAMO: proyectos, presupuestos, IA, pagos, propiedad intelectual y apps." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://desarrollamo.com.ar/faq" />
+<meta name="theme-color" content="#0b1020" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Crect width='64' height='48' rx='8' fill='%230b1020'/%3E%3Cpolygon points='8,40 20,16 32,40' fill='%237DD3FC'/%3E%3Cpolygon points='24,40 36,12 48,40' fill='%23FF77B4'/%3E%3Cpolygon points='40,40 52,20 60,40' fill='%23FF77B4'/%3E%3Ccircle cx='60' cy='26' r='9' fill='%23FFD166'/%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-500">
+
+<a href="#top" class="skip-link">Saltar al contenido</a>
+
+<!-- Logo SVG (idéntico al home) -->
+<svg width="0" height="0" style="position:absolute;left:-9999px;visibility:hidden" aria-hidden="true" focusable="false">
+<defs>
+<radialGradient id="amo-sun-grad" cx="50%" cy="60%" r="60%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="1" />
+<stop offset="60%" stop-color="#FF9F6E" stop-opacity="0.9" />
+<stop offset="100%" stop-color="#FF77B4" stop-opacity="0" />
+</radialGradient>
+<radialGradient id="amo-halo-grad" cx="50%" cy="65%" r="80%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="0.25"/>
+<stop offset="100%" stop-color="#FFD166" stop-opacity="0"/>
+</radialGradient>
+<filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+<feMerge>
+<feMergeNode in="blur"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+<symbol id="logo-desarrollamo" viewBox="0 0 80 48">
+<ellipse cx="68" cy="28" rx="11" ry="9" fill="url(#amo-halo-grad)"></ellipse>
+<circle cx="68" cy="26" r="9" fill="url(#amo-sun-grad)" filter="url(#soft-glow)"></circle>
+<polygon points="8,40 20,16 32,40" fill="#7DD3FC"/>
+<polygon points="24,40 36,12 48,40" fill="#FF77B4"/>
+<polygon points="40,40 52,20 60,40" fill="#FF77B4"/>
+<rect x="8" y="40" width="64" height="2" fill="rgba(255,255,255,0.15)"/>
+</symbol>
+</defs>
+</svg>
+
+<!-- Header (idéntico al home) -->
+<header class="fixed inset-x-0 top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/5 border-b border-white/10">
+<div class="max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
+<a href="https://desarrollamo.com.ar/" class="flex items-center gap-3" aria-label="Ir al inicio">
+<svg width="38" height="28" viewBox="0 0 64 48" class="drop-shadow" aria-hidden="true"><use href="#logo-desarrollamo"></use></svg>
+<span class="font-semibold tracking-tight"><span class="text-sky-300">Desarroll</span><span class="text-pink-400">AMO</span></span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Principal">
+<a class="hover:text-sky-300" href="/">Inicio</a>
+<a class="hover:text-sky-300" href="/servicios">Servicios</a>
+<a class="hover:text-sky-300" href="/galeria">Galería</a>
+<a class="hover:text-sky-300" href="/manifiesto">Manifiesto</a>
+<a class="hover:text-sky-300" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">Contacto</a>
+</nav>
+<button id="menuBtn" class="md:hidden px-3 py-2 border border-white/20 rounded-md">Menú</button>
+</div>
+<nav id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-black/50" aria-label="Principal móvil">
+<div class="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+<a class="px-3 py-2 rounded-md bg-white/10" href="/">Inicio</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/servicios">Servicios</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/galeria">Galería</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/manifiesto">Manifiesto</a>
+<a class="px-3 py-2 rounded-md bg-pink-500 text-white" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">Contacto</a>
+</div>
+</nav>
+</header>
+
+<main id="top" class="flex-grow pt-24"><div class="relative z-10 max-w-5xl mx-auto px-6 py-12 space-y-12">
+
+<section class="glass-bg rounded-3xl p-12 shadow-xl text-center">
+<h1 class="hero-title text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-sky-300">
+Preguntas frecuentes
+</h1>
+<p class="text-lg max-w-3xl mx-auto leading-relaxed text-gray-200/90">
+Respuestas concretas a las dudas más comunes sobre DesarrollAMO, los proyectos, la IA, los pagos y la propiedad del trabajo.
+</p>
+<p class="text-xs text-gray-300/70 mt-4">Última actualización: 20 de agosto de 2026.</p>
+</section>
+
+  <nav aria-label="Migas" class="text-sm text-gray-200/80 mb-6">
+    <a href="/" class="hover:text-sky-300">Inicio</a>
+    <span aria-hidden="true">›</span>
+    <a href="/faq" class="hover:text-sky-300">Ayuda</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page" class="text-gray-200">Preguntas frecuentes</span>
+  </nav>
+
+  <nav class="toc mb-10 p-5 rounded-xl bg-white/10 border border-white/10" aria-label="Índice">
+    <h2 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-3">En esta página</h2>
+    <ul class="space-y-1 text-sm">
+      <li><a href="#desarrollamo">DesarrollAMO</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#ia">Inteligencia artificial</a></li>
+      <li><a href="#pagos">Pagos</a></li>
+      <li><a href="#propiedad">Propiedad intelectual</a></li>
+      <li><a href="#apps">Apps y productos</a></li>
+      <li><a href="#contacto">Contacto y soporte</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============== DESARROLLAMO ============== -->
+  <section id="desarrollamo" class="anchor mb-12">
+    <h2 class="text-2xl font-semibold mb-6 text-sky-300">DesarrollAMO</h2>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Qué es DesarrollAMO?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>DesarrollAMO es una iniciativa de Juan Manuel Amoedo dedicada a traducir ideas a tecnología. Diseñamos y desarrollamos productos digitales a medida: sitios web, automatizaciones, sistemas internos, herramientas y apps.</p>
+        <p>El nombre viene de <em>Desarroll + AMO</em>: "desarrollo" y un guiño al "amo" del problema y del proceso.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Qué tipo de cosas puede crear?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Ejemplos de lo que se ha construido o se puede construir:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Landings y sitios web para mostrar un servicio o producto.</li>
+          <li>Catálogos online y pequeñas tiendas.</li>
+          <li>Apps internas, dashboards y herramientas de gestión.</li>
+          <li>Automatizaciones en Python, Bash o PowerShell.</li>
+          <li>Sistemas de cobro y verificación de pagos.</li>
+          <li>Bots, integraciones y prototipos con IA.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Cómo empiezo un proyecto?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>El primer paso es una conversación corta para entender qué necesitás, qué datos tenés y cuál sería un resultado razonable. Después se arma un presupuesto con alcance, plazo y precio.</p>
+        <p>El canal principal es Instagram (<a class="text-sky-300 hover:underline" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">@desarrollamoficial</a>) o el formulario de contacto en <a class="text-sky-300 hover:underline" href="/">desarrollamo.com.ar</a>.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============== PROYECTOS ============== -->
+  <section id="proyectos" class="anchor mb-12">
+    <h2 class="text-2xl font-semibold mb-6 text-sky-300">Proyectos</h2>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Cómo se calcula un presupuesto?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>El presupuesto se arma según el alcance real: qué se entrega, en qué plazo y con cuántas rondas de revisión. Se valoran tres cosas: complejidad técnica, horas estimadas y entregables.</p>
+        <p>No se cobra por hora sin contexto: la unidad es <em>un proyecto resuelto</em>. Ver <a class="text-sky-300 hover:underline" href="/payments">Pagos y reembolsos</a> para más detalle.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Cuánto puede tardar?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Depende del alcance. Una landing simple puede estar lista en 3 a 5 días. Un sitio más completo, una a dos semanas. Sistemas a medida o con integraciones varias pueden llevar más.</p>
+        <p>El plazo concreto se confirma en el presupuesto y se respeta salvo cambios acordados.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Qué incluye una entrega?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Lo que se haya pactado en el presupuesto. Normalmente incluye: archivos fuente (cuando corresponde), deploy, instrucciones de uso y, si fue acordado, un período breve de soporte post-entrega.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Cómo funcionan las revisiones?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Cada presupuesto incluye una cantidad de rondas de revisión. Una ronda es un ciclo en el que el cliente indica cambios, se ajustan y se vuelve a entregar. Cambios fuera del alcance originalmente pactado se presupuestan aparte.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Qué ocurre si cambia el alcance?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Si durante el proyecto se incorporan o modifican requisitos que cambian materialmente el alcance, se conversa, se acuerda un nuevo precio o plazo, y se sigue. No se asumen silenciosamente tareas no contempladas.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============== IA ============== -->
+  <section id="ia" class="anchor mb-12">
+    <h2 class="text-2xl font-semibold mb-6 text-sky-300">Inteligencia artificial</h2>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿DesarrollAMO utiliza inteligencia artificial?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Sí. Se utilizan herramientas de IA como apoyo en tareas concretas: redacción de código, análisis, prototipado rápido, generación de material gráfico, automatización.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Para qué se utiliza?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Como acelerador y asistente. La decisión final sobre arquitectura, copy, diseño y entregables sigue siendo humana y queda bajo responsabilidad de DesarrollAMO.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Qué ocurre con la información que proporciona el cliente?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>La información que el cliente comparte se utiliza únicamente para el proyecto acordado. No se publica, no se vende y no se comparte con terceros fuera del flujo de trabajo necesario.</p>
+        <p>Cuando se usan herramientas de IA externas, los datos enviados se procesan bajo los términos de cada proveedor. La política completa está en <a class="text-sky-300 hover:underline" href="/privacy">Privacidad</a>.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Puede intervenir software de terceros?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Sí, cuando el proyecto lo requiere. Se utilizan APIs y servicios de terceros dentro de lo permitido por sus términos. Si una integración implica compartir datos, se informa previamente al cliente.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============== PAGOS ============== -->
+  <section id="pagos" class="anchor mb-12">
+    <h2 class="text-2xl font-semibold mb-6 text-sky-300">Pagos</h2>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Cómo se paga?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Los medios disponibles están listados y verificados en <a class="text-sky-300 hover:underline" href="https://cobramo.netlify.app/" target="_blank" rel="noopener noreferrer">cobramo.netlify.app</a>: transferencia bancaria, MercadoPago, Wise, N26, EUR/USD/ARS, entre otros.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Qué es CobrAMO?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>CobrAMO es la página de cobro oficial de DesarrollAMO. Concentra los datos del titular verificados y los medios de pago aceptados. Es la fuente de verdad para transferencias.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Cuándo se considera confirmado un pago?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Cuando se verifica el comprobante. Para transferencias, esto puede demorar entre algunas horas y un día hábil. Para MercadoPago, la confirmación es prácticamente inmediata.</p>
+        <p>Los proyectos comienzan una vez confirmada la seña pactada, salvo acuerdo escrito distinto.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Cómo funcionan cancelaciones y reembolsos?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Depende del momento y del tipo de trabajo. Ver <a class="text-sky-300 hover:underline" href="/payments">Pagos y reembolsos</a> para el detalle completo.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============== PROPIEDAD ============== -->
+  <section id="propiedad" class="anchor mb-12">
+    <h2 class="text-2xl font-semibold mb-6 text-sky-300">Propiedad intelectual</h2>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Quién conserva los materiales originales del cliente?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>El cliente conserva lo que aporta: textos, imágenes, marcas, logos, datos. DesarrollAMO no los reutiliza ni los publica sin permiso escrito.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Quién puede utilizar el trabajo terminado?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Una vez completado el pago total, el cliente recibe una licencia de uso sobre los entregables del proyecto según lo pactado. DesarrollAMO puede mostrar el trabajo como parte de su portfolio, salvo acuerdo de confidencialidad.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Cómo funcionan las licencias de software?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Cada dependencia de terceros conserva su licencia original (MIT, Apache, GPL, etc.). El software original de DesarrollAMO se entrega con la licencia pactada en el contrato. Ver <a class="text-sky-300 hover:underline" href="/licenses">Licencias</a>.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============== APPS ============== -->
+  <section id="apps" class="anchor mb-12">
+    <h2 class="text-2xl font-semibold mb-6 text-sky-300">Apps y productos</h2>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Qué es StoreAMO?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>StoreAMO es el nombre del espacio donde se publican las aplicaciones y herramientas DesarrollAMO. Cuando un producto está disponible públicamente, se referencia desde allí.</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Cómo se obtienen y actualizan las aplicaciones?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Cada aplicación tiene su propia página de descarga o instalación. Las actualizaciones se anuncian por el canal que el producto utilice (correo, web, repositorio).</p>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Qué significan estados como development, candidate o verified?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Son etiquetas de madurez del producto:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>development</strong>: en construcción, no usar en producción.</li>
+          <li><strong>candidate</strong>: candidato a release, se está probando.</li>
+          <li><strong>verified</strong>: validado y estable.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="group mb-3 p-4 rounded-lg bg-white/10 border border-white/10 open:border-white/20">
+      <summary class="flex items-start justify-between gap-3 font-medium">
+        <span>¿Dónde se informa sobre privacidad y licencias de una app?</span>
+        <svg class="chev w-5 h-5 text-gray-200/80 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="mt-3 text-gray-200 space-y-2">
+        <p>Cada producto referencia su licencia y política de privacidad en su propio repositorio o página. Si no la encontrás, podés pedirla por <a class="text-sky-300 hover:underline" href="/#contacto">contacto</a>.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============== CONTACTO ============== -->
+  <section id="contacto" class="anchor mb-12">
+    <h2 class="text-2xl font-semibold mb-6 text-sky-300">Contacto y soporte</h2>
+
+    <p class="text-gray-200 mb-4">Para cualquier duda que no esté cubierta acá:</p>
+    <ul class="space-y-2 text-gray-200">
+      <li><strong>Instagram:</strong> <a class="text-sky-300 hover:underline" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">@desarrollamoficial</a> (canal principal)</li>
+      <li><strong>Email:</strong> <a class="text-sky-300 hover:underline" href="mailto:desarrollamoficial@gmail.com">desarrollamoficial@gmail.com</a></li>
+      <li><strong>WhatsApp:</strong> <a class="text-sky-300 hover:underline" href="https://wa.me/34604282816" target="_blank" rel="noopener noreferrer">+34 604 28 28 16</a></li>
+    </ul>
+  </section>
+
+  <div class="text-sm text-white0 mt-12 pt-6 border-t border-white/10">
+    <p>Esta página se actualiza cuando hay cambios reales. Si detectás algo que no coincide con la práctica actual, avisanos por <a class="text-sky-300 hover:underline" href="mailto:desarrollamoficial@gmail.com">email</a>.</p>
+  </div>
+
+</div></main>
+
+<!-- footer replaced -->
+
+<script>
+document.documentElement.classList.add('dark');
+const btn=document.getElementById('menuBtn');const menu=document.getElementById('mobileMenu');if(btn&&menu){function toggleMenu(){const nowHidden=menu.classList.toggle('hidden');btn.setAttribute('aria-expanded',String(!nowHidden));}btn.addEventListener('click',toggleMenu);menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(!menu.classList.contains('hidden'))toggleMenu();}));}
+</script>
+
+
+
+<style>
+.amo-footer{
+  position: relative;
+  z-index: 999;
+  padding: 16px 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.58);
+  color: rgba(229,231,235,.95);
+  border-top: 1px solid rgba(255,255,255,.14);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: light){
+  .amo-footer{
+    background: rgba(255,255,255,.78);
+    color: rgba(17,24,39,.92);
+    border-top: 1px solid rgba(0,0,0,.10);
+  }
+}
+.amo-footer-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.amo-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  color: inherit;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.amo-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.22);
+}
+.amo-sky{ color:#7DD3FC; }
+.amo-pink{ color:#FF5AA5; }
+.amo-year{ opacity:.75; }
+.amo-legal{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
+  font-size: 12px;
+}
+.amo-legal a{
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+.amo-legal a:hover{ opacity: 1; border-bottom-color: rgba(229,231,235,.4); }
+</style>
+<footer class="amo-footer">
+<div class="amo-footer-inner">
+<a class="amo-link" href="/" target="_blank" rel="noopener noreferrer">
+<span class="amo-logo" aria-hidden="true">
+<svg width="30" height="22" viewBox="0 0 78 48" style="display:block">
+<polygon points="8,40 20,16 32,40" fill="#7DD3FC"></polygon>
+<polygon points="24,40 36,12 48,40" fill="#FF5AA5"></polygon>
+<polygon points="40,40 52,20 60,40" fill="#FF5AA5"></polygon>
+<circle cx="69" cy="29" r="10.5" fill="#FFD166" opacity="0.16"></circle>
+<circle cx="69" cy="29" r="7.8"  fill="#FFD166"></circle>
+</svg>
+</span>
+<span class="amo-brand">
+<span class="amo-sky">Desarroll</span><span class="amo-pink">AMO</span><span class="amo-sky">.</span>
+</span>
+</a>
+<span class="amo-year">© <span id="amoYear"></span></span>
+<nav class="amo-legal" aria-label="Enlaces legales y de ayuda">
+<a href="/faq">FAQ</a>
+<a href="/terms">Términos</a>
+<a href="/privacy">Privacidad</a>
+<a href="/cookies">Cookies</a>
+<a href="/payments">Pagos</a>
+<a href="/licenses">Licencias</a>
+</nav>
+</div>
+<script>document.getElementById('amoYear').textContent = new Date().getFullYear();</script>
+</footer>
+</body>
+</html>

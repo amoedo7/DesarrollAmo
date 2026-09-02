@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pagos, cancelaciones y reembolsos — DesarrollAMO</title>
+<meta name="description" content="Cómo se paga, cómo se confirman los pagos, qué pasa si cancelás, cómo funcionan los reembolsos y el botón de arrepentimiento." />
+<link rel="canonical" href="https://desarrollamo.com.ar/payments" />
+<meta property="og:title" content="Pagos, cancelaciones y reembolsos — DesarrollAMO" />
+<meta property="og:description" content="Cómo se paga, cómo se confirman los pagos, qué pasa si cancelás, cómo funcionan los reembolsos y el botón de arrepentimiento." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://desarrollamo.com.ar/payments" />
+<meta name="theme-color" content="#0b1020" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Crect width='64' height='48' rx='8' fill='%230b1020'/%3E%3Cpolygon points='8,40 20,16 32,40' fill='%237DD3FC'/%3E%3Cpolygon points='24,40 36,12 48,40' fill='%23FF77B4'/%3E%3Cpolygon points='40,40 52,20 60,40' fill='%23FF77B4'/%3E%3Ccircle cx='60' cy='26' r='9' fill='%23FFD166'/%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-500">
+
+<a href="#top" class="skip-link">Saltar al contenido</a>
+
+<!-- Logo SVG (idéntico al home) -->
+<svg width="0" height="0" style="position:absolute;left:-9999px;visibility:hidden" aria-hidden="true" focusable="false">
+<defs>
+<radialGradient id="amo-sun-grad" cx="50%" cy="60%" r="60%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="1" />
+<stop offset="60%" stop-color="#FF9F6E" stop-opacity="0.9" />
+<stop offset="100%" stop-color="#FF77B4" stop-opacity="0" />
+</radialGradient>
+<radialGradient id="amo-halo-grad" cx="50%" cy="65%" r="80%">
+<stop offset="0%" stop-color="#FFD166" stop-opacity="0.25"/>
+<stop offset="100%" stop-color="#FFD166" stop-opacity="0"/>
+</radialGradient>
+<filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+<feMerge>
+<feMergeNode in="blur"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+<symbol id="logo-desarrollamo" viewBox="0 0 80 48">
+<ellipse cx="68" cy="28" rx="11" ry="9" fill="url(#amo-halo-grad)"></ellipse>
+<circle cx="68" cy="26" r="9" fill="url(#amo-sun-grad)" filter="url(#soft-glow)"></circle>
+<polygon points="8,40 20,16 32,40" fill="#7DD3FC"/>
+<polygon points="24,40 36,12 48,40" fill="#FF77B4"/>
+<polygon points="40,40 52,20 60,40" fill="#FF77B4"/>
+<rect x="8" y="40" width="64" height="2" fill="rgba(255,255,255,0.15)"/>
+</symbol>
+</defs>
+</svg>
+
+<!-- Header (idéntico al home) -->
+<header class="fixed inset-x-0 top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/5 border-b border-white/10">
+<div class="max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
+<a href="https://desarrollamo.com.ar/" class="flex items-center gap-3" aria-label="Ir al inicio">
+<svg width="38" height="28" viewBox="0 0 64 48" class="drop-shadow" aria-hidden="true"><use href="#logo-desarrollamo"></use></svg>
+<span class="font-semibold tracking-tight"><span class="text-sky-300">Desarroll</span><span class="text-pink-400">AMO</span></span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Principal">
+<a class="hover:text-sky-300" href="/">Inicio</a>
+<a class="hover:text-sky-300" href="/servicios">Servicios</a>
+<a class="hover:text-sky-300" href="/galeria">Galería</a>
+<a class="hover:text-sky-300" href="/manifiesto">Manifiesto</a>
+<a class="hover:text-sky-300" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">Contacto</a>
+</nav>
+<button id="menuBtn" class="md:hidden px-3 py-2 border border-white/20 rounded-md">Menú</button>
+</div>
+<nav id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-black/50" aria-label="Principal móvil">
+<div class="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+<a class="px-3 py-2 rounded-md bg-white/10" href="/">Inicio</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/servicios">Servicios</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/galeria">Galería</a>
+<a class="px-3 py-2 rounded-md bg-white/10" href="/manifiesto">Manifiesto</a>
+<a class="px-3 py-2 rounded-md bg-pink-500 text-white" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">Contacto</a>
+</div>
+</nav>
+</header>
+
+<main id="top" class="flex-grow pt-24"><div class="relative z-10 max-w-5xl mx-auto px-6 py-12 space-y-12">
+
+<section class="glass-bg rounded-3xl p-12 shadow-xl text-center">
+<h1 class="hero-title text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-sky-300">
+Pagos y reembolsos
+</h1>
+<p class="text-lg max-w-3xl mx-auto leading-relaxed text-gray-200/90">
+Información clara sobre cómo se paga, qué pasa si cancelás, cuándo corresponde reembolso y cómo ejercer tu derecho de arrepentimiento.
+</p>
+<p class="text-xs text-gray-300/70 mt-4">Última actualización: 20 de agosto de 2026.</p>
+</section>
+
+  <nav aria-label="Migas" class="text-sm text-gray-200/80 mb-6">
+    <a href="/" class="hover:text-sky-300">Inicio</a>
+    <span aria-hidden="true">›</span>
+    <a href="/faq" class="hover:text-sky-300">Ayuda</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page" class="text-gray-200">Pagos y reembolsos</span>
+  </nav>
+
+  <nav class="toc mb-10 p-5 rounded-xl bg-white/10 border border-white/10" aria-label="Índice">
+    <h2 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-3">En esta página</h2>
+    <ol class="space-y-1 text-sm list-decimal pl-5">
+      <li><a href="#cobramo">CobrAMO</a></li>
+      <li><a href="#medios">Medios de pago aceptados</a></li>
+      <li><a href="#monedas">Monedas</a></li>
+      <li><a href="#confirmacion">Confirmación del pago</a></li>
+      <li><a href="#anticipos">Presupuestos y anticipos</a></li>
+      <li><a href="#parciales">Pagos parciales</a></li>
+      <li><a href="#cancelacion-antes">Cancelación antes de comenzar</a></li>
+      <li><a href="#cancelacion-despues">Cancelación con trabajo iniciado</a></li>
+      <li><a href="#personalizados">Trabajos personalizados</a></li>
+      <li><a href="#digitales">Productos digitales</a></li>
+      <li><a href="#reembolsos">Reembolsos</a></li>
+      <li><a href="#duplicados">Pagos duplicados o erróneos</a></li>
+      <li><a href="#contracargos">Contracargos</a></li>
+      <li><a href="#arrepentimiento">Derecho de arrepentimiento</a></li>
+      <li><a href="#soporte">Soporte</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ol>
+  </nav>
+
+  <section id="cobramo" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">1. CobrAMO</h2>
+    <p>Toda la información de cobro está concentrada en <a class="text-sky-300 hover:underline" href="https://cobramo.netlify.app/" target="_blank" rel="noopener noreferrer">cobramo.netlify.app</a>, operada por DesarrollAMO. Ahí se publica el titular verificado y los medios de pago aceptados, con sus datos reales.</p>
+  </section>
+
+  <section id="medios" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">2. Medios de pago aceptados</h2>
+    <ul class="list-disc pl-6 space-y-1 mt-2">
+      <li>Transferencia bancaria (datos en CobrAMO).</li>
+      <li>MercadoPago.</li>
+      <li>Wise y N26 para pagos desde el exterior.</li>
+      <li>Otros medios puntuales que se acuerden por escrito.</li>
+    </ul>
+    <p class="mt-3">No se aceptan pagos por medios no publicados o que no permitan trazabilidad.</p>
+  </section>
+
+  <section id="monedas" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">3. Monedas</h2>
+    <p>Se aceptan pagos en ARS, USD y EUR. La moneda pactada en el presupuesto es la que se usa para todo el proyecto. Si hay que convertir (por ejemplo, ARS a USD), se aplica el tipo de cambio acordado al inicio, salvo pacto expreso distinto.</p>
+  </section>
+
+  <section id="confirmacion" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">4. Confirmación del pago</h2>
+    <p>El pago se considera confirmado cuando se verifica el comprobante. Para transferencias bancarias esto puede demorar entre algunas horas y un día hábil. Para MercadoPago y otros pagos online, la confirmación suele ser inmediata.</p>
+    <p class="mt-3">El proyecto no comienza hasta que la seña está confirmada, salvo pacto escrito distinto.</p>
+  </section>
+
+  <section id="anticipos" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">5. Presupuestos y anticipos</h2>
+    <p>Por regla general se solicita un anticipo (seña) para reservar capacidad y comenzar el trabajo, y el resto contra entrega o por hitos. Los porcentajes se indican en cada presupuesto.</p>
+  </section>
+
+  <section id="parciales" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">6. Pagos parciales</h2>
+    <p>Si se acuerda un esquema de pagos parciales (por hitos, por etapas, etc.), cada pago parcial corresponde a una entrega definida. Lo no entregado se mantiene pendiente hasta completarse.</p>
+  </section>
+
+  <section id="cancelacion-antes" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">7. Cancelación antes de comenzar</h2>
+    <p>Si el cliente cancela antes de que el trabajo haya comenzado, se devuelve el anticipo recibido menos los gastos administrativos efectivamente incurridos (transferencias, comisiones, tiempo de armado), previa coordinación.</p>
+  </section>
+
+  <section id="cancelacion-despues" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">8. Cancelación con trabajo iniciado</h2>
+    <p>Si el cliente cancela cuando el trabajo ya está en marcha:</p>
+    <ul class="list-disc pl-6 space-y-1 mt-2">
+      <li>Se factura y retiene el proporcional del trabajo efectivamente realizado hasta el momento de la cancelación.</li>
+      <li>Si lo abonado supera el trabajo realizado, se devuelve la diferencia.</li>
+      <li>Si lo abonado es menor, se factura el proporcional restante.</li>
+    </ul>
+    <p class="mt-3">El criterio "proporcional" se define en el presupuesto o contrato del proyecto. Si no está explícito, se calcula por horas trabajadas sobre el total estimado, redondeado a una unidad razonable.</p>
+  </section>
+
+  <section id="personalizados" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">9. Trabajos personalizados</h2>
+    <p>Los servicios a medida son, por naturaleza, personalizados. Una vez iniciada la ejecución, pierden el carácter de "prueba" o "estándar". Esto se tiene en cuenta al evaluar reembolsos.</p>
+  </section>
+
+  <section id="digitales" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">10. Productos digitales</h2>
+    <p>Para productos digitales descargables o de acceso inmediato (apps, plantillas, herramientas), la regla es:</p>
+    <ul class="list-disc pl-6 space-y-1 mt-2">
+      <li>Si no se descargó ni se accedió al producto: reembolso posible, salvo gastos administrativos.</li>
+      <li>Si el producto ya fue entregado y/o accedido: la naturaleza digital del entregable limita las opciones de reembolso, especialmente si ya fue utilizado.</li>
+    </ul>
+  </section>
+
+  <section id="reembolsos" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">11. Reembolsos</h2>
+    <p>Cuando corresponde un reembolso, se realiza por el mismo medio por el que se recibió el pago, salvo acuerdo distinto. Los plazos dependen del medio:</p>
+    <ul class="list-disc pl-6 space-y-1 mt-2">
+      <li>Transferencia bancaria: hasta 10 días hábiles.</li>
+      <li>MercadoPago: según tiempos de la plataforma.</li>
+      <li>Wise / N26: según tiempos del proveedor.</li>
+    </ul>
+  </section>
+
+  <section id="duplicados" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">12. Pagos duplicados o erróneos</h2>
+    <p>Si el cliente envía dos veces el mismo pago o paga por error, se devuelve íntegramente el monto duplicado o erróneo, previa confirmación. Se solicita aviso inmediato a <a class="text-sky-300 hover:underline" href="mailto:desarrollamoficial@gmail.com">desarrollamoficial@gmail.com</a>.</p>
+  </section>
+
+  <section id="contracargos" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">13. Contracargos</h2>
+    <p>Antes de iniciar un contracargo con el proveedor de pago, se pide al cliente contactar primero a DesarrollAMO para buscar una solución. La mayoría de los inconvenientes se resuelven por acuerdo directo y más rápido.</p>
+    <p class="mt-3">Un contracargo iniciado sin aviso previo, sobre un servicio efectivamente prestado o en proceso, puede afectar la relación comercial y dar lugar a acciones legales para recuperar lo adeudado más los costos asociados.</p>
+  </section>
+
+  <section id="arrepentimiento" class="anchor mb-10 bg-white/10 border border-white/10 rounded-xl p-6">
+    <h2 class="text-2xl font-semibold mb-3 text-sky-300">14. Derecho de arrepentimiento</h2>
+
+    <h3 class="text-lg font-semibold mt-4 mb-2">Marco normativo aplicable</h3>
+    <p>En Argentina, la protección del consumidor se rige principalmente por la <strong>Ley 24.240</strong> de Defensa del Consumidor y el <strong>Código Civil y Comercial de la Nación</strong>. Las disposiciones específicas de comercio electrónico que incluían la Resolución 424/2020 han ido actualizándose con el tiempo (Disposición 954/2025 y normativa posterior).</p>
+    <p class="mt-3">Esta página refleja lo que DesarrollAMO aplica en la práctica. Si la normativa vigente al momento de la contratación exige condiciones distintas, prevalecerá la norma.</p>
+
+    <h3 class="text-lg font-semibold mt-6 mb-2">Alcance en DesarrollAMO</h3>
+    <p>El derecho de arrepentimiento se aplica típicamente a contrataciones celebradas fuera del establecimiento comercial o a distancia, donde el consumidor no ha tenido contacto físico con el producto. En los servicios a medida de DesarrollAMO, la contratación se realiza por canales digitales (Instagram, email, WhatsApp) con un presupuesto detallado.</p>
+
+    <h3 class="text-lg font-semibold mt-6 mb-2">Cómo ejercerlo</h3>
+    <p>Si querés ejercer tu derecho de arrepentimiento o solicitar la baja de un servicio o producto, hacé clic en el botón y enviá tu solicitud:</p>
+
+    <p class="mt-3">
+      <a href="mailto:desarrollamoficial@gmail.com?subject=Derecho%20de%20arrepentimiento%20-%20solicitud%20de%20baja&body=Hola%2C%20ejerzo%20mi%20derecho%20de%20arrepentimiento%20sobre%20el%20servicio%20contratado.%20Datos%20del%20cliente%3A%0A%0ANombre%3A%20%0AEmail%20o%20tel%C3%A9fono%20de%20contacto%3A%20%0AServicio%20o%20producto%3A%20%0AFecha%20de%20contrataci%C3%B3n%3A%20%0AMotivo%20(opcional)%3A%20"
+         class="inline-block mt-4 px-6 py-3 rounded-lg bg-cyan-400 text-gray-200/90 font-semibold hover:bg-cyan-300 transition">
+        Solicitar arrepentimiento / baja
+      </a>
+    </p>
+
+    <h3 class="text-lg font-semibold mt-6 mb-2">Qué pasa después</h3>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>Recibís confirmación de que tu solicitud entró.</li>
+      <li>Se evalúa si el servicio ya fue prestado total o parcialmente.</li>
+      <li>Si no comenzó, se devuelve el anticipo menos gastos administrativos.</li>
+      <li>Si comenzó, se aplica el proporcional del trabajo realizado (ver sección 8).</li>
+    </ul>
+
+    <h3 class="text-lg font-semibold mt-6 mb-2">Excepciones</h3>
+    <p>La ley permite excepciones para productos o servicios personalizados o que, por su naturaleza, no puedan devolverse. Se informa al cliente en cada presupuesto cuando aplica una excepción.</p>
+  </section>
+
+  <section id="soporte" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">15. Soporte</h2>
+    <p>Si tenés un problema con un pago, una cancelación, un reembolso o cualquier duda de facturación, escribinos a <a class="text-sky-300 hover:underline" href="mailto:desarrollamoficial@gmail.com">desarrollamoficial@gmail.com</a>. Respondemos en plazos razonables.</p>
+  </section>
+
+  <section id="contacto" class="anchor mb-10">
+    <h2 class="text-2xl font-semibold mb-3">16. Contacto</h2>
+    <ul class="space-y-2 text-gray-200 mt-3">
+      <li><strong>Email:</strong> <a class="text-sky-300 hover:underline" href="mailto:desarrollamoficial@gmail.com">desarrollamoficial@gmail.com</a></li>
+      <li><strong>Instagram:</strong> <a class="text-sky-300 hover:underline" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener noreferrer">@desarrollamoficial</a></li>
+      <li><strong>WhatsApp:</strong> <a class="text-sky-300 hover:underline" href="https://wa.me/34604282816" target="_blank" rel="noopener noreferrer">+34 604 28 28 16</a></li>
+    </ul>
+  </section>
+
+</div></main>
+
+<!-- footer replaced -->
+
+<script>
+document.documentElement.classList.add('dark');
+const btn=document.getElementById('menuBtn');const menu=document.getElementById('mobileMenu');if(btn&&menu){function toggleMenu(){const nowHidden=menu.classList.toggle('hidden');btn.setAttribute('aria-expanded',String(!nowHidden));}btn.addEventListener('click',toggleMenu);menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(!menu.classList.contains('hidden'))toggleMenu();}));}
+</script>
+
+
+
+<style>
+.amo-footer{
+  position: relative;
+  z-index: 999;
+  padding: 16px 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.58);
+  color: rgba(229,231,235,.95);
+  border-top: 1px solid rgba(255,255,255,.14);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: light){
+  .amo-footer{
+    background: rgba(255,255,255,.78);
+    color: rgba(17,24,39,.92);
+    border-top: 1px solid rgba(0,0,0,.10);
+  }
+}
+.amo-footer-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.amo-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  color: inherit;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.amo-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.22);
+}
+.amo-sky{ color:#7DD3FC; }
+.amo-pink{ color:#FF5AA5; }
+.amo-year{ opacity:.75; }
+.amo-legal{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
+  font-size: 12px;
+}
+.amo-legal a{
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+.amo-legal a:hover{ opacity: 1; border-bottom-color: rgba(229,231,235,.4); }
+</style>
+<footer class="amo-footer">
+<div class="amo-footer-inner">
+<a class="amo-link" href="/" target="_blank" rel="noopener noreferrer">
+<span class="amo-logo" aria-hidden="true">
+<svg width="30" height="22" viewBox="0 0 78 48" style="display:block">
+<polygon points="8,40 20,16 32,40" fill="#7DD3FC"></polygon>
+<polygon points="24,40 36,12 48,40" fill="#FF5AA5"></polygon>
+<polygon points="40,40 52,20 60,40" fill="#FF5AA5"></polygon>
+<circle cx="69" cy="29" r="10.5" fill="#FFD166" opacity="0.16"></circle>
+<circle cx="69" cy="29" r="7.8"  fill="#FFD166"></circle>
+</svg>
+</span>
+<span class="amo-brand">
+<span class="amo-sky">Desarroll</span><span class="amo-pink">AMO</span><span class="amo-sky">.</span>
+</span>
+</a>
+<span class="amo-year">© <span id="amoYear"></span></span>
+<nav class="amo-legal" aria-label="Enlaces legales y de ayuda">
+<a href="/faq">FAQ</a>
+<a href="/terms">Términos</a>
+<a href="/privacy">Privacidad</a>
+<a href="/cookies">Cookies</a>
+<a href="/payments">Pagos</a>
+<a href="/licenses">Licencias</a>
+</nav>
+</div>
+<script>document.getElementById('amoYear').textContent = new Date().getFullYear();</script>
+</footer>
+</body>
+</html>
