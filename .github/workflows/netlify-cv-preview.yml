@@ -1,0 +1,80 @@
+name: Verify CV candidate on Netlify preview
+
+on:
+  push:
+    branches:
+      - deploy-cv-preview-20260902
+
+permissions:
+  contents: read
+
+env:
+  NETLIFY_SITE_ID: bfc9b6b0-c384-4092-9108-c48cb876649e
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Netlify credential availability
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${NETLIFY_AUTH_TOKEN:-}" ]; then
+            echo 'NETLIFY_AUTH_TOKEN is not configured in this repository.'
+            exit 2
+          fi
+          echo 'Netlify credential is available.'
+
+      - name: Deploy isolated preview
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx --yes netlify-cli@23.9.1 deploy \
+            --dir=site \
+            --site="$NETLIFY_SITE_ID" \
+            --auth="$NETLIFY_AUTH_TOKEN" \
+            --json > /tmp/netlify-deploy.json
+          python - <<'PY'
+          import json
+          p='/tmp/netlify-deploy.json'
+          data=json.load(open(p, encoding='utf-8'))
+          url=data.get('deploy_url') or data.get('deploy_ssl_url') or data.get('url')
+          if not url:
+              raise SystemExit('Netlify preview URL missing')
+          if url.startswith('http://'):
+              url='https://'+url[len('http://'):]
+          open('/tmp/preview-url','w').write(url.rstrip('/'))
+          print('Preview:', url)
+          PY
+
+      - name: Verify preview preserves the site and serves the CV
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL="$(cat /tmp/preview-url)"
+          for route in / /servicios /galeria /manifiesto /faq /cvs/amoedojuan/; do
+            echo "Checking $route"
+            curl --retry 4 --retry-delay 2 -fsS "$URL$route" -o /tmp/page
+            test -s /tmp/page
+            TYPE="$(curl --retry 4 --retry-delay 2 -fsSI "$URL$route" | tr -d '\r' | awk -F': ' 'tolower($1)=="content-type" {print tolower($2); exit}')"
+            echo "Content-Type: $TYPE"
+            [[ "$TYPE" == text/html* ]] || { echo "Expected HTML at $route"; exit 1; }
+          done
+          curl -fsS "$URL/" | grep -q 'Formas de pago'
+          curl -fsS "$URL/" | grep -q 'Tecnología que entiende'
+          curl -fsS "$URL/servicios" | grep -q 'DesarrollAMO'
+          curl -fsS "$URL/galeria" | grep -q 'DesarrollAMO'
+          CV="$(curl -fsS "$URL/cvs/amoedojuan/")"
+          grep -q 'Juan Manuel Amoedo' <<<"$CV"
+          grep -q 'Proyecto Estampa' <<<"$CV"
+          grep -q 'Move DJ' <<<"$CV"
+          grep -q 'Puesto Catorce' <<<"$CV"
+          grep -q 'printButtonBottom' <<<"$CV"
+          echo "PREVIEW_OK=$URL"
