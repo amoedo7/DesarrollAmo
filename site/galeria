@@ -1,75 +1,9 @@
 <!DOCTYPE html><html lang="es" class="scroll-smooth"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Galería · DesarrollAMO</title>
 <meta name="description" content="Portfolio de DesarrollAMO: webs de clientes, CVs online, imágenes IA, aplicaciones y herramientas."><link rel="canonical" href="/galeria">
-<script src="https://cdn.tailwindcss.com"></script><link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Crect width='64' height='48' rx='8' fill='%230b1020'/%3E%3Cpolygon points='8,40 20,16 32,40' fill='%237DD3FC'/%3E%3Cpolygon points='24,40 36,12 48,40' fill='%23FF77B4'/%3E%3Cpolygon points='40,40 52,20 60,40' fill='%23FF77B4'/%3E%3Ccircle cx='60' cy='26' r='9' fill='%23FFD166'/%3E%3C/svg%3E" rel="icon"/><link rel="stylesheet" href="/static/galeria.css"><style>
-.amo-footer{
-  position: relative;
-  z-index: 999;
-  padding: 16px 16px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(0,0,0,.58);
-  color: rgba(229,231,235,.95);
-  border-top: 1px solid rgba(255,255,255,.14);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
-@media (prefers-color-scheme: light){
-  .amo-footer{
-    background: rgba(255,255,255,.78);
-    color: rgba(17,24,39,.92);
-    border-top: 1px solid rgba(0,0,0,.10);
-  }
-}
-.amo-footer-inner{
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px 16px;
-  flex-wrap: wrap;
-  text-align: center;
-  font-size: 13px;
-  line-height: 1.4;
-}
-.amo-link{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 900;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.14);
-  color: inherit;
-  transition: transform .15s ease, background .2s ease, border-color .2s ease;
-}
-.amo-link:hover{
-  transform: translateY(-1px);
-  background: rgba(255,255,255,.14);
-  border-color: rgba(255,255,255,.22);
-}
-.amo-sky{ color:#7DD3FC; }
-.amo-pink{ color:#FF5AA5; }
-.amo-year{ opacity:.75; }
-.amo-legal{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 4px 14px;
-  font-size: 12px;
-}
-.amo-legal a{
-  color: inherit;
-  text-decoration: none;
-  opacity: .85;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 1px;
-}
-.amo-legal a:hover{ opacity: 1; border-bottom-color: rgba(229,231,235,.4); }
-</style>
-<link rel="stylesheet" href="/static/site-global.css"></head><body class="gallery-page"><svg aria-hidden="true" focusable="false" height="0" style="position:absolute;left:-9999px;visibility:hidden" width="0">
+<script src="https://cdn.tailwindcss.com"></script><link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Crect width='64' height='48' rx='8' fill='%230b1020'/%3E%3Cpolygon points='8,40 20,16 32,40' fill='%237DD3FC'/%3E%3Cpolygon points='24,40 36,12 48,40' fill='%23FF77B4'/%3E%3Cpolygon points='40,40 52,20 60,40' fill='%23FF77B4'/%3E%3Ccircle cx='60' cy='26' r='9' fill='%23FFD166'/%3E%3C/svg%3E" rel="icon"/><link rel="stylesheet" href="/static/galeria.css">
+<link rel="stylesheet" href="/static/site-global.css"><link rel="stylesheet" href="/static/desarrollamo-footer.css" data-desarrollamo-footer />
+</head><body class="gallery-page"><svg aria-hidden="true" focusable="false" height="0" style="position:absolute;left:-9999px;visibility:hidden" width="0">
 <defs>
 <!-- Gradiente del sol -->
 <radialgradient cx="50%" cy="60%" id="amo-sun-grad" r="60%">
@@ -145,12 +79,18 @@
 <main class="profile-shell">
 <section class="profile-top" aria-labelledby="profileName"><div class="brand-avatar"><div class="brand-avatar__inside"><svg width="88" height="62" viewBox="0 0 80 48" aria-label="Logo DesarrollAMO"><use href="#logo-desarrollamo"></use></svg></div></div>
 <div><div class="profile-id"><h1 id="profileName">desarrollamoficial</h1><span class="verified" aria-label="Perfil oficial">✓</span><div class="profile-actions"><a class="primary" href="https://www.instagram.com/desarrollamoficial" target="_blank" rel="noopener">Contacto</a><a href="/servicios">Servicios</a></div></div>
-<div class="profile-stats"><span><strong>20</strong> webs</span><span><strong>6</strong> CVs</span><span><strong>15</strong> imágenes IA históricas</span></div>
+<div class="profile-stats"><span><strong>21</strong> webs</span><span><strong>6</strong> CVs</span><span><strong>15</strong> imágenes IA históricas</span></div>
 <div class="profile-bio"><strong>DesarrollAMO</strong><br><span class="tagline">Ideas → tecnología. Diseño, web, automatización e IA con trabajo real detrás.</span><br>Portfolio de clientes y laboratorio creativo · Rosario / mundo.</div></div></section>
 <section class="highlights" aria-label="Filtrar galería"><button class="highlight is-active" type="button" data-filter="all"><span class="highlight-ring"><span class="highlight-core">▦</span></span><span>Todo</span></button><button class="highlight" type="button" data-filter="web"><span class="highlight-ring"><span class="highlight-core">W</span></span><span>Webs</span></button><button class="highlight" type="button" data-filter="cv"><span class="highlight-ring"><span class="highlight-core">CV</span></span><span>CVs</span></button><button class="highlight" type="button" data-filter="ia"><span class="highlight-ring"><span class="highlight-core">✦</span></span><span>IA</span></button><button class="highlight" type="button" data-filter="app"><span class="highlight-ring"><span class="highlight-core">A</span></span><span>Apps</span></button><button class="highlight" type="button" data-filter="tool"><span class="highlight-ring"><span class="highlight-core">⌘</span></span><span>Scripts</span></button><button class="highlight" type="button" data-filter="brand"><span class="highlight-ring"><span class="highlight-core">AMO</span></span><span>Marca</span></button></section>
 <div class="gallery-bar"><div class="gallery-tabs"><span>▦ PUBLICACIONES</span><span>PORTFOLIO</span></div><label class="gallery-search" aria-label="Buscar"><input id="gallerySearch" type="search" placeholder="Buscar…" autocomplete="off"></label></div>
-<p class="gallery-count" id="galleryCount">52 piezas visibles</p>
-<section class="ig-grid" id="galleryGrid" aria-label="Portfolio"><article class="ig-card" data-category="web" data-name="reliance travel viajes y turismo">
+<p class="gallery-count" id="galleryCount">53 piezas visibles</p>
+<section class="ig-grid" id="galleryGrid" aria-label="Portfolio"><article class="ig-card" data-category="web" data-name="vivero la querencia vivero de campo · pergamino">
+  <a class="ig-tile" href="https://viverolaquerencia.com.ar/" target="_blank" rel="noopener noreferrer" data-project data-title="Vivero La Querencia" data-kind="Web" data-desc="Vivero de campo · Pergamino" data-url="https://viverolaquerencia.com.ar/">
+    <span class="tile-fallback" aria-hidden="true"><img src="https://viverolaquerencia.com.ar/assets/images/og-image.webp" alt="" loading="lazy"></span>
+    <img class="tile-image" src="https://d33wubrfki0l68.cloudfront.net/6aada1e84eab6fff763bd0da/screenshot_2026-09-18-20-41-15-0000.webp" alt="Vista previa de Vivero La Querencia" loading="lazy" onerror="this.style.display='none'">
+    <span class="tile-shade"></span><span class="tile-meta"><strong>Vivero La Querencia</strong><small>Web</small></span>
+  </a>
+</article><article class="ig-card" data-category="web" data-name="reliance travel viajes y turismo">
   <a class="ig-tile" href="https://reliancetravel.netlify.app/" target="_blank" rel="noopener noreferrer" data-project data-title="Reliance Travel" data-kind="Web" data-desc="Viajes y turismo" data-url="https://reliancetravel.netlify.app/">
     <span class="tile-fallback" aria-hidden="true"><img src="/static/gallery-v3/reliance-travel.svg" alt="" loading="lazy"></span>
     <img class="tile-image" src="https://d33wubrfki0l68.cloudfront.net/69d540447c677e5808c5db4e/screenshot_2026-04-07-17-35-02-0000.webp" alt="Vista previa de Reliance Travel" loading="lazy" onerror="this.style.display='none'">
@@ -454,31 +394,26 @@
 <p class="gallery-footnote"><strong>Portfolio primero.</strong> Las webs y CVs enlazan a las publicaciones públicas correspondientes. Apps y herramientas se muestran sin exponer repositorios, código, claves ni infraestructura interna. El archivo histórico de IA se conserva como categoría aunque sus assets originales no venían en el último deploy.</p>
 </main>
 <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" data-close-modal aria-label="Cerrar">×</button><div class="modal-card"><div class="modal-media"><img id="modalImage" alt=""></div><div class="modal-body"><div class="modal-kicker" id="modalKind"></div><h2 id="modalTitle"></h2><p id="modalDesc"></p><div class="modal-actions"><a id="modalLink" target="_blank" rel="noopener">Abrir trabajo ↗</a><button data-close-modal>Volver</button></div></div></div></div>
-<footer class="amo-footer">
-<div class="amo-footer-inner">
-<a class="amo-link" href="/" rel="noopener noreferrer" target="_blank">
-<span aria-hidden="true" class="amo-logo">
-<svg height="22" style="display:block" viewbox="0 0 78 48" width="30">
-<polygon fill="#7DD3FC" points="8,40 20,16 32,40"></polygon>
-<polygon fill="#FF5AA5" points="24,40 36,12 48,40"></polygon>
-<polygon fill="#FF5AA5" points="40,40 52,20 60,40"></polygon>
-<circle cx="69" cy="29" fill="#FFD166" opacity="0.16" r="10.5"></circle>
-<circle cx="69" cy="29" fill="#FFD166" r="7.8"></circle>
-</svg>
-</span>
-<span class="amo-brand">
-<span class="amo-sky">Desarroll</span><span class="amo-pink">AMO</span><span class="amo-sky">.</span>
-</span>
-</a>
-<span class="amo-year">© <span id="amoYear"></span></span>
-<nav aria-label="Enlaces legales y de ayuda" class="amo-legal">
-<a href="/faq">FAQ</a>
-<a href="/terms">Términos</a>
-<a href="/privacy">Privacidad</a>
-<a href="/cookies">Cookies</a>
-<a href="/payments">Pagos</a>
-<a href="/licenses">Licencias</a>
-</nav>
-</div>
-<script>document.getElementById('amoYear').textContent = new Date().getFullYear();</script>
-</footer><script src="/static/galeria.js" defer></script></body></html>
+<script src="/static/galeria.js" defer></script>
+
+
+
+<!-- DESARROLLAMO-FOOTER:START -->
+<footer class="amo-footer amo-footer--corporate">
+  <div class="amo-footer__inner">
+    <a class="amo-footer__brand" href="https://desarrollamo.com.ar/" aria-label="DesarrollAMO">
+      <img class="amo-footer__logo" src="/static/desarrollamo-brand-horizontal.svg" alt="DesarrollAMO." />
+    </a>
+    <span class="amo-footer__copyright">© <span data-amo-year>2026</span></span>
+    <nav class="amo-footer__legal" aria-label="Enlaces legales y de ayuda">
+      <a href="https://desarrollamo.com.ar/faq">FAQ</a>
+      <a href="https://desarrollamo.com.ar/terms">Términos</a>
+      <a href="https://desarrollamo.com.ar/privacy">Privacidad</a>
+      <a href="https://desarrollamo.com.ar/cookies">Cookies</a>
+      <a href="https://desarrollamo.com.ar/payments">Pagos</a>
+      <a href="https://desarrollamo.com.ar/licenses">Licencias</a>
+    </nav>
+  </div>
+</footer>
+<!-- DESARROLLAMO-FOOTER:END -->
+</body></html>
