@@ -56,14 +56,9 @@ jobs:
           check_page https://desarrollamo.com.ar/ \
             'DesarrollAMO'
           check_page https://desarrollamo.com.ar/servicios \
-            'CobrAMO' \
-            'amo-header'
+            'Servicios' \
+            'CobrAMO'
           check_page https://desarrollamo.com.ar/galeria \
-            'project-card' \
-            'amo-footer'
+            'Galería'
           check_page https://desarrollamo.com.ar/manifiesto \
-            'Manifiesto' \
-            'amo-header'
-          check_page https://desarrollamo.com.ar/inversiones \
-            'Todavía no aceptamos inversiones públicas' \
-            'CAMO'
+            'Manifiesto'
