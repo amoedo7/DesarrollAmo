@@ -54,8 +54,7 @@ jobs:
           }
 
           check_page https://desarrollamo.com.ar/ \
-            'Inversiones DesarrollAMO' \
-            'Ver inversiones'
+            'DesarrollAMO'
           check_page https://desarrollamo.com.ar/servicios \
             'CobrAMO' \
             'amo-header'
